@@ -7,7 +7,7 @@
 
       <span class="hidden sm:inline-block sm:align-middle sm:h-screen " ></span>
 
-          <div class="inline-block overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:max-w-4xl sm:my-8 sm:align-middle sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline" > <style> body {overflow-y:hidden;}</style>
+          <div class="inline-block overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:max-w-4xl sm:my-8 sm:align-middle" role="dialog" aria-modal="true" aria-labelledby="modal-headline" > <style> body {overflow-y:hidden;}</style>
   
               <form>
                   <div class="px-4 pt-5 pb-4 bg-yellow-50 sm:p-6 sm:pb-4" >
