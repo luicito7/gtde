@@ -1,14 +1,14 @@
 <div class="fixed inset-0 z-10 overflow-y-auto ease-out duration-400">
-    <div class="flex justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0" >
-    
-        <div class="fixed inset-0 transition-opacity">
-            <div class="absolute inset-0 bg-gray-500 opacity-75 " ></div>   {{--aqui para el fondo --}}
-        </div>
+  <div class="flex justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0" >
+  
+      <div class="fixed inset-y-0 w-full transition-opacity right-4">
+          <div class="absolute inset-0 bg-gray-500 opacity-75" ></div>   {{--aqui para el fondo --}}
+      </div>
 
-        <span class="hidden sm:inline-block sm:align-middle sm:h-screen " ></span>
+      <span class="hidden sm:inline-block sm:align-middle sm:h-screen " ></span>
 
-            <div class="inline-block overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:align-middle sm:max-w-lg sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline" >    
-              
+          <div class="inline-block overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:max-w-4xl sm:my-8 sm:align-middle sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline" > <style> body {overflow-y:hidden;}</style>
+                
                 <form>
 
                     <div class="px-4 pt-5 pb-4 bg-yellow-50 sm:p-6 sm:pb-4" >
@@ -111,10 +111,6 @@
                                     <option value="4">divorciado</option>
                                     <option value="5">viudo</option>
                                   </select>
-                                  
-                                  <div class="absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 pointer-events-none">
-                                    <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-                                  </div>
                                 </div>
                               </div>
  
@@ -150,9 +146,6 @@
                                     <option value="10">tecnico</option>
                                     
                                   </select>
-                                  <div class="absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 pointer-events-none">
-                                    <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-                                  </div>
                                 </div>
                               </div>
                             
@@ -166,9 +159,6 @@
                                     <option value="1">Si</option>
                                     <option value="2">No</option>
                                  </select>
-                                 <div class="absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 pointer-events-none">
-                                   <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-                                 </div>
                                </div>
                              </div>
 
@@ -183,9 +173,6 @@
                                     <option value="1">Activo</option>
                                     <option value="2">Inactivo</option>
                                   </select>
-                                  <div class="absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 pointer-events-none">
-                                    <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-                                  </div>
                                 </div>
                               </div>
                            </div>
@@ -227,9 +214,6 @@
                                     <option value="1">Femenino</option>
                                     <option value="2">Masculino</option>
                                   </select>
-                                  <div class="absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 pointer-events-none">
-                                    <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-                                  </div>
                                 </div>
                               </div>
 
