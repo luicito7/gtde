@@ -7,8 +7,7 @@
 
       <span class="hidden sm:inline-block sm:align-middle sm:h-screen " ></span>
 
-          <div class="inline-block overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:max-w-4xl sm:my-8 sm:align-middle sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline" > <style> body {overflow-y:hidden;}</style>
-                
+          <div class="inline-block overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:max-w-4xl sm:my-8 sm:align-middle sm:max-w-lg sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline" > <style> body {overflow-y:hidden;}</style>
                 <form>
 
                     <div class="px-4 pt-5 pb-4 bg-yellow-50 sm:p-6 sm:pb-4" >
@@ -204,30 +203,35 @@
                                   <output class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="email" type="email" wire:model="email">
                                 </div>
                                 
-                            <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
-                                <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="sexo">
-                                  SEXO
-                                </label>
-                                <div class="relative">
-                                  <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="sexo" wire:model="sexo">
-                                    <option value data-isdefault="true" style="display:none;">Seleccione</option>
-                                    <option value="1">Femenino</option>
-                                    <option value="2">Masculino</option>
-                                  </select>
+                              </div>
+                              <div class="flex flex-wrap mb-6 -mx-3">
+                                <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0">
+                                  <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="sexo">
+                                    SEXO
+                                  </label>
+                                  <div class="relative">
+                                    <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="sexo" wire:model="sexo">
+                                      <option value data-isdefault="true" style="display:none;">Seleccione</option>
+                                      <option value="1">Femenino</option>
+                                      <option value="2">Masculino</option>
+                                    </select>
                                 </div>
                               </div>
-
-                              <div class="mb-4">
-                                <label for="fechanac" class="block mb-2 text-sm font-bold text-gray-700">Fecha de Nacimiento:</label>
-                                <input type="date" class="w-full px-3 py-2 leading-tight text-gray-700 bg-blue-100 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="fechanac" wire:model="fechanac" readonly>
+                                
+                                <div class="w-full px-3 md:w-1/2">
+                                  <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="fechanac">
+                                    fECHA DE NACIMIENTO
+                                  </label>
+                                  <input type="date" class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="fechanac" type="fechanac" wire:model="fechanac">
+                                </div>  
                               </div>
-                            </div>  
+
                               <div>
                                 <div class="flex flex-wrap mb-6 -mx-3">
                                 <div class="w-full px-3">
                                 <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="direcreal">
                                  OBSERVACIONES</label>
-                                <output class="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="observac" type="texto" wire:model="observac">
+                                <output class="block w-full h-32 px-4 py-3 mb-3 overflow-hidden overflow-y-auto leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="observac" type="texto" wire:model="observac">
                                 </div>
                               </div>
                               
