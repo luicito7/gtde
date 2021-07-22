@@ -32,6 +32,18 @@ class Personas extends Component
      $observac,
      $id_mostrar,
      $id_persona;
+     protected $rules = [
+        'dni' => 'required|max:8',
+        'apepaterno' => 'required',
+        'apematerno' => 'required',
+        'nombres' => 'required',
+        'fechanac' => 'required',
+    ];
+
+    public function update($propertyName) 
+    {
+        $this->validationOnly($propertyName);
+    }
      
     public $modal = false; 
     public $modal1 = false; 
@@ -133,6 +145,7 @@ class Personas extends Component
     {
         Persona::updateOrCreate(['id'=>$this->id_persona],
             [
+                $validation =$this->validate(),
                 'dni' => $this->dni,
                 'apepaterno' => $this->apepaterno,
                 'apematerno' => $this->apematerno,
@@ -153,7 +166,7 @@ class Personas extends Component
                 'discapac' => $this->discapac,
                 'estadoreg' => $this->estadoreg,
                 'observac' => $this->observac,
-            ]);
+            ],$validation);
         $this->cerrarModal();
         $this->limpiarCampos();
 
