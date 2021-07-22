@@ -137,7 +137,7 @@ class Personas extends Component
                 'apepaterno' => $this->apepaterno,
                 'apematerno' => $this->apematerno,
                 'nombres' => $this->nombres,
-                'namecomplet' => $this->namecomplet,
+                'namecomplet' => $this->nombres.' '. $this->apepaterno.' '. $this->apematerno ,
                 'fechanac' => $this->fechanac,
                 'sexo' => $this->sexo,
                 'direcreal' => $this->direcreal,

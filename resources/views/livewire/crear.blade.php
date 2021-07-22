@@ -41,16 +41,7 @@
                                 APELLIDO MATERNO
                               </label>
                               <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="apematerno" type="text" wire:model="apematerno">
-                            </div>
-                            
-                        </div>
-                         <div class="flex flex-wrap mb-6 -mx-3">
-                          <div class="w-full px-3">
-                            <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="namecomplet">
-                              NOMBRE COMPLETO</label>
-                            <input class="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="namecomplet" type="texto" wire:model="namecomplet">
-                            
-                          </div>
+                            </div>                      
 
                         </div>
                         
