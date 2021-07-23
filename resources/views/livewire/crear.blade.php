@@ -17,8 +17,9 @@
                             <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="dni">
                               DNI
                             </label>
-                            <input class="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-blue-100 border border-red-500 rounded appearance-none focus:outline-none focus:bg-white" id="dni" type="text" maxlength="8" pattern="[0-9]{8}" wire:model="dni" required>
-                            <p class="text-xs italic text-red-500">Campo Obligatorio</p>
+                            <input class="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-blue-100 border border-blue-500 rounded appearance-none focus:outline-none focus:bg-white" id="dni" type="text" placeholder="DNI obligatorio" maxlength="8" pattern="[0-9]{8}" wire:model="dni" required>
+                            @error('dni') <span class="error" href="#dni">{{ $message }}</span> @enderror
+                            
                             <BR>
                           </div>
                           
@@ -76,6 +77,55 @@
                         <br>
                             {{-- final --}}
                         
+                            <div>
+                              <div class="flex flex-wrap mb-6 -mx-3">
+                              <div class="w-full px-3">
+                              <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="direcreal">
+                              DIRECCION</label>
+                              <input class="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="direcreal" type="texto" placeholder="(Jr.calle,Av.) Av. Los lirios N° 000" wire:model="direcreal">
+                              </div>
+                          </div>
+                          
+                          <div class="flex flex-wrap mb-6 -mx-3">
+                              <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0">
+                                <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="celprin">
+                                  CELULAR
+                                </label>
+                                <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="celprin" type="text" maxlength="9" wire:model="celprin">
+                                <br>
+                              </div>
+                              
+                              <div class="w-full px-3 md:w-1/2">
+                                <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="email">
+                                  CORREO
+                                </label>
+                                <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="email" type="email" wire:model="email">
+                              </div>
+
+                              </div>
+
+                              <div class="flex flex-wrap mb-6 -mx-3">
+                                <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0">
+                                  <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="sexo">
+                                    SEXO
+                                  </label>
+                                  <div class="relative">
+                                    <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="sexo" wire:model="sexo">
+                                      <option value data-isdefault="true" style="display:none;">Seleccione</option>
+                                      <option value="1">Femenino</option>
+                                      <option value="2">Masculino</option>
+                                    </select>
+                                </div>
+                              </div>
+                                
+                                <div class="w-full px-3 md:w-1/2">
+                                  <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="fechanac">
+                                    fECHA DE NACIMIENTO
+                                  </label>
+                                  <input type="date" class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="fechanac" type="fechanac" wire:model="fechanac">
+                                </div>  
+                              </div>
+                              
 
                         {{-- formulario2  --}}
                          <div class="flex flex-wrap mb-2 -mx-3">
@@ -167,55 +217,6 @@
                         <br>
                           {{-- final --}}
 
-                          <div>
-                              <div class="flex flex-wrap mb-6 -mx-3">
-                              <div class="w-full px-3">
-                              <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="direcreal">
-                              DIRECCION</label>
-                              <input class="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="direcreal" type="texto" placeholder="(Jr.calle,Av.) Av. Los lirios N° 000" wire:model="direcreal">
-                              </div>
-                          </div>
-                          
-                          <div class="flex flex-wrap mb-6 -mx-3">
-                              <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0">
-                                <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="celprin">
-                                  CELULAR
-                                </label>
-                                <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="celprin" type="text" wire:model="celprin">
-                                <br>
-                              </div>
-                              
-                              <div class="w-full px-3 md:w-1/2">
-                                <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="email">
-                                  CORREO
-                                </label>
-                                <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="email" type="email" wire:model="email">
-                              </div>
-
-                              </div>
-
-                              <div class="flex flex-wrap mb-6 -mx-3">
-                                <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0">
-                                  <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="sexo">
-                                    SEXO
-                                  </label>
-                                  <div class="relative">
-                                    <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="sexo" wire:model="sexo">
-                                      <option value data-isdefault="true" style="display:none;">Seleccione</option>
-                                      <option value="1">Femenino</option>
-                                      <option value="2">Masculino</option>
-                                    </select>
-                                </div>
-                              </div>
-                                
-                                <div class="w-full px-3 md:w-1/2">
-                                  <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="fechanac">
-                                    fECHA DE NACIMIENTO
-                                  </label>
-                                  <input type="date" class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="fechanac" type="fechanac" wire:model="fechanac">
-                                </div>  
-                              </div>
-                              
                             <div>
                               <div class="flex flex-wrap mb-6 -mx-3">
                               <div class="w-full px-3">

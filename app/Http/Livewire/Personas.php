@@ -32,12 +32,20 @@ class Personas extends Component
      $observac,
      $id_mostrar,
      $id_persona;
+
      protected $rules = [
-        'dni' => 'required|max:8',
+        'dni' => 'required|max:8|unique:personas,dni',
         'apepaterno' => 'required',
         'apematerno' => 'required',
         'nombres' => 'required',
-        'fechanac' => 'required',
+        'sexo' => 'required',
+
+    ];
+
+    protected $messages = [
+        'dni.required' => 'El DNI es obligatorio',
+        //'email.email' => 'The Email Address format is not valid.',
+        'dni.unique' => 'El Dni ya existe',
     ];
 
     public function update($propertyName) 
