@@ -7,6 +7,10 @@
                     @if($modal1)
                     @include('livewire.detalles')                
                     @endif
+                    
+                    @if($modal2)
+                    @include('livewire.editar')                
+                    @endif
                 
     <table class="w-full text-xs table-fixed">
         <thead>

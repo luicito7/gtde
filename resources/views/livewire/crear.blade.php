@@ -5,40 +5,50 @@
           <div class="absolute inset-0 bg-gray-500 opacity-75" ></div>   {{--aqui para el fondo --}}
       </div>
 
-      <span class="hidden sm:inline-block sm:align-middle sm:h-screen " ></span>
-
+             <span class="hidden sm:inline-block sm:align-middle sm:h-screen " ></span>
+             
           <div class="inline-block overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:max-w-4xl sm:my-8 sm:align-middle" role="dialog" aria-modal="true" aria-labelledby="modal-headline" > <style> body {overflow-y:hidden;}</style>
   
               <form>
                   <div class="px-4 pt-5 pb-4 bg-yellow-50 sm:p-6 sm:pb-4" >
                       
-                      <div class="flex flex-wrap mb-6 -mx-3">
-                          <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0">
-                            <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="dni">
+                      <div class="flex flex-wrap -mx-3">
+                          <div class="w-full px-3 md:w-1/2 md:mb-0">
+                            <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="dni">
                               DNI
                             </label>
-                            <input class="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-blue-100 border border-blue-500 rounded appearance-none focus:outline-none focus:bg-white" id="dni" type="text" placeholder="DNI obligatorio" maxlength="8" pattern="[0-9]{8}" wire:model="dni" required>
-                            @error('dni') <span class="error" href="#dni">{{ $message }}</span> @enderror
-                            
-                            <BR>
+                            <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-blue-500 rounded appearance-none focus:outline-none focus:bg-white" id="dni" type="number" placeholder="DNI obligatorio" data-maxlength="8" pattern="[0-9]{8}" wire:model="dni" required oninput="this.value=this.value.slice(0,this.dataset.maxlength)" >
+                            @error('dni')
+                            <span href="$form" >
+                            <div class="px-4 py-3 text-teal-900 bg-red-100 border-t-4 border-red-500 rounded-b shadow-md " role="alert">
+                              <div class="flex">
+                                <div class="py-1"><svg class="w-6 h-6 mr-4 text-red-500 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"/></svg></div>
+                                <div>
+                                  <p class="font-bold">DNI</p>
+                                  <p class="text-sm">{{ $message }}</p>
+                                </div>
+                              </div>
+                            </div>
+                            </span>
+                             @enderror 
                           </div>
                           
-                          <div class="w-full px-3 md:w-1/2">
-                            <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="nombres">
+                          <div class="w-full px-3 mb-6 md:w-1/2">
+                            <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="nombres">
                               NOMBRES
                             </label>
                             <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="nombres" type="text" wire:model="nombres">
-                          </div>
+                         </div>
 
-                          <div class="w-full px-3 md:w-1/2">
-                              <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="apepaterno">
+                          <div class="w-full px-3 mb-6 md:w-1/2">
+                              <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="apepaterno">
                                 APELLIDO PATERNO
                               </label>
                               <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="apepaterno" type="text" wire:model="apepaterno">
                           </div>
                             
                             <div class="w-full px-3 md:w-1/2">
-                              <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="apematerno">
+                              <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="apematerno">
                                 APELLIDO MATERNO
                               </label>
                               <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="apematerno" type="text" wire:model="apematerno">
@@ -48,17 +58,17 @@
                         
 
                        {{-- INICIO  --}}
-                        <div class="flex flex-wrap mb-2 -mx-3">
-                          <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
-                            <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="departamento">
+                        <div class="flex flex-wrap mb-6 -mx-3">
+                          <div class="w-full px-3 md:w-1/3 md:mb-0">
+                            <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="departamento">
                               DEPARTAMENTO
                             </label>
                             <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="departamento" type="text" wire:model="departamento">
                           </div>
 
                           
-                          <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
-                            <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="provincia">
+                          <div class="w-full px-3 md:w-1/3 md:mb-0">
+                            <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="provincia">
                               PROVINCIA
                             </label>
                             <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="provincia" type="text" wire:model="provincia">
@@ -67,28 +77,27 @@
                           </div>
 
                           
-                          <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
-                            <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="distrito">
+                          <div class="w-full px-3 md:w-1/3 md:mb-0">
+                            <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="distrito">
                               DISTRITO
                             </label>
                             <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="distrito" type="text" wire:model="distrito">
                           </div>
                          </div>
-                        <br>
                             {{-- final --}}
                         
                             <div>
                               <div class="flex flex-wrap mb-6 -mx-3">
                               <div class="w-full px-3">
-                              <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="direcreal">
+                              <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="direcreal">
                               DIRECCION</label>
-                              <input class="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="direcreal" type="texto" placeholder="(Jr.calle,Av.) Av. Los lirios N° 000" wire:model="direcreal">
+                              <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="direcreal" type="texto" placeholder="(Jr.calle,Av.) Av. Los lirios N° 000" wire:model="direcreal">
                               </div>
-                          </div>
+                            </div>
                           
-                          <div class="flex flex-wrap mb-6 -mx-3">
-                              <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0">
-                                <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="celprin">
+                          <div class="flex flex-wrap -mx-3">
+                              <div class="w-full px-3 md:w-1/2 md:mb-0">
+                                <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="celprin">
                                   CELULAR
                                 </label>
                                 <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="celprin" type="text" maxlength="9" wire:model="celprin">
@@ -96,17 +105,17 @@
                               </div>
                               
                               <div class="w-full px-3 md:w-1/2">
-                                <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="email">
+                                <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="email">
                                   CORREO
                                 </label>
                                 <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="email" type="email" wire:model="email">
                               </div>
 
-                              </div>
+                           </div>
 
                               <div class="flex flex-wrap mb-6 -mx-3">
-                                <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0">
-                                  <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="sexo">
+                                <div class="w-full px-3 md:w-1/2 md:mb-0">
+                                  <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="sexo">
                                     SEXO
                                   </label>
                                   <div class="relative">
@@ -119,26 +128,23 @@
                               </div>
                                 
                                 <div class="w-full px-3 md:w-1/2">
-                                  <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="fechanac">
+                                  <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="fechanac">
                                     fECHA DE NACIMIENTO
                                   </label>
                                   <input type="date" class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="fechanac" type="fechanac" wire:model="fechanac">
                                 </div>  
                               </div>
-                              
 
-                        {{-- formulario2  --}}
-                         <div class="flex flex-wrap mb-2 -mx-3">
-                           <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
-                             <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="ruc">
+                         <div class="flex flex-wrap mb-6 -mx-3">
+                           <div class="w-full px-3 md:w-1/3 md:mb-0">
+                             <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="ruc">
                                RUC
                              </label>
                              <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="ruc" maxlength="11" type="text" wire:model="ruc">
                            </div>
 
-                           
-                           <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
-                              <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="estacivil">
+                           <div class="w-full px-3 md:w-1/3 md:mb-0">
+                              <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="estacivil">
                                 ESTADO CIVIL
                               </label>
                               <div class="relative">
@@ -154,20 +160,20 @@
                             </div>
 
                            
-                           <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
-                             <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="profesion">
+                           <div class="w-full px-3 md:w-1/3 md:mb-0">
+                             <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="profesion">
                                PROFESION
                              </label>
                              <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="profesion" type="text" wire:model="profesion">
                            </div>
                           </div>
-                         <br>
+                        
                              {{-- final --}}
 
                           {{-- OTRO FORM  --}}
-                         <div class="flex flex-wrap mb-2 -mx-3">
-                          <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
-                              <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grainstruc">
+                         <div class="flex flex-wrap mb-6 -mx-3">
+                          <div class="w-full px-3 md:w-1/3 md:mb-0">
+                              <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="grainstruc">
                                 FORMACION
                               </label>
                               <div class="relative">
@@ -187,8 +193,8 @@
                               </div>
                             </div>
                           
-                          <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
-                             <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="discapac">
+                          <div class="w-full px-3 md:w-1/3 md:mb-0">
+                             <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="discapac">
                                DISCAPACIDAD
                              </label>
                              <div class="relative">
@@ -201,8 +207,8 @@
                            </div>
 
                           
-                           <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
-                              <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="estadoreg">
+                           <div class="w-full px-3 md:w-1/3 md:mb-0">
+                              <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="estadoreg">
                                 ESTADO
                               </label>
                               <div class="relative">
@@ -214,18 +220,15 @@
                               </div>
                             </div>
                          </div>
-                        <br>
-                          {{-- final --}}
-
                             <div>
-                              <div class="flex flex-wrap mb-6 -mx-3">
+                              <div class="flex flex-wrap -mx-3">
                               <div class="w-full px-3">
-                              <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="direcreal">
+                              <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="direcreal">
                                OBSERVACIONES</label>
-                              <input class="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="observac" type="texto" wire:model="observac">
+                              <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="observac" type="texto" wire:model="observac">
                               </div>
                             </div>  
-                      </div>   
+                        </div>   
                   </div>
                 
                       <div class="px-4 py-3 bg-yellow-50 sm:px-6 sm:flex sm:flex-row-reverse">

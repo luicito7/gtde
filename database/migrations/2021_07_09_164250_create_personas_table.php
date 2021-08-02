@@ -36,8 +36,6 @@ class CreatePersonasTable extends Migration
             $table->enum('estadoreg', ['1', '2'])->default('1');
             $table->text('observac')->nullable();
             //$table->integer('users');
-
-
             $table->timestamps();
 
             //Relaciones

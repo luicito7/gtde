@@ -55,7 +55,7 @@ class Personas extends Component
      
     public $modal = false; 
     public $modal1 = false; 
-    
+    public $modal2 = false; 
 
 
     public function render()
@@ -89,6 +89,16 @@ class Personas extends Component
     public function cerrarModal1()
     {
         $this->modal1 = false;
+    }
+    
+    public function abrirModal2()
+    {
+        $this->modal2 = true;
+    }
+
+    public function cerrarModal2()
+    {
+        $this->modal2 = false;
     }
 
     public function limpiarCampos()
@@ -140,7 +150,7 @@ class Personas extends Component
         $this->discapac = $persona->discapac;
         $this->estadoreg = $persona->estadoreg;
         $this->observac = $persona->observac;
-        $this->abrirModal();
+        $this->abrirModal2();
 
     }
 
@@ -176,6 +186,37 @@ class Personas extends Component
                 'observac' => $this->observac,
             ],$validation);
         $this->cerrarModal();
+        $this->limpiarCampos();
+
+    }
+
+    public function mod()
+    {
+        Persona::updateOrCreate(['id'=>$this->id_persona],
+            [
+                
+                'dni' => $this->dni ,
+                'apepaterno' => $this->apepaterno,
+                'apematerno' => $this->apematerno,
+                'nombres' => $this->nombres,
+                'namecomplet' => $this->nombres.' '. $this->apepaterno.' '. $this->apematerno ,
+                'fechanac' => $this->fechanac,
+                'sexo' => $this->sexo,
+                'direcreal' => $this->direcreal,
+                'departamento' => $this->departamento,
+                'provincia' => $this->provincia,
+                'distrito' => $this->distrito,
+                'celprin' => $this->celprin,
+                'email' => $this->email,
+                'estacivil' => $this->estacivil,
+                'profesion' => $this->profesion,
+                'grainstruc' => $this->grainstruc,
+                'ruc' => $this->ruc,
+                'discapac' => $this->discapac,
+                'estadoreg' => $this->estadoreg,
+                'observac' => $this->observac,
+            ],);
+        $this->cerrarModal2();
         $this->limpiarCampos();
 
     }
