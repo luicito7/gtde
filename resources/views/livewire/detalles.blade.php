@@ -13,42 +13,44 @@
                     <div class="px-4 pt-5 pb-4 bg-yellow-50 sm:p-6 sm:pb-4" >
                         
 
-                        <div class="flex flex-wrap mb-6 -mx-3">
-                            <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0">
-                              <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="dni">
+                        <div class="flex flex-wrap -mx-3">
+                            <div class="w-full px-3 md:w-1/2 md:mb-0">
+                              <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="dni">
                                 DNI
                               </label>
-                              <output class="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white" id="dni" type="text" maxlength="8" pattern="[0-9]{8}" wire:model="dni">
-                              <BR>
+                               <div>  
+                              <output class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white " id="dni" type="text"  wire:model="dni">
+                              </div>
+                              </label>
                             </div>
                             
-                            <div class="w-full px-3 md:w-1/2">
-                              <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="nombres">
+                            <div class="w-full px-3 mb-5 md:w-1/2">
+                              <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="nombres">
                                 NOMBRES
                               </label>
                               <output class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="nombres" type="text" wire:model="nombres">
                             </div>
 
                             <div class="w-full px-3 md:w-1/2">
-                                <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="apepaterno">
+                                <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="apepaterno">
                                   APELLIDO PATERNO
                                 </label>
                                 <output class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="apepaterno" type="text" wire:model="apepaterno">
                             </div>
                               
-                              <div class="w-full px-3 md:w-1/2">
-                                <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="apematerno">
+                              <div class="w-full px-3 mb-5 md:w-1/2">
+                                <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="apematerno">
                                   APELLIDO MATERNO
                                 </label>
                                 <output class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="apematerno" type="text" wire:model="apematerno">
                               </div>
                               
                           </div>
-                           <div class="flex flex-wrap mb-6 -mx-3">
+                           <div class="flex flex-wrap mb-5 -mx-3">
                             <div class="w-full px-3">
-                              <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="namecomplet">
+                              <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="namecomplet">
                                 NOMBRE COMPLETO</label>
-                              <output class="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="namecomplet" type="texto" wire:model="namecomplet">
+                              <output class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="namecomplet" type="texto" wire:model="namecomplet">
                               
                             </div>
 
@@ -56,17 +58,17 @@
                           
 
                          {{-- INICIO  --}}
-                          <div class="flex flex-wrap mb-2 -mx-3">
-                            <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
-                              <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="departamento">
+                          <div class="flex flex-wrap mb-5 -mx-3">
+                            <div class="w-full px-3 md:w-1/3 md:mb-0">
+                              <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="departamento">
                                 DEPARTAMENTO
                               </label>
                               <output class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="departamento" type="text" wire:model="departamento">
                             </div>
 
                             
-                            <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
-                              <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="provincia">
+                            <div class="w-full px-3 md:w-1/3 md:mb-0">
+                              <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="provincia">
                                 PROVINCIA
                               </label>
                               <output class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="provincia" type="text" wire:model="provincia">
@@ -75,29 +77,29 @@
                             </div>
 
                             
-                            <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
-                              <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="distrito">
+                            <div class="w-full px-3 md:w-1/3 md:mb-0">
+                              <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="distrito">
                                 DISTRITO
                               </label>
                               <output class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="distrito" type="text" wire:model="distrito">
                             </div>
                            </div>
-                          <br>
+
                               {{-- final --}}
                           
 
                           {{-- formulario2  --}}
-                           <div class="flex flex-wrap mb-2 -mx-3">
-                             <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
-                               <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="ruc">
+                           <div class="flex flex-wrap mb-5 -mx-3">
+                             <div class="w-full px-3 md:w-1/3 md:mb-0">
+                               <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="ruc">
                                  RUC
                                </label>
                                <output class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="ruc" type="text" wire:model="ruc">
                              </div>
  
                              
-                             <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
-                                <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="estacivil">
+                             <div class="w-full px-3 md:w-1/3 md:mb-0">
+                                <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="estacivil">
                                   ESTADO CIVIL
                                 </label>
                                 <div class="relative">
@@ -114,20 +116,19 @@
                               </div>
  
                              
-                             <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
-                               <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="profesion">
+                             <div class="w-full px-3 md:w-1/3 md:mb-0">
+                               <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="profesion">
                                  PROFESION
                                </label>
                                <output class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="profesion" type="text" wire:model="profesion">
                              </div>
                             </div>
-                           <br>
                                {{-- final --}}
 
                             {{-- OTRO FORM  --}}
-                           <div class="flex flex-wrap mb-2 -mx-3">
-                            <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
-                                <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="grainstruc">
+                           <div class="flex flex-wrap mb-5 -mx-3">
+                            <div class="w-full px-3 md:w-1/3 md:mb-0">
+                                <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="grainstruc">
                                   FORMACION
                                 </label>
                                 <div class="relative">
@@ -148,8 +149,8 @@
                                 </div>
                               </div>
                             
-                            <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
-                               <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="discapac">
+                            <div class="w-full px-3 md:w-1/3 md:mb-0">
+                               <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="discapac">
                                  DISCAPACIDAD
                                </label>
                                <div class="relative">
@@ -162,8 +163,8 @@
                              </div>
 
                             
-                             <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
-                                <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="estadoreg">
+                             <div class="w-full px-3 md:w-1/3 md:mb-0">
+                                <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="estadoreg">
                                   ESTADO
                                 </label>
                                 <div class="relative">
@@ -175,38 +176,37 @@
                                 </div>
                               </div>
                            </div>
-                          <br>
                             {{-- final --}}
 
                             <div>
-                                <div class="flex flex-wrap mb-6 -mx-3">
+                                <div class="flex flex-wrap mb-5 -mx-3">
                                 <div class="w-full px-3">
-                                <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="direcreal">
+                                <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="direcreal">
                                 DIRECCION</label>
-                                <output class="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="direcreal" type="texto" placeholder="(Jr.calle,Av.) Av. Los lirios N° 000" wire:model="direcreal">
+                                <output class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="direcreal" type="texto" placeholder="(Jr.calle,Av.) Av. Los lirios N° 000" wire:model="direcreal">
                                 </div>
                             </div>
                             
-                            <div class="flex flex-wrap mb-6 -mx-3">
-                                <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0">
-                                  <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="celprin">
+                            <div class="flex flex-wrap -mx-3">
+                                <div class="w-full px-3 md:w-1/2 md:mb-0">
+                                  <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="celprin">
                                     CELULAR
                                   </label>
                                   <output class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="celprin" type="text" wire:model="celprin">
                                   <br>
                                 </div>
                                 
-                                <div class="w-full px-3 md:w-1/2">
-                                  <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="email">
+                                <div class="w-full mb-5 md:w-1/2">
+                                  <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="email">
                                     CORREO
                                   </label>
                                   <output class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="email" type="email" wire:model="email">
                                 </div>
                                 
                               </div>
-                              <div class="flex flex-wrap mb-6 -mx-3">
-                                <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0">
-                                  <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="sexo">
+                              <div class="flex flex-wrap -mx-3">
+                                <div class="w-full px-3 md:w-1/2 md:mb-0">
+                                  <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="sexo">
                                     SEXO
                                   </label>
                                   <div class="relative">
@@ -218,30 +218,47 @@
                                 </div>
                               </div>
                                 
-                                <div class="w-full px-3 md:w-1/2">
-                                  <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="fechanac">
+                                <div class="w-full px-3 mb-5 md:w-1/2">
+                                  <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="fechanac">
                                     fECHA DE NACIMIENTO
                                   </label>
                                   <input type="date" class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="fechanac" type="fechanac" wire:model="fechanac">
                                 </div>  
                               </div>
 
-                              <div>
-                                <div class="flex flex-wrap mb-6 -mx-3">
+
+                              <div id="contenedor">
+                               <div>
+                                <div class="flex flex-wrap mb-3 -mx-3">
                                 <div class="w-full px-3">
-                                <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" for="direcreal">
+                                 
+                                <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="direcreal">
                                  OBSERVACIONES</label>
-                                <output class="block w-full h-32 px-4 py-3 mb-3 overflow-hidden overflow-y-auto leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="observac" type="texto" wire:model="observac">
+                                 <div id="texto" contenteditable="false">
+                                <output class="block w-full px-4 py-3 overflow-hidden overflow-y-auto leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="observac" type="texto" wire:model="observac">
+                                </div>
                                 </div>
                               </div>
+
+                              </div>
+
+                              <style>
+                                  #contenedor{
+                                  display: inline-block;
+                                  min-width: 100px;
+                                      }
+
+                                  #texto{
+                                    background-color: red;
+                                    width: 100%;
+                                      }
+                              </style>
+
                               
                         </div>
 
-                        
                     </div>
-                    
-                        
-                    
+
                         <div class="px-4 py-3 bg-yellow-50 sm:px-6 sm:flex sm:flex-row-reverse">
                             
                             <span class="flex w-full rounded-md shadow-sm sm:ml-3 sm:w-auto">
