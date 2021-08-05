@@ -4,10 +4,11 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Persona;
-
+use Livewire\WithPagination;
 
 class Personas extends Component
 {
+    use WithPagination;
     //definimos variables
     public $personas, $mostrar,
      $dni, 
@@ -60,6 +61,8 @@ class Personas extends Component
 
     public function render()
     {
+        // $personas = Persona::where('id_persona',auth()->personas()->id)
+        //     ->paginate(10);
         
         $this->personas = Persona::all();
         return view('livewire.personas');

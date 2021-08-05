@@ -25,6 +25,16 @@ class UserSeader extends Seeder
             $usuario->oficina = "GTDE";
             $usuario->fecha_ingreso = "2022-01-01";
             $usuario->fecha_expiracion = "2022-10-11";
+
+            $usuario->dni = "77282133";
+            $usuario->name = "Ronald";
+            $usuario->email = "prueba1@hotmail.com";
+            $usuario->password = '$2y$10$Nevnnh7o3/7EWykRY41WEOVqzk.QIfDVzoNf7qfsQdRYzDILPJwei';
+            $usuario->nivel = "1";
+            $usuario->cargo = "Informatico";
+            $usuario->oficina = "OTI";
+            $usuario->fecha_ingreso = "2021-03-05";
+            $usuario->fecha_expiracion = "2022-10-11";
     
             $usuario-> save();
     }
