@@ -14,7 +14,14 @@ class Associations extends Component
     $dnirepre,
     $dnideleg, 
     $ubicacion, 
-    $rubroasoc, 
+    $rubroasoc,
+    $tipoasoc,
+    $dferia,
+    $fechaconst,
+    $docregist,
+    $docconsti,
+    $docpadron,
+    $observacion,
     $id_mostrar1,
     $id_association;
 
@@ -25,6 +32,12 @@ class Associations extends Component
     {
         $this->associations = Association::all();
         return view('livewire.associations');
+    }
+
+    public function crear1()
+    {
+        $this->limpiarCampos();
+        $this->abrirModal3();
     }
 
     public function lista()
@@ -60,6 +73,13 @@ class Associations extends Component
         $this->dnideleg = '';
         $this->ubicacion = '';
         $this->rubroasoc = '';
+        $this->tipoasoc = '';
+        $this->dferia = '';
+        $this->fechaconst = '';
+        $this->docregist = '';
+        $this->docconsti = '';
+        $this->docpadron = '';
+        $this->observacion = '';
         $this->id_association = '';
     }
 
@@ -73,6 +93,13 @@ class Associations extends Component
         $this->dnideleg = $association->dnideleg;
         $this->ubicacion = $association->ubicacion;
         $this->rubroasoc = $association->rubroasoc;
+        $this->tipoasoc = $association->tipoasoc;
+        $this->dferia = $association->dferia;
+        $this->fechaconst = $association->fechaconst;
+        $this->docregist = $association->docregist;
+        $this->docconsti = $association->docconsti;
+        $this->docpadron = $association->docpadron;
+        $this->observacion = $association->observacion;
         $this->abrirModal3();
 
     }
@@ -93,6 +120,13 @@ class Associations extends Component
                 'dnideleg' => $this->dnideleg,
                 'ubicacion' => $this->ubicacion,
                 'rubroasoc' => $this->rubroasoc,
+                'tipoasoc' => $this->tipoasoc,
+                'dferia' => $this->dferia,
+                'fechaconst' => $this->fechaconst,
+                'docregist' => $this->docregist,
+                'docconsti' => $this->docconsti,
+                'docpadron' => $this->docpadron,
+                'observacion' => $this->observacion,
 
             ]);
         $this->cerrarModal3();

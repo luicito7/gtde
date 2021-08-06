@@ -51,7 +51,7 @@
                                 <i class="fas fa-users"></i><p class="pl-1 text-sm"> Personas</p>
                             </a>
 
-                            <a	class="flex items-center w-full p-3 px-16 py-2 text-gray-100 hover:bg-indigo-500 hover:text-white" href="#" >
+                            <a	class="flex items-center w-full p-3 px-16 py-2 text-gray-100 hover:bg-indigo-500 hover:text-white" href="{{route('associations')}}" >
                                 <i class="fas fa-user-friends"></i><p class="pl-1 text-sm"> Asociaciones</p>
                             </a>
     

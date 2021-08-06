@@ -32,7 +32,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group( function(){
     Route::get('/dashboard', function() {
         return view('dashboard');  })->name('dashboard');
     Route::get('/personas', Personas::class)->name('personas');
-    Route::get('/associations', Associations::class);
+    Route::get('/associations', Associations::class)->name('associations');
     route::get('/users',[UserController::class,'index'])->name('users.index');
     route::get('/users/create',[UserController::class,'create'])->name('users.create'); 
     route::get('/users/{id}',[UserController::class,'show'])->name('users.show');    

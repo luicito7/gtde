@@ -13,6 +13,13 @@ class Association extends Model
         'dnirepre',
         'dnideleg',
         'ubicacion',
-        'rubroasoc'
+        'rubroasoc',
+        'tipoasoc',
+        'dferia',
+        'fechaconst',
+        'docregist',
+        'docconsti',
+        'docpadron',
+        'observacion'
     ];
 }
