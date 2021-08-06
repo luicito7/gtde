@@ -12,19 +12,13 @@
         @livewireStyles
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
-
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-        <link href="https://tailwindcomponents.com/css/component.sidebar-with-sublinks.css" rel="stylesheet">
-        
     </head>
 
     <body x-data="sidebar()" class="text-gray-900 bg-gray-200" @resize.window="handleResize()">
-        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
         <div class="min-h-screen lg:flex">
                 <div x-show="isOpen()" class="inset-0 flex overflow-auto bg-blue-800 bg-opacity-75 position lg:static">
                     
-                    <div @click.away="handleAway()" class="static h-full text-white bg-gray-800 shadow w-65">
+                    <div @click.away="handleAway()" class="static w-56 h-full text-white bg-gray-800 shadow">
                         <div class="flex content-between bg-gray-700">
                             <img src="../img/Escudo_de_Puno_mini.png" alt="ESCUDO DE PUNO" class="p-1 w-14" > 
                             <div class="w-full p-1 text-sm ">Municipalidad Provincial de Puno</div>
@@ -34,16 +28,14 @@
                                 </svg>
                             </a>
                         </div>
-
-                        
                         <a	class="flex items-center w-full p-3 hover:bg-indigo-500" href="{{route('dashboard')}}" >
                             <i class="fas fa-home"></i><p class="pl-1 text-sm"> Inicio</p>
                         </a>
-
+                        
                         <div x-data="{ open: false }">
                             <button @click="open = !open" class="flex items-center justify-between w-full text-gray-100 cursor-pointer hover:bg-gray-700 hover:text-gray-100 focus:outline-none">   
-                               <a class="flex items-center w-full p-3 hover:bg-indigo-500">
-                                <i class="fas fa-address-book"></i><p class="pl-1 text-sm"> Registro</p>
+                               <a class="flex items-center w-full p-3.5 hover:bg-indigo-500">
+                            <i class="fas fa-address-book"></i><p class="pl-1 text-sm"> Registro</p>
                               </a>
                               <span>
                                 <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -55,21 +47,21 @@
 
                            <div x-show="open" class="bg-gray-700">
                            
-                            <a	class="flex items-center w-full p-3 px-16 py-2 text-gray-100  hover:bg-indigo-500 hover:text-white" href="{{route('personas')}}" >
+                            <a	class="flex items-center w-full p-3 px-16 py-2 text-gray-100 hover:bg-indigo-500 hover:text-white" href="{{route('personas')}}" >
                                 <i class="fas fa-users"></i><p class="pl-1 text-sm"> Personas</p>
                             </a>
 
-                            <a	class="flex items-center w-full p-3 px-16 py-2 text-gray-100  hover:bg-indigo-500 hover:text-white" href="#" >
+                            <a	class="flex items-center w-full p-3 px-16 py-2 text-gray-100 hover:bg-indigo-500 hover:text-white" href="#" >
                                 <i class="fas fa-user-friends"></i><p class="pl-1 text-sm"> Asociaciones</p>
                             </a>
     
                             </div>
-                        </div>  
-
+                        </div> 
+                        
                         <a class="flex items-center w-full p-3 hover:bg-indigo-500"	href="#" >
                             <i class="fas fa-people-carry"></i><p class="pl-1 text-sm">Fiscalizacion</p>
                         </a>
-          
+
                         <div x-data="{ open: false }">
                             <button @click="open = !open" class="flex items-center justify-between w-full text-gray-100 cursor-pointer hover:bg-gray-700 hover:text-gray-100 focus:outline-none">   
                                <a class="flex items-center w-full p-3 hover:bg-indigo-500" href="#" >
@@ -88,6 +80,7 @@
                             </div>
                         </div>  
                         
+
                         <div x-data="{ open: false }">
                             <button @click="open = !open" class="flex items-center justify-between w-full text-gray-100 cursor-pointer hover:bg-gray-700 hover:text-gray-100 focus:outline-none">   
                                <a class="flex items-center w-full p-3 hover:bg-indigo-500" href="#" >
@@ -106,23 +99,21 @@
                             </div>
                         </div>  
 
-                           
-                        <a class="flex items-center w-full p-3 hover:bg-indigo-500" href="{{route('users.index')}}" >
-                        <i class="fas fa-user-lock"></i><p class="pl-1 text-sm">Usuarios MPP </p>
-                        </a>
-                        
 
+                        <a class="flex items-center w-full p-3 hover:bg-indigo-500" href="{{route('users.index')}}" >
+                            <i class="fas fa-user-lock"></i><p class="pl-1 text-sm">Usuarios MPP </p>
+                        </a>
                     </div>
                 </div> 
 
-                <div class="">
+                <div class="flex-auto">
                         <div class="flex text-gray-700 bg-white">   
                         @livewire('navigation-menu')
                         </div>
                             <!-- Page Content -->
                     
                         <main class="grid gap-4 p-1 md:grid-cols-2 lg:grid-cols-1">
-                            <div class="shadow-lg " > 
+                            <div class="shadow-lg">
                                 {{ $slot }}
                             </div>
                             
