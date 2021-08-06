@@ -112,7 +112,7 @@
                                     SEXO
                                   </label>
                                   <div class="relative">
-                                    <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none  h-11 focus:outline-none focus:bg-white focus:border-gray-500" id="sexo" wire:model="sexo">
+                                    <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none h-11 focus:outline-none focus:bg-white focus:border-gray-500" id="sexo" wire:model="sexo">
                                       <option value data-isdefault="true" style="display:none;">Seleccione</option>
                                       <option value="1">Femenino</option>
                                       <option value="2">Masculino</option>
@@ -124,7 +124,7 @@
                                   <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="fechanac">
                                     fECHA DE NACIMIENTO
                                   </label>
-                                  <input type="date" class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none  h-11 focus:outline-none focus:bg-white focus:border-gray-500" id="fechanac" type="fechanac" wire:model="fechanac">
+                                  <input type="date" class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none h-11 focus:outline-none focus:bg-white focus:border-gray-500" id="fechanac" type="fechanac" wire:model="fechanac">
                                 </div>  
                               </div>
                               {{-- FINAL DE LINEA 6 SEXO, FECHA NACIMIENTO --}}
@@ -210,7 +210,7 @@
                               </div>
                             </div>
                           </div>
-                         {{-- final de LINEA 8 formacion, discapacidad, estados----}}
+                         {{-- final de LINEA 8 formacion, discapacidad, estado ----}}
                          
                          {{-- inicio de LINEA 9 OBERVACION----}}
                             <div>

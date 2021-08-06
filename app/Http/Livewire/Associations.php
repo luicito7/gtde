@@ -25,6 +25,26 @@ class Associations extends Component
     $id_mostrar1,
     $id_association;
 
+    protected $rules = [
+        'dnirepre' => 'required|max:8|unique:associations,dnirepre',
+        'dnideleg' => 'required',
+        'nombreasoc' => 'required',
+        'ubicacion' => 'required',
+        'rubroasoc' => 'required',
+
+    ];
+
+    protected $messages = [
+        'dnirepre.required' => 'El DNI es obligatorio',
+        //'email.email' => 'The Email Address format is not valid.',
+        'dnirepre.unique' => 'El Dni ya existe',
+    ];
+
+    public function update($propertyName) 
+    {
+        $this->validationOnly($propertyName);
+    }
+
     public $modal3 = false; 
     public $modal4 = false; 
 
@@ -115,6 +135,7 @@ class Associations extends Component
     {
         Association::updateOrCreate(['id'=>$this->id_association],
             [
+                $validation =$this->validate(),
                 'nombreasoc' => $this->nombreasoc,
                 'dnirepre' => $this->dnirepre,
                 'dnideleg' => $this->dnideleg,
@@ -127,8 +148,7 @@ class Associations extends Component
                 'docconsti' => $this->docconsti,
                 'docpadron' => $this->docpadron,
                 'observacion' => $this->observacion,
-
-            ]);
+            ],$validation);
         $this->cerrarModal3();
         $this->limpiarCampos();
 

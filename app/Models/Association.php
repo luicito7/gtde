@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Association extends Model
 {
     use HasFactory;
+    protected $table = 'associations';
     protected $fillable = [
         'nombreasoc',
         'dnirepre',
