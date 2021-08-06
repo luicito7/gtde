@@ -1,4 +1,4 @@
-<div class="py-10 mx-auto max-w-7xl sm:px-6 lg:px-8">
+<div class="py-0.5 mx-auto max-w-7xl sm:px-6 lg:px-8">
     <button wire:click="crear()" class="px-4 py-2 my-3 text-xs bg-green-500 xt-white fYont-bold M hover:bg-green-600">AGREGAR PERSONA</button>
                     @if($modal)
                         @include('livewire.crear')                

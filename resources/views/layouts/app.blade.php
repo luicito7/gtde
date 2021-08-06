@@ -94,8 +94,8 @@
                             </span>
                            </button>
                            <div x-show="open" class="bg-gray-700">
-                              <a class="block px-16 py-2 text-sm text-gray-100 hover:bg-blue-500 hover:text-white" href="#">Comerciantes</a>
-                              <a class="block px-16 py-2 text-sm text-gray-100 hover:bg-blue-500 hover:text-white" href="#">Pagos</a>
+                              <a class="block px-16 py-2 text-sm text-gray-100 hover:bg-blue-500 hover:text-white" href="#">Asociados</a>
+                              
                             </div>
                         </div>  
 
