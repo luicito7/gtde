@@ -58,7 +58,7 @@
                             </div>
                         </div> 
                         
-                        <a class="flex items-center w-full p-3 hover:bg-indigo-500"	href="#" >
+                        <a class="flex items-center w-full p-3 hover:bg-indigo-500"	href="{{route('papeleta-de-infraciones')}}" >
                             <i class="fas fa-people-carry"></i><p class="pl-1 text-sm">Fiscalizacion</p>
                         </a>
 
