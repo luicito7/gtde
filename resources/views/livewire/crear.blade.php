@@ -208,17 +208,18 @@
 
                           
                            <div class="w-full px-3 md:w-1/3 md:mb-0">
-                              <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="estadoreg">
-                                ESTADO
-                              </label>
-                              <div class="relative">
-                                <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="estadoreg" wire:model="estadoreg">
-                                  <option value data-isdefault="true" style="display:none;">Seleccione</option>
-                                  <option value="1">Activo</option>
-                                  <option value="2">Inactivo</option>
-                                </select>
-                              </div>
+                            <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="estadoreg">
+                              ESTADO
+                            </label>
+                            <div class="relative">
+                              <select class="block w-full px-4 py-3 pr-8 ml-1 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" name="estadoreg" [(ngModel)]="estadoreg" id="estadoreg" wire:model="estadoreg">
+                                <option value data-isdefault="true" style="display:none;">Seleccione</option>
+                                <option value="0">Activo</option>
+                                <option value="1">Inactivo</option>
+                              </select>
                             </div>
+                          </div> 
+                            
                          </div>
                             <div>
                               <div class="flex flex-wrap -mx-3">

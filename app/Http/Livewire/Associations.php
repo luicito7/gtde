@@ -5,11 +5,13 @@ namespace App\Http\Livewire;
 use App\Models\Association;
 use Livewire\Component;
 
+use Livewire\WithPagination;
+
 class Associations extends Component
 {
 
     //definimos variables
-    public $associations, $mostrar1,
+    public  
     $nombreasoc, 
     $dnirepre,
     $dnideleg, 
@@ -23,7 +25,9 @@ class Associations extends Component
     $docpadron,
     $observacion,
     $id_mostrar1,
-    $id_association;
+    $id_association,
+    $search = '',
+    $perPage = '10';
 
     protected $rules = [
         'dnirepre' => 'required|max:8|unique:associations,dnirepre',
@@ -48,10 +52,26 @@ class Associations extends Component
     public $modal3 = false; 
     public $modal4 = false; 
 
+    protected $queryString = [
+        'search'=>['except' => ''],
+        'perPage'    
+    ];
+
+    use WithPagination; 
     public function render()
     {
-        $this->associations = Association::all();
-        return view('livewire.associations');
+        //$this->associations = Association::all();
+        return view('livewire.associations',[ 
+            'associations' => Association::where('nombreasoc', 'LIKE', "%{$this->search}%")
+                       ->orWhere('rubroasoc', 'LIKE', "%{$this->search}%")       
+                    //    'dnirepre',
+                    //    'dnideleg',
+                    //    'ubicacion',
+                    //    'rubroasoc',
+                    //    'tipoasoc',
+                    //    'dferia',
+                        ->paginate($this ->perPage)
+        ]);
     }
 
     public function crear1()
@@ -154,5 +174,14 @@ class Associations extends Component
 
     }
 
+    public function clear()
+    
+    {
+        $this->search ='';
+        $this ->page = 1;
+        $this ->perPage = '10';
+    }
+
 
 }
+

@@ -33,7 +33,7 @@ class CreatePersonasTable extends Migration
             $table->string('profesion',191)->nullable();
             $table->enum('grainstruc', ['1','2','3','4','5','6','7','8','9','10'])->nullable();
             $table->enum('discapac', ['1', '2'])->nullable();
-            $table->enum('estadoreg', ['1', '2'])->default('1');
+            $table->boolean('estadoreg');
             $table->text('observac')->nullable();
             //$table->integer('users');
             $table->timestamps();

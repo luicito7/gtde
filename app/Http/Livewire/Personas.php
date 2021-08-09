@@ -8,9 +8,8 @@ use Livewire\WithPagination;
 
 class Personas extends Component
 {
-    use WithPagination;
     //definimos variables
-    public $personas, $mostrar,
+    public
      $dni, 
      $apepaterno,
      $apematerno, 
@@ -32,7 +31,9 @@ class Personas extends Component
      $estadoreg,
      $observac,
      $id_mostrar,
-     $id_persona;
+     $id_persona,
+     $search = '',
+     $perPage = '10';
 
      protected $rules = [
         'dni' => 'required|max:8|unique:personas,dni',
@@ -58,14 +59,24 @@ class Personas extends Component
     public $modal1 = false; 
     public $modal2 = false; 
 
+    protected $queryString = [
+        'search'=>['except' => ''],
+        'perPage'    
+    ];
 
+    use WithPagination;
     public function render()
     {
         // $personas = Persona::where('id_persona',auth()->personas()->id)
-        //     ->paginate(10);
-        
+        //     ->paginate(10);    
         $this->personas = Persona::all();
-        return view('livewire.personas');
+
+        return view('livewire.personas', [
+            'personas' => Persona::where('dni', 'LIKE', "%{$this->search}%")
+            ->orWhere(Persona::raw("CONCAT(`nombres`, ' ' ,`apepaterno`, ' ' ,`apematerno`)"), 'like', '%' . $this->search . '%')
+
+                ->paginate($this ->perPage)
+        ]);
     }
 
     public function crear()
@@ -251,4 +262,14 @@ class Personas extends Component
     $this->abrirModal1();
     
     }
+
+    public function clear()
+    
+    {
+        $this->search ='';
+        $this ->page = 1;
+        $this ->perPage = '10';
+    }
+
+
 }
