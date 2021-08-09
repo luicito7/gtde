@@ -23,6 +23,11 @@ class DatabaseSeeder extends Seeder
         //$this->call(PersonaSeader::class);
         $this->call(UserSeader::class);
         User::factory(30)->create();
+        $this->call(PapeletaSeeder::class);
+        $this->call(InfraccionPersonaSeeder::class);
+        $this->call(InfraccionDatosSeeder::class);
+        $this->call(InfraccionDatosPapeletaSeeder::class);
+        
             
 
     

@@ -14,50 +14,43 @@ class UserSeader extends Seeder
      */
     public function run()
     {
-        $usuario = new User();
-
-            $usuario->dni = "42640291";
-            $usuario->name = "LUIS";
-            $usuario->email = "luicito7@gmail.com";
-            $usuario->password = '$2y$10$Gle1qkqqDEdm/P1EUQIx8emC4o1cPxc0JlPcm0Xl3tHYQ61fP9f2C';
-            $usuario->nivel = "1";
-            $usuario->cargo = "Analista de informacion";
-            $usuario->oficina = "GTDE";
-            $usuario->fecha_ingreso = "2022-01-01";
-            $usuario->fecha_expiracion = "2022-10-11";
-
-            $usuario->dni = "77282133";
-            $usuario->name = "Ronald";
-            $usuario->email = "prueba1@hotmail.com";
-            $usuario->password = '$2y$10$Nevnnh7o3/7EWykRY41WEOVqzk.QIfDVzoNf7qfsQdRYzDILPJwei';
-            $usuario->nivel = "1";
-            $usuario->cargo = "Informatico";
-            $usuario->oficina = "OTI";
-            $usuario->fecha_ingreso = "2021-03-05";
-            $usuario->fecha_expiracion = "2022-10-11";
+        User::create([
+            'dni' => "42640291",
+            'name' => "LUIS",
+            'email' => "luicito7@gmail.com",
+            'password' => '$2y$10$Gle1qkqqDEdm/P1EUQIx8emC4o1cPxc0JlPcm0Xl3tHYQ61fP9f2C',
+            'nivel' => "1",
+            'cargo' => "Analista de informacion",
+            'oficina' => "GTDE"
+        ]);
+        User::create([
             
-            $usuario->dni = "74829965";
-            $usuario->name = "Wilberth";
-            $usuario->email = "wil@hotmail.com";
-            $usuario->password = bcrypt('12345678');
-            $usuario->nivel = "1";
-            $usuario->cargo = "Sistemas";
-            $usuario->oficina = "OTI";
-            $usuario->fecha_ingreso = "2021-03-05";
-            $usuario->fecha_expiracion = "2022-10-11";
+            'dni' => "77282133",
+            'name' => "Ronald",
+            'email' => "prueba1@hotmail.com",
+            'password' => '$2y$10$Nevnnh7o3/7EWykRY41WEOVqzk.QIfDVzoNf7qfsQdRYzDILPJwei',
+            'nivel' => "1",
+            'cargo' => "Informatico",
+            'oficina' => "OTI",
+        ]);
+        User::create([
+            'dni' => "74829964",
+            'name' => "Wilberth",
+            'email' => "elWilberth@gmail.com",
+            'password' => '$2y$10$I87a.7w/pYbXABTeo9UJiemsn0KbdTCU0iHUZxxkhILz616CYTVE6',
+            'nivel' => "1",
+            'cargo' => "Informatico",
+            'oficina' => "OTI",
             
-
-            
-            $usuario->dni = "71938063";
-            $usuario->name = "Wilson";
-            $usuario->email = "elBarto@gmail.com";
-            $usuario->password = '$2y$10$0IoO6Q6anpuGS9oPKK2GJO77GnN.4jaaPRJLdOZgd4.5kg0opju3S';
-            $usuario->nivel = "1";
-            $usuario->cargo = "Informatico";
-            $usuario->oficina = "OTI";
-            $usuario->fecha_ingreso = "2021-03-05";
-            $usuario->fecha_expiracion = "2022-10-11";
-    
-            $usuario-> save();
+        ]);
+        User::create([
+            'dni' => "71938063",
+            'name' => "Wilson",
+            'email' => "elBarto@gmail.com",
+            'password' => '$2y$10$0IoO6Q6anpuGS9oPKK2GJO77GnN.4jaaPRJLdOZgd4.5kg0opju3S',
+            'nivel' => "1",
+            'cargo' => "Informatico",
+            'oficina' => "OTI",
+        ]);
     }
 }
