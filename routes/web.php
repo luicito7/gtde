@@ -3,7 +3,6 @@
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Personas;
-use App\Http\Livewire\PapeletaDeInfraciones;
 use App\Http\Livewire\Associations;
 
 /*
@@ -33,7 +32,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group( function(){
     Route::get('/dashboard', function() {
         return view('dashboard');  })->name('dashboard');
     Route::get('/personas', Personas::class)->name('personas');
-    Route::get('/papeleta-de-infraciones', PapeletaDeInfraciones::class)->name('papeleta-de-infraciones');
     Route::get('/associations', Associations::class)->name('associations');
     route::get('/users',[UserController::class,'index'])->name('users.index');
     route::get('/users/create',[UserController::class,'create'])->name('users.create'); 
