@@ -17,7 +17,9 @@ class CreateAssociationsTable extends Migration
             $table->id();
             $table->string('nombreasoc',100)->nullable();
             $table->string('dnirepre')->unique();
+
             $table->string('dnideleg',8)->unique();
+            
             $table->string('ubicacion',255)->nullable();
             $table->string('rubroasoc',255)->nullable();
             $table->enum('tipoasoc', ['1', '2','3'])->nullable();
