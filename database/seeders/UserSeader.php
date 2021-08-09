@@ -35,6 +35,28 @@ class UserSeader extends Seeder
             $usuario->oficina = "OTI";
             $usuario->fecha_ingreso = "2021-03-05";
             $usuario->fecha_expiracion = "2022-10-11";
+            
+            $usuario->dni = "74829965";
+            $usuario->name = "Wilberth";
+            $usuario->email = "wil@hotmail.com";
+            $usuario->password = bcrypt('12345678');
+            $usuario->nivel = "1";
+            $usuario->cargo = "Sistemas";
+            $usuario->oficina = "OTI";
+            $usuario->fecha_ingreso = "2021-03-05";
+            $usuario->fecha_expiracion = "2022-10-11";
+            
+
+            
+            $usuario->dni = "71938063";
+            $usuario->name = "Wilson";
+            $usuario->email = "elBarto@gmail.com";
+            $usuario->password = '$2y$10$0IoO6Q6anpuGS9oPKK2GJO77GnN.4jaaPRJLdOZgd4.5kg0opju3S';
+            $usuario->nivel = "1";
+            $usuario->cargo = "Informatico";
+            $usuario->oficina = "OTI";
+            $usuario->fecha_ingreso = "2021-03-05";
+            $usuario->fecha_expiracion = "2022-10-11";
     
             $usuario-> save();
     }
