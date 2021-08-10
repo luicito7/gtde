@@ -24,7 +24,6 @@ class Associations extends Component
     $docconsti,
     $docpadron,
     $observacion,
-    $id_mostrar1,
     $id_association,
     $search = '',
     $perPage = '10';
@@ -50,7 +49,8 @@ class Associations extends Component
     }
 
     public $modal3 = false; 
-    public $modal4 = false; 
+    public $modal4 = false;
+    public $modal5 = false; 
 
     protected $queryString = [
         'search'=>['except' => ''],
@@ -106,6 +106,16 @@ class Associations extends Component
         $this->modal4 = false;
     }
 
+    public function abrirModal5()
+    {
+        $this->modal5 = true;
+    }
+
+    public function cerrarModal5()
+    {
+        $this->modal5 = false;
+    }
+
     public function limpiarCampos()
     {
         $this->nombreasoc = '';
@@ -140,7 +150,7 @@ class Associations extends Component
         $this->docconsti = $association->docconsti;
         $this->docpadron = $association->docpadron;
         $this->observacion = $association->observacion;
-        $this->abrirModal3();
+        $this->abrirModal5();
 
     }
 
@@ -170,6 +180,49 @@ class Associations extends Component
                 'observacion' => $this->observacion,
             ],$validation);
         $this->cerrarModal3();
+        $this->limpiarCampos();
+
+    }
+
+    public function detalles($id)
+    {
+    $association = Association::find($id);
+    $this->id_association = $id;
+    $this->nombreasoc = $association->nombreasoc;
+    $this->dnirepre = $association->dnirepre;
+    $this->dnideleg = $association->dnideleg;
+    $this->ubicacion = $association->ubicacion;
+    $this->rubroasoc = $association->rubroasoc;
+    $this->tipoasoc = $association->tipoasoc;
+    $this->dferia = $association->dferia;
+    $this->fechaconst = $association->fechaconst;
+    $this->docregist = $association->docregist;
+    $this->docconsti = $association->docconsti;
+    $this->docpadron = $association->docpadron;
+    $this->observacion = $association->observacion;
+    $this->abrirModal4();
+    
+    }
+
+    public function modif()
+    {
+        Association::updateOrCreate(['id'=>$this->id_association],
+            [
+                
+                'nombreasoc' => $this->nombreasoc,
+                'dnirepre' => $this->dnirepre,
+                'dnideleg' => $this->dnideleg,
+                'ubicacion' => $this->ubicacion,
+                'rubroasoc' => $this->rubroasoc,
+                'tipoasoc' => $this->tipoasoc,
+                'dferia' => $this->dferia,
+                'fechaconst' => $this->fechaconst,
+                'docregist' => $this->docregist,
+                'docconsti' => $this->docconsti,
+                'docpadron' => $this->docpadron,
+                'observacion' => $this->observacion,
+            ],);
+        $this->cerrarModal5();
         $this->limpiarCampos();
 
     }
