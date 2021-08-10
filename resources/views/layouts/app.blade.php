@@ -13,7 +13,52 @@
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
+    <style>
+        .activePanel{
+            background-color: rgba(99, 102, 241, var(--tw-bg-opacity));
+                
+        }
 
+        .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        }
+
+        .dropdown-content p {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content p:hover {background-color: #f1f1f1}
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+    </style>
+   
     <body x-data="sidebar()" class="text-gray-900 bg-gray-200" @resize.window="handleResize()">
         <div class="min-h-screen lg:flex">
                 <div x-show="isOpen()" class="inset-0 flex overflow-auto bg-blue-800 bg-opacity-75 position lg:static">
@@ -28,9 +73,11 @@
                                 </svg>
                             </a>
                         </div>
-                        <a	class="flex items-center w-full p-3 hover:bg-indigo-500" href="{{route('dashboard')}}" >
-                            <i class="fas fa-home"></i><p class="pl-1 text-sm"> Inicio</p>
-                        </a>
+                        <div class="{{'dashboard'==request()->path()?'activePanel':''}}">
+                            <a	class="flex items-center w-full p-3 hover:bg-indigo-500" href="{{route('dashboard')}}" >
+                                <i class="fas fa-home"></i><p class="pl-1 text-sm"> Inicio</p>
+                            </a>
+                        </div>
                         
                         <div x-data="{ open: false }">
                             <button @click="open = !open" class="flex items-center justify-between w-full text-gray-100 cursor-pointer hover:bg-gray-700 hover:text-gray-100 focus:outline-none">   
@@ -46,21 +93,24 @@
                            </button>
 
                            <div x-show="open" class="bg-gray-700">
-                           
-                            <a	class="flex items-center w-full p-3 px-16 py-2 text-gray-100 hover:bg-indigo-500 hover:text-white" href="{{route('personas')}}" >
-                                <i class="fas fa-users"></i><p class="pl-1 text-sm"> Personas</p>
-                            </a>
-
-                            <a	class="flex items-center w-full p-3 px-16 py-2 text-gray-100 hover:bg-indigo-500 hover:text-white" href="{{route('associations')}}" >
-                                <i class="fas fa-user-friends"></i><p class="pl-1 text-sm"> Asociaciones</p>
-                            </a>
+                           <div class="{{'personas'==request()->path()?'activePanel':''}}">
+                               <a	class="flex items-center w-full p-3 px-16 py-2 text-gray-100 hover:bg-indigo-500 hover:text-white" href="{{route('personas')}}" >
+                                   <i class="fas fa-users"></i><p class="pl-1 text-sm"> Personas</p>
+                               </a>
+                           </div>
+                           <div class="{{'associations'==request()->path()?'activePanel':''}}">
+                               <a	class="flex items-center w-full p-3 px-16 py-2 text-gray-100 hover:bg-indigo-500 hover:text-white" href="{{route('associations')}}" >
+                                   <i class="fas fa-user-friends"></i><p class="pl-1 text-sm"> Asociaciones</p>
+                               </a>
+                           </div>
     
                             </div>
                         </div> 
-                        
-                        <a class="flex items-center w-full p-3 hover:bg-indigo-500"	href="{{route('papeleta-de-infraciones')}}" >
-                            <i class="fas fa-people-carry"></i><p class="pl-1 text-sm">Fiscalizacion</p>
-                        </a>
+                        <div class="{{'papeleta-de-infraciones'==request()->path()?'activePanel':''}}">
+                            <a class="flex items-center w-full p-3 hover:bg-indigo-500"	href="{{route('papeleta-de-infraciones')}}" >
+                                <i class="fas fa-people-carry"></i><p class="pl-1 text-sm">Fiscalizacion</p>
+                            </a>
+                        </div>
 
                         <div x-data="{ open: false }">
                             <button @click="open = !open" class="flex items-center justify-between w-full text-gray-100 cursor-pointer hover:bg-gray-700 hover:text-gray-100 focus:outline-none">   
@@ -99,10 +149,11 @@
                             </div>
                         </div>  
 
-
-                        <a class="flex items-center w-full p-3 hover:bg-indigo-500" href="{{route('users.index')}}" >
-                            <i class="fas fa-user-lock"></i><p class="pl-1 text-sm">Usuarios MPP </p>
-                        </a>
+                        <div class="{{'users.index'==request()->path()?'activePanel':''}}">
+                            <a class="flex items-center w-full p-3 hover:bg-indigo-500" href="{{route('users.index')}}" >
+                                <i class="fas fa-user-lock"></i><p class="pl-1 text-sm">Usuarios MPP </p>
+                            </a>
+                        </div>
                     </div>
                 </div> 
 
