@@ -71,11 +71,11 @@
            @foreach($associations as $association)
                <tr>
                    {{-- <td class="px-4 py-2 border">{{$association->id}}</td> --}}
-                   <td class="px-4 py-2 border">{{$association->nombreasoc}}</td>
-                   <td class="px-4 py-2 border">{{$association->dnirepre}}</td>
-                   <td class="px-4 py-2 border">{{$association->dnideleg}}</td>
-                   <td class="px-4 py-2 border">{{$association->ubicacion}}</td>
-                   <td class="px-4 py-2 border">{{$association->rubroasoc}}</td>
+                   <td class="px-4 py-2 text-center border">{{$association->nombreasoc}}</td>
+                   <td class="px-4 py-2 text-center border ">{{$association->dnirepre}}</td>
+                   <td class="px-4 py-2 text-center border">{{$association->dnideleg}}</td>
+                   <td class="px-4 py-2 text-center border">{{$association->ubicacion}}</td>
+                   <td class="px-4 py-2 text-center border">{{$association->rubroasoc}}</td>
 
 
                    <td class="px-4 py-2 text-xs text-center border">

@@ -25,7 +25,7 @@
                 </div>
 
                 <div class="mt-4">
-                    <x-jet-label for="password" value="{{ __('Password') }}" />
+                    <x-jet-label for="password" value="{{ __('Contraseña') }}" />
                     <x-jet-input id="password" class="block w-full mt-1" type="password" name="password" required autocomplete="current-password" />
                 </div>
 
@@ -39,7 +39,7 @@
                 <div class="flex items-center justify-end mt-4">
                     @if (Route::has('password.request'))
                         <a class="text-sm text-gray-600 underline hover:text-gray-900" href="{{ route('password.request') }}">
-                            {{ __('Olvido su password?') }}
+                            {{ __('Olvido su Contraseña') }}
                         </a>
                     @endif
 

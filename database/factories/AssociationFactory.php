@@ -24,7 +24,7 @@ class AssociationFactory extends Factory
         return [         
 
             'dnirepre' => $this->faker->numerify('########'),
-            'nombreasoc' => $this->faker->firstName(),
+            'nombreasoc' => $this->faker->Company(),
             'dnideleg' => $this->faker->numerify('########'),
             'ubicacion' => $this->faker->streetAddress(),
             'rubroasoc' => $this->faker->name(),
