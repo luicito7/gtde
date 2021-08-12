@@ -21,6 +21,6 @@ class Association extends Model
         'docregist',
         'docconsti',
         'docpadron',
-        'observacion'
+        'observaciones'
     ];
 }

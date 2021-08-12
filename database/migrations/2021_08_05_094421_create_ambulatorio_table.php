@@ -25,6 +25,7 @@ class CreateAmbulatorioTable extends Migration
             $table->string('rubro1',50)->nullable();
             $table->string('zona',100)->nullable();
             $table->string('numpadron',1000)->nullable();
+            $table->text('observaciones');
             $table->timestamps();
         });
     }

@@ -163,12 +163,14 @@
                         </div>
                             <!-- Page Content -->
                     
-                        <main class="grid gap-4 p-1 md:grid-cols-2 lg:grid-cols-1">
+                        <main class="grid gap-4 p-1 lg:grid-cols-1">
                             <div class="shadow-lg">
                                 {{ $slot }}
                             </div>
                             
                         </main>
+
+                        <div class="text-sm" id="copyright">Copyright&copy; 2021 - Municipalidad Provincial de Puno - Gerencia de Turismo y Desarrollo Economico- Todos los derechos reservados</div>
                 </div>
 
                 @stack('modals')

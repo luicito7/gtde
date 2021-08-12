@@ -29,6 +29,7 @@ class CreateAbastosTable extends Migration
             $table->string('fotopuesto',100)->nullable();
             $table->enum('tipocomer', ['1', '2'])->nullable();
             $table->string('numpadron',1000)->nullable();
+            $table->text('observaciones');
             $table->timestamps();
         });
     }
