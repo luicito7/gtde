@@ -39,14 +39,14 @@ class PersonaFactory extends Factory
             'departamento' => $this->faker->country(),
             'provincia' => $this->faker->state(),
             'distrito' => $this->faker->city(),
-            'celprin' => $this->faker->optional()->numerify('9########'),
+            'celprin' => $this->faker->numerify('9########'),
             'email' => $this->faker->unique()->safeEmail,
             'ruc' => $this->faker->numerify('10#########'),
             'estacivil' => $this->faker->numberBetween($min = 1, $max = 5),
             'profesion' => $this->faker->optional(0.6)->company(),
             'grainstruc' => $this->faker->numberBetween($min = 1, $max = 10),
             'discapac' => $this->faker->numberBetween($min = 1, $max = 2),
-            'estadoreg' => $this->faker->boolean(),
+            'estadoreg' => $this->faker->boolean(1),
             'observac' => $this->faker->text(),
         ];
     }

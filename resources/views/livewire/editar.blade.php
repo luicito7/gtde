@@ -10,7 +10,7 @@
           <div class="inline-block overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:max-w-4xl sm:my-8 sm:align-middle" role="dialog" aria-modal="true" aria-labelledby="modal-headline" > <style> body {overflow-y:hidden;}</style>
   
               <form>
-                <span class="flex flex-row-reverse pt-2 pr-2  bg-yellow-50">
+                <span class="flex flex-row-reverse pt-2 pr-2 bg-yellow-50">
                   <button wire:click.prevent="cerrarModal2()" class="px-2 py-1 text-white transition duration-150 ease-in-out bg-red-600 border border-transparent rounded-full focus:outline-none focus:border-green-400 focus:shadow-outline-green sm:text-sm sm:leading-4">X</button>
                 </span>
                   <div class="px-4 pt-5 pb-4 bg-yellow-50 sm:p-6 sm:pb-4" >
@@ -117,8 +117,8 @@
                                   <div class="relative">
                                     <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none h-11 focus:outline-none focus:bg-white focus:border-gray-500" id="sexo" wire:model="sexo">
                                       <option value data-isdefault="true" style="display:none;">Seleccione</option>
-                                      <option value="1">Femenino</option>
-                                      <option value="2">Masculino</option>
+                                      <option value="Femenino">Femenino</option>
+                                      <option value="Masculino">Masculino</option>
                                     </select>
                                 </div>
                               </div>
@@ -147,11 +147,11 @@
                               <div class="relative">
                                 <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="estacivil" wire:model="estacivil" required atribute>
                                   <option value data-isdefault="true" style="display:none;">Seleccione</option>
-                                  <option value="1">soltero</option>
-                                  <option value="2">conviviente</option>
-                                  <option value="3">casado</option>
-                                  <option value="4">divorciado</option>
-                                  <option value="5">viudo</option>
+                                  <option value="soltero">soltero</option>
+                                  <option value="conviviente">conviviente</option>
+                                  <option value="casado">casado</option>
+                                  <option value="divorciado">divorciado</option>
+                                  <option value="viudo">viudo</option>
                                 </select>
                               </div>
                              </div>
@@ -173,16 +173,16 @@
                               <div class="relative">
                                 <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="grainstruc" wire:model="grainstruc">
                                   <option value data-isdefault="true" style="display:none;">Seleccione</option>
-                                  <option value="1">primaria</option>
-                                  <option value="2">secundaria</option> 
-                                  <option value="3">bachiller</option> 
-                                  <option value="4">titulado</option> 
-                                  <option value="5">universidad incompleta</option> 
-                                  <option value="6">universidad completa</option> 
-                                  <option value="7">instituto</option> 
-                                  <option value="8">egresado</option> 
-                                  <option value="9">estudiante</option> 
-                                  <option value="10">tecnico</option>                                  
+                                  <option value="primaria">primaria</option>
+                                  <option value="secundaria">secundaria</option> 
+                                  <option value="bachiller">bachiller</option> 
+                                  <option value="titulado">titulado</option> 
+                                  <option value="universidad incompleta">universidad incompleta</option> 
+                                  <option value="universidad completa">universidad completa</option> 
+                                  <option value="instituto">instituto</option> 
+                                  <option value="egresado">egresado</option> 
+                                  <option value="estudiante">estudiante</option> 
+                                  <option value="tecnico">tecnico</option>                                  
                                 </select>
                               </div>
                             </div>
@@ -194,8 +194,8 @@
                              <div class="relative">
                                <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="discapac" wire:model="discapac">
                                   <option value data-isdefault="true" style="display:none;">Seleccione</option> 
-                                  <option value="1">Si</option>
-                                  <option value="2">No</option>
+                                  <option value="Si">Si</option>
+                                  <option value="No">No</option>
                                </select>
                              </div>
                            </div>
@@ -207,8 +207,8 @@
                               <div class="relative">
                                 <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="estadoreg" wire:model="estadoreg">
                                   <option value data-isdefault="true" style="display:none;">Seleccione</option>
-                                  <option value="1">Activo</option>
-                                  <option value="2">Inactivo</option>
+                                  <option value="0">Activo</option>
+                                  <option value="1">Inactivo</option>
                                 </select>
                               </div>
                             </div>

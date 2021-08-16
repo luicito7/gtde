@@ -40,8 +40,6 @@ class Personas extends Component
         'apepaterno' => 'required',
         'apematerno' => 'required',
         'nombres' => 'required',
-        'sexo' => 'required',
-
     ];
 
     protected $messages = [

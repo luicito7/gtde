@@ -15,7 +15,7 @@
                     
                     <div class="items-center px-4 pt-0 pb-4 bg-white-50 sm:p-6 sm:pb-4" >
                         <div class="flex items-center justify-between pb-5">
-                            <h2>Buscar Nombre</h2>
+                            <h2>Buscar por DNI</h2>
                             <div class="relative self-center text-gray-600 sm:mb-0 focus-within:text-gray-400">
                                 <span class="absolute inset-y-0 left-0 flex items-center pl-2">
                                     <button type="submit" class="p-1 focus:outline-none focus:shadow-outline">
