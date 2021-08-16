@@ -133,7 +133,6 @@ class Personas extends Component
         $this->grainstruc = '';
         $this->ruc = '';
         $this->discapac = '';
-        //$this->estadoreg = '';
         $this->observac = '';
         $this->id_persona = '';
     }
@@ -160,7 +159,6 @@ class Personas extends Component
         $this->grainstruc = $persona->grainstruc;
         $this->ruc = $persona->ruc;
         $this->discapac = $persona->discapac;
-        //$this->estadoreg = $persona->estadoreg;
         $this->observac = $persona->observac;
         $this->abrirModal2();
 
@@ -194,7 +192,6 @@ class Personas extends Component
                 'grainstruc' => $this->grainstruc,
                 'ruc' => $this->ruc,
                 'discapac' => $this->discapac,
-                //'estadoreg' => $this->estadoreg,
                 'observac' => $this->observac,
             ],$validation);
         $this->cerrarModal();
@@ -225,7 +222,6 @@ class Personas extends Component
                 'grainstruc' => $this->grainstruc,
                 'ruc' => $this->ruc,
                 'discapac' => $this->discapac,
-                //'estadoreg' => $this->estadoreg,
                 'observac' => $this->observac,
             ],);
         $this->cerrarModal2();
@@ -255,7 +251,6 @@ class Personas extends Component
     $this->grainstruc = $persona->grainstruc;
     $this->ruc = $persona->ruc;
     $this->discapac = $persona->discapac;
-    //$this->estadoreg = $persona->estadoreg;
     $this->observac = $persona->observac;
     $this->abrirModal1();
     

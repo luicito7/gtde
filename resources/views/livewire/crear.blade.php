@@ -175,7 +175,7 @@
 
                           {{-- OTRO FORM  --}}
                          <div class="flex flex-wrap mb-6 -mx-3">
-                          <div class="w-full px-3 md:w-1/3 md:mb-0">
+                          <div class="w-full px-3 md:w-1/2 md:mb-0">
                               <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="grainstruc">
                                 FORMACION
                               </label>
@@ -196,7 +196,7 @@
                               </div>
                             </div>
                           
-                          <div class="w-full px-3 md:w-1/3 md:mb-0">
+                          <div class="w-full px-3 md:w-1/2 md:mb-0">
                              <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="discapac">
                                DISCAPACIDAD
                              </label>
@@ -210,18 +210,7 @@
                            </div>
 
                           
-                           <div class="w-full px-3 md:w-1/3 md:mb-0">
-                            <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="estadoreg">
-                              ESTADO
-                            </label>
-                            <div class="relative">
-                              <select class="block w-full px-4 py-3 pr-8 ml-1 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" name="estadoreg" [(ngModel)]="estadoreg" id="estadoreg" wire:model="estadoreg">
-                                <option value data-isdefault="false" style="display:none;">Seleccione</option>
-                                <option value="1">Activo</option>
-                                <option value="0">Inactivo</option>
-                              </select>
-                            </div>
-                          </div> 
+                           
                             
                          </div>
                             <div>
@@ -238,7 +227,7 @@
                       <div class="px-4 py-3 bg-yellow-50 sm:px-6 sm:flex sm:flex-row-reverse">
                           
                           <span class="flex w-full rounded-md shadow-sm sm:ml-3 sm:w-auto">
-                              <button wire:click="cerrarModal()" type="button" class="inline-flex justify-center w-full px-4 py-2 text-base font-medium leading-6 text-gray-700 transition duration-150 ease-in-out bg-gray-200 border border-gray-300 rounded-md shadow-sm hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue sm:text-sm sm:leading-5">Cancelar</button>
+                              <button wire:click="cerrarModal()" type="button" class="inline-flex justify-center w-full px-4 py-2 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-red-600 border border-gray-300 rounded-md shadow-sm hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue sm:text-sm sm:leading-5">Cancelar</button>
                           </span>
                           
                           <span class="flex w-full rounded-md shadow-sm sm:ml-3 sm:w-auto">

@@ -166,7 +166,7 @@
 
                           {{--inicio de linea 8 de formacion, discapacidad, estados--}}
                          <div class="flex flex-wrap mb-5 -mx-3">
-                          <div class="w-full px-3 md:w-1/3 md:mb-0">
+                          <div class="w-full px-3 md:w-1/2 md:mb-0">
                               <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="grainstruc">
                                 FORMACION
                               </label>
@@ -187,7 +187,7 @@
                               </div>
                             </div>
                           
-                          <div class="w-full px-3 md:w-1/3 md:mb-0">
+                          <div class="w-full px-3 md:w-1/2 md:mb-0">
                              <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="discapac">
                                DISCAPACIDAD
                              </label>
@@ -200,7 +200,7 @@
                              </div>
                            </div>
 
-                           <div class="w-full px-3 md:w-1/3 md:mb-0">
+                           {{-- <div class="w-full px-3 md:w-1/3 md:mb-0">
                               <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="estadoreg">
                                 ESTADO
                               </label>
@@ -211,7 +211,7 @@
                                   <option value="1">Inactivo</option>
                                 </select>
                               </div>
-                            </div>
+                            </div> --}}
                           </div>
                          {{-- final de LINEA 8 formacion, discapacidad, estado ----}}
                          
