@@ -34,8 +34,9 @@ class CreatePersonasTable extends Migration
             $table->string('grainstruc')->nullable();
             $table->string('discapac')->nullable();
             $table->text('observac')->nullable();
+            $table->softDeletes();
             $table->timestamps();
-            $table->boolean('estadoreg')->default(1);
+            //$table->boolean('estadoreg')->default(1);
             //Relaciones
         
         });

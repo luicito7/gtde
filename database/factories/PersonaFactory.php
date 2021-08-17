@@ -46,7 +46,7 @@ class PersonaFactory extends Factory
             'profesion' => $this->faker->optional(0.6)->company(),
             'grainstruc' => $this->faker->numberBetween($min = 1, $max = 10),
             'discapac' => $this->faker->numberBetween($min = 1, $max = 2),
-            'estadoreg' => $this->faker->boolean(),
+            //'estadoreg' => $this->faker->boolean(),
             'observac' => $this->faker->text(),
         ];
     }
