@@ -169,8 +169,7 @@ class Associations extends Component
 
 
         
-        
-        //$this->associations = Association::all();
+
 
         $searchTerm1 = '%'.$this-> searchTerm1. "%";
         $searchTerm1temp =$this-> searchTerm1;
