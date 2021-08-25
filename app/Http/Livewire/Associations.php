@@ -56,7 +56,7 @@ class Associations extends Component
     $RegistrarInput,
     $observac;
     
-    
+    public $lunes, $martes, $miercoles, $jueves, $viernes, $sabado, $domingo;
 
     public $cantPerson=0;
     public $searchTerm1;
@@ -350,7 +350,7 @@ class Associations extends Component
                 'ubicacion' => $this->ubicacion,
                 'rubroasoc' => $this->rubroasoc,
                 'tipoasoc' => $this->tipoasoc,
-                'dferia' => $this->dferia,
+                'dferia' => $this->lunes. ' ' . $this->martes. ' ' .$this->miercoles. ' ' .$this->jueves. ' ' .$this->viernes. ' ' .$this->sabado. ' ' .$this->domingo,
                 'fechaconst' => $this->fechaconst,
                 'docregist' => $this->docregist,
                 'docconsti' => $this->docconsti,

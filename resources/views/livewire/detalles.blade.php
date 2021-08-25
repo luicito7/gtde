@@ -170,7 +170,7 @@
                                   ESTADO
                                 </label>
                                 <div class="relative">
-                                  <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="estadoreg" wire:model="estadoreg">
+                                  <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"  id="estadoreg" wire:model="estadoreg">
                                     <option value data-isdefault="true" style="display:none;">Seleccione</option>
                                     <option value="Activo">Activo</option>
                                     <option value="Inactivo">Inactivo</option>

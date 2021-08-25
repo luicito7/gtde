@@ -17,13 +17,11 @@ class CreateAssociationsTable extends Migration
             $table->id();
             $table->string('nombreasoc',100)->nullable();
             $table->string('dnirepre')->unique();
-
             $table->string('dnideleg',8)->unique();
-            
             $table->string('ubicacion',255)->nullable();
             $table->string('rubroasoc',255)->nullable();
-            $table->enum('tipoasoc', ['1', '2','3'])->nullable();
-            $table->enum('dferia', ['1','2','3','4','5','6','7'])->nullable();
+            $table->enum('tipoasoc', ['mayorista', 'minorista','mixto'])->nullable();
+            $table->enum('dferia', ['lunes','martes','miercoles','jueves','viernes','sabado','domingo'])->nullable();
             $table->string('fechaconst',100)->nullable();
             $table->string('docregist',255)->nullable();
             $table->string('docconsti',255)->nullable();

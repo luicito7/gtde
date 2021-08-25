@@ -94,49 +94,47 @@
 
                           {{-- OTRO FORM  --}}
                          <div class="flex flex-wrap mb-6 -mx-3">
-                          <div class="w-full px-3 md:w-1/3 md:mb-0">
+                          <div class="w-full px-3 md:w-1/2 md:mb-0">
                             <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="rubroasoc">
                               RUBRO ASOCIACION
                             </label>
                             <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="rubroasoc" type="text" wire:model="rubroasoc">
                             </div>
 
-                          <div class="w-full px-3 md:w-1/3 md:mb-0">
+                          <div class="w-full px-3 md:w-1/2 md:mb-0">
                              <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="tipoasoc">
                                TIPO ASOCIACION
                              </label>
                              <div class="relative">
                                <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="tipoasoc" wire:model="tipoasoc">
                                   <option value data-isdefault="true" style="display:none;">Seleccione</option>
-                                  <option value="1">Mayorista</option>
-                                  <option value="2">Minorista</option>
-                                  <option value="3">Mixto</option>
+                                  <option value="mayorista">Mayorista</option>
+                                  <option value="minorista">Minorista</option>
+                                  <option value="mixto">Mixto</option>
                                </select>
                              </div>
                            </div>
+                        </div>
 
-
-                           <div class="w-full px-3 md:w-1/3 md:mb-0">
-                              <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="dferia">
-                                DIAS FERIA
-                              </label>
-                              <div class="relative">
-                                <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="dferia" wire:model="dferia">
-                                  <option value data-isdefault="true" style="display:none;">Seleccione</option>
-                                  <option value="1">Lunes</option>
-                                  <option value="2">Martes</option>
-                                  <option value="3">Miercoles</option>
-                                  <option value="4">Jueves</option>
-                                  <option value="5">Viernes</option>
-                                  <option value="6">Sabado</option>
-                                  <option value="7">Domingo</option>
-                                </select>
+                              <div class="flex flex-wrap mb-4 -mx-3">
+                                <div class="w-full px-3">
+                                    <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="dferia">
+                                      DIAS FERIA
+                                    </label>
+                                      <div class="flex ">
+                                      <div class="mr-6"><input class="mx-2" value= "lunes"id="lunes" wire:model="lunes" type="checkbox" name="lunes">Lunes</div>
+                                      <div class="mr-6"><input class="mx-2" value= "martes"id="martes" wire:model="martes" type="checkbox" name="mastes">Martes</div>
+                                      <div class="mr-6"><input class="mx-2" value= "miercoles"id="miercoles" wire:model="miercoles" type="checkbox" name="miercoles">Miercoles</div>
+                                      <div class="mr-6"><input class="mx-2" value= "jueves"id="jueves" wire:model="jueves" type="checkbox" name="jueves">Jueves</div>
+                                      <div class="mr-6"><input class="mx-2" value= "viernes"id="viernes" wire:model="viernes" type="checkbox" name="viernes">Viernes</div>
+                                      <div class="mr-6"><input class="mx-2" value= "sabado"id="sabado" wire:model="sabado" type="checkbox" name="sabado">Sabado</div>
+                                      <div class="mr-6"><input class="mx-2" value= "domingo"id="domingo" wire:model="domingo" type="checkbox" name="domingo">Domingo</div>
+                                    </div>
                               </div>
-                            </div>
                          </div>
-{{--
-                         <div class="flex flex-wrap -mx-3">
-                          <div class="w-full px-3 mb-6 md:w-1/2">
+
+                          <div class="flex flex-wrap -mx-3">
+                            <div class="w-full px-3 mb-6 md:w-1/2">
                               <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="fechaconst">
                                 FECHA CONSTITUCION
                               </label>
@@ -151,7 +149,7 @@
                             </label>
                            </div>
 
-                          <div class="w-full px-3 mb-6 md:w-1/2">
+                          {{-- <div class="w-full px-3 mb-6 md:w-1/2">
                             <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="docconsti">
                               DOCUMENTO CONSTITUCION
                             </label>
@@ -163,10 +161,10 @@
                               DOCUMENTO PADRON
                             </label>
                             <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="docpadron" type="file" wire:model="docpadron">
-                          </div>
-                        </div>  --}}
+                          </div> --}}
+                        </div> 
 
-
+                        
                           <div>
                               <div class="flex flex-wrap -mx-3">
                               <div class="w-full px-3">
