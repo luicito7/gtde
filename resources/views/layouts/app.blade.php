@@ -125,7 +125,7 @@
                             </span>
                            </button>
                            <div x-show="open" class="bg-gray-700">
-                              <a class="block px-16 py-2 text-sm text-gray-100 hover:bg-blue-500 hover:text-white" href="#">Comerciantes</a>
+                              <a class="block px-16 py-2 text-sm text-gray-100 hover:bg-blue-500 hover:text-white" href="{{route('comerciantes')}}">Comerciantes</a>
                               <a class="block px-16 py-2 text-sm text-gray-100 hover:bg-blue-500 hover:text-white" href="#">Pagos</a>
                             </div>
                         </div>  
@@ -144,7 +144,7 @@
                             </span>
                            </button>
                            <div x-show="open" class="bg-gray-700">
-                              <a class="block px-16 py-2 text-sm text-gray-100 hover:bg-blue-500 hover:text-white" href="#">Asociados</a>
+                              <a class="block px-16 py-2 text-sm text-gray-100 hover:bg-blue-500 hover:text-white" href="{{route('asociados')}}">Asociados</a>
                               
                             </div>
                         </div>  

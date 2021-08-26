@@ -349,7 +349,7 @@ class Associations extends Component
                 'ubicacion' => $this->ubicacion,
                 'rubroasoc' => $this->rubroasoc,
                 'tipoasoc' => $this->tipoasoc,
-                'dferia' => $this->lunes. ' ' . $this->martes. ' ' .$this->miercoles. ' ' .$this->jueves. ' ' .$this->viernes. ' ' .$this->sabado. ' ' .$this->domingo,
+                'dferia' => $this->lunes.' '.$this->martes.' '.$this->miercoles.' '.$this->jueves.' '.$this->viernes.' '.$this->sabado.' '.$this->domingo,
                 'fechaconst' => $this->fechaconst,
                 'docregist' => $this->docregist,
                 'docconsti' => $this->docconsti,

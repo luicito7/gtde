@@ -122,13 +122,13 @@
                                       DIAS FERIA
                                     </label>
                                       <div class="flex ">
-                                      <div class="mr-6"><input class="mx-2" value= "lunes"id="lunes" wire:model="lunes" type="checkbox" name="lunes">Lunes</div>
-                                      <div class="mr-6"><input class="mx-2" value= "martes"id="martes" wire:model="martes" type="checkbox" name="mastes">Martes</div>
-                                      <div class="mr-6"><input class="mx-2" value= "miercoles"id="miercoles" wire:model="miercoles" type="checkbox" name="miercoles">Miercoles</div>
-                                      <div class="mr-6"><input class="mx-2" value= "jueves"id="jueves" wire:model="jueves" type="checkbox" name="jueves">Jueves</div>
-                                      <div class="mr-6"><input class="mx-2" value= "viernes"id="viernes" wire:model="viernes" type="checkbox" name="viernes">Viernes</div>
-                                      <div class="mr-6"><input class="mx-2" value= "sabado"id="sabado" wire:model="sabado" type="checkbox" name="sabado">Sabado</div>
-                                      <div class="mr-6"><input class="mx-2" value= "domingo"id="domingo" wire:model="domingo" type="checkbox" name="domingo">Domingo</div>
+                                      <div class="mr-6"><input class="mx-2" value= "lunes" id="lunes" wire:model="lunes" type="checkbox" name="lunes">Lunes</div>
+                                      <div class="mr-6"><input class="mx-2" value= "martes" id="martes" wire:model="martes" type="checkbox" name="martes">Martes</div>
+                                      <div class="mr-6"><input class="mx-2" value= "miercoles" id="miercoles" wire:model="miercoles" type="checkbox" name="miercoles">Miercoles</div>
+                                      <div class="mr-6"><input class="mx-2" value= "jueves" id="jueves" wire:model="jueves" type="checkbox" name="jueves">Jueves</div>
+                                      <div class="mr-6"><input class="mx-2" value= "viernes" id="viernes" wire:model="viernes" type="checkbox" name="viernes">Viernes</div>
+                                      <div class="mr-6"><input class="mx-2" value= "sabado" id="sabado" wire:model="sabado" type="checkbox" name="sabado">Sabado</div>
+                                      <div class="mr-6"><input class="mx-2" value= "domingo" id="domingo" wire:model="domingo" type="checkbox" name="domingo">Domingo</div>
                                     </div>
                               </div>
                          </div>
@@ -138,7 +138,7 @@
                               <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="fechaconst">
                                 FECHA CONSTITUCION
                               </label>
-                              <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="fechaconst" type="date" wire:model="fechaconst">
+                              <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="fechaconst" type="text" wire:model="fechaconst">
                           </div>
 
                           <div class="w-full px-3 md:w-1/2">

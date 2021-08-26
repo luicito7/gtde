@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAbastosTable extends Migration
+class CreateAsociadosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,21 +13,17 @@ class CreateAbastosTable extends Migration
      */
     public function up()
     {
-        Schema::create('abastos', function (Blueprint $table) {
+        Schema::create('asociados', function (Blueprint $table) {
             $table->id();
             $table->string('dni',8)->unique();
             $table->string('apepaterno',100)->nullable();
             $table->string('apematerno',100)->nullable();
             $table->string('nombres',100)->nullable();
             $table->string('nombrecomplet',100)->nullable();
-            $table->string('puesto',100)->nullable();
+            $table->string('ubicacion',100)->nullable();
             $table->string('asociacion',100)->nullable();
             $table->string('rubro1',50)->nullable();
-            $table->string('rubro2',50)->nullable();
-            $table->string('mercado',100)->nullable();
-            $table->string('direcpuesto',100)->nullable();
-            $table->string('fotopuesto',100)->nullable();
-            $table->enum('tipocomer', ['1', '2'])->nullable();
+            $table->string('zona',100)->nullable();
             $table->string('numpadron',1000)->nullable();
             $table->text('observaciones');
             $table->timestamps();
@@ -41,6 +37,6 @@ class CreateAbastosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('abastos');
+        Schema::dropIfExists('asociados');
     }
 }

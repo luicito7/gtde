@@ -21,7 +21,7 @@ class CreateAssociationsTable extends Migration
             $table->string('ubicacion',255)->nullable();
             $table->string('rubroasoc',255)->nullable();
             $table->enum('tipoasoc', ['mayorista', 'minorista','mixto'])->nullable();
-            $table->enum('dferia', ['lunes','martes','miercoles','jueves','viernes','sabado','domingo'])->nullable();
+            $table->string('dferia')->nullable();
             $table->string('fechaconst',100)->nullable();
             $table->string('docregist',255)->nullable();
             $table->string('docconsti',255)->nullable();

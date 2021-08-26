@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Personas;
 use App\Http\Livewire\PapeletaDeInfraciones;
 use App\Http\Livewire\Associations;
+use App\Http\Livewire\Comerciantes;
+use App\Http\Livewire\Asociados;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +37,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group( function(){
     Route::get('/personas', Personas::class)->name('personas');
     Route::get('/papeleta-de-infraciones', PapeletaDeInfraciones::class)->name('papeleta-de-infraciones');
     Route::get('/associations', Associations::class)->name('associations');
+    Route::get('/comerciantes', Comerciantes::class)->name('comerciantes');
+    Route::get('/asociados', Asociados::class)->name('asociados');
     route::get('/users',[UserController::class,'index'])->name('users.index');
     route::get('/users/create',[UserController::class,'create'])->name('users.create'); 
     route::get('/users/{id}',[UserController::class,'show'])->name('users.show');    
