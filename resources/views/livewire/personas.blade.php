@@ -1,6 +1,6 @@
 <div class="py-0.5 mx-auto max-w-7xl sm:px-6 lg:px-8">
     <div class="flex items-center justify-between ">
-       <button wire:click="crear()" class="h-10 px-4 mt-3 font-bold bg-green-500 rounded-md w-60 text-ms hover:bg-green-600">AGREGAR PERSONA</button>
+       <button wire:click="crear()" class="h-10 px-4 mt-3 font-bold text-white bg-green-500 rounded-md w-60 text-ms hover:bg-green-600">AGREGAR PERSONA</button>
        
        <!-- component -->
 
