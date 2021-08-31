@@ -17,7 +17,7 @@ class Asociado extends Model
         'nombrecomplet',
         'ubicacion',
         'asociacion',
-        'rubro1',
+        'rubro',
         'zona',
         'numpadron',
         'observaciones'

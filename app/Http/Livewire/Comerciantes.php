@@ -10,20 +10,20 @@ class Comerciantes extends Component
 {
     public $comerciantes, 
     $dni,
-    // $apepaterno,
-    // $apematerno,
+    $apepaterno,
+    $apematerno,
     $nombres,
-    //$nombrecomplet, 
-    $puesto;
-    // $asociacion,
-    // $rubro1,
-    // $rubro2,
-    // $mercado,
-    // $direcpuesto,
-    // $fotopuesto,
-    // $tipocomer,
-    // $numpadron,
-    // $observaciones;
+    $nombrecomplet, 
+    $puesto,
+    $asociacion,
+    $rubro1,
+    $rubro2,
+    $mercado,
+    $direcpuesto,
+    $fotopuesto,
+    $tipocomer,
+    $numpadron,
+    $observaciones;
 
     public $modal = false;
 
@@ -52,11 +52,21 @@ class Comerciantes extends Component
     public function limpiarCampos()
     {
         $this->dni = '';
-        //$this->apepaterno = '';
-        //$this->apematerno = '';
+        $this->apepaterno = '';
+        $this->apematerno = '';
         $this->nombres = '';
-        //$this->nombrecomplet = '';
+        $this->nombrecomplet = '';
         $this->puesto = '';
+        $this->asociacion = '';
+        $this->rubro1 = '';
+        $this->rubro2 = '';
+        $this->mercado = '';
+        $this->direcpuesto = '';
+        $this->fotopuesto = '';
+        $this->tipocomer = '';
+        $this->numpadron = '';
+        $this->observaciones = '';
+        
     }
 
 

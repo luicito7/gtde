@@ -10,20 +10,16 @@ class Asociados extends Component
 {
     public $asociados, 
     $dni,
-    // $apepaterno,
-    // $apematerno,
+    $apepaterno,
+    $apematerno,
     $nombres,
-    //$nombrecomplet, 
-    $ubicacion;
-    // $asociacion,
-    // $rubro1,
-    // $rubro2,
-    // $mercado,
-    // $direcpuesto,
-    // $fotopuesto,
-    // $tipocomer,
-    // $numpadron,
-    // $observaciones;
+    $nombrecomplet, 
+    $ubicacion,
+    $asociacion,
+    $rubro1,
+    $zona,
+    $numpadron,
+    $observaciones;
 
     public $modal = false;
 
@@ -52,11 +48,16 @@ class Asociados extends Component
     public function limpiarCampos()
     {
         $this->dni = '';
-        //$this->apepaterno = '';
-        //$this->apematerno = '';
+        $this->apepaterno = '';
+        $this->apematerno = '';
         $this->nombres = '';
-        //$this->nombrecomplet = '';
-        $this->puesto = '';
+        $this->nombrecomplet = '';
+        $this->ubicacion = '';
+        $this->asociacion = '';
+        $this->rubro = '';
+        $this->zona = '';
+        $this->numpadron = '';
+        $this->observaciones = '';
     }
 
 }
