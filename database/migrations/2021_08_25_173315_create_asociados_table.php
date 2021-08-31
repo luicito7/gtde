@@ -22,7 +22,7 @@ class CreateAsociadosTable extends Migration
             $table->string('nombrecomplet',100)->nullable();
             $table->string('ubicacion',100)->nullable();
             $table->string('asociacion',100)->nullable();
-            $table->string('rubro1',50)->nullable();
+            $table->string('rubro',50)->nullable();
             $table->string('zona',100)->nullable();
             $table->string('numpadron',1000)->nullable();
             $table->text('observaciones');

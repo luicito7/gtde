@@ -25,7 +25,8 @@
                 <th class="px-4 py-2">ID</th>
                 <th class="px-4 py-2">DNI</th>
                 <th class="px-4 py-2">NOMBRES</th>
-                <th class="px-4 py-2">UBICACION</th>    
+                <th class="px-4 py-2">UBICACION</th>
+                <th class="px-4 py-2">OPCIONES</th>    
             </tr>
         </thead>
         <tbody>
@@ -33,8 +34,8 @@
             <tr>
                 <td class="px-4 py-2 border">{{$asociado->id}}</td>
                 <td class="px-4 py-2 border">{{$asociado->dni}}</td>
-                <td class="px-4 py-2 border">{{$asociado->nombres}}</td>
-                <td class="px-4 py-2 border">{{$asociado->puesto}}</td>
+                <td class="px-4 py-2 border">{{$asociado->nombrecomplet}}</td>
+                <td class="px-4 py-2 border">{{$asociado->ubicacion}}</td>
                 <td class="px-4 py-2 text-center border">
                     <button wire:click="editar({{$asociado->id}})" class="px-4 py-2 font-bold text-white bg-blue-500 hover:bg-blue-600">Editar</button>
                     <button wire:click="borrar({{$asociado->id}})" class="px-4 py-2 font-bold text-white bg-red-500 hover:bg-red-700">Borrar</button>

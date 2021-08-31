@@ -16,12 +16,26 @@ class Asociados extends Component
     $nombrecomplet, 
     $ubicacion,
     $asociacion,
-    $rubro1,
+    $rubro,
     $zona,
     $numpadron,
+    $id_asociado,
     $observaciones;
 
+    protected $rules = [
+        'dni' => 'required|max:8|unique:personas,dni',
+        'apepaterno' => 'required',
+        'apematerno' => 'required',
+        'nombres' => 'required',
+    ];
+
+
     public $modal = false;
+
+    public function update($propertyName) 
+    {
+        $this->validationOnly($propertyName);
+    }
 
     public function render()
     {
@@ -58,6 +72,42 @@ class Asociados extends Component
         $this->zona = '';
         $this->numpadron = '';
         $this->observaciones = '';
+    }
+
+    public function guardar()
+    {
+        Asociado::updateOrCreate(['id'=>$this->id_asociado],
+            [
+                $validation =$this->validate(),
+                'dni' => $this->dni,
+                'apepaterno' => $this->apepaterno,
+                'apematerno' => $this->apematerno,
+                'nombres' => $this->nombres,
+                'nombrecomplet' => $this->nombres.' '. $this->apepaterno.' '. $this->apematerno ,
+                'ubicacion' => $this->ubicacion,
+                'asociacion' => $this->asociacion,
+                'rubro' => $this->rubro,
+                'zona' => $this->zona,
+                'numpadron' => $this->numpadron,
+                'observaciones' => $this->observaciones,
+            ],$validation);
+        $this->cerrarModal();
+        $this->limpiarCampos();
+    }
+
+    public function borrar($id)
+    {
+        //Persona::find($id)->delete();
+        $asociado = Asociado::findOrFail($id);
+        $asociado -> delete();
+        // $this->id_persona = $id;
+
+        // Persona::updateOrCreate(['id'=>$this->id_persona],
+        //     [
+        //         'estadoreg' => $this->estadoreg = (0),
+               
+        //     ],);
+
     }
 
 }

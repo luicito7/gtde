@@ -23,9 +23,22 @@ class Comerciantes extends Component
     $fotopuesto,
     $tipocomer,
     $numpadron,
-    $observaciones;
+    $observaciones,
+    $id_comerciante;
+
+    protected $rules = [
+        'dni' => 'required|max:8|unique:personas,dni',
+        'apepaterno' => 'required',
+        'apematerno' => 'required',
+        'nombres' => 'required',
+    ];
 
     public $modal = false;
+
+    public function update($propertyName) 
+    {
+        $this->validationOnly($propertyName);
+    }
 
     public function render()
     {
@@ -69,6 +82,29 @@ class Comerciantes extends Component
         
     }
 
-
+    public function guardar()
+    {
+        Comerciante::updateOrCreate(['id'=>$this->id_comerciante],
+            [
+                $validation =$this->validate(),
+                'dni' => $this->dni,
+                'apepaterno' => $this->apepaterno,
+                'apematerno' => $this->apematerno,
+                'nombres' => $this->nombres,
+                'nombrecomplet' => $this->nombres.' '. $this->apepaterno.' '. $this->apematerno ,
+                'puesto' => $this->puesto,
+                'asociacion' => $this->asociacion,
+                'rubro1' => $this->rubro1,
+                'rubro2' => $this->rubro2,
+                'mercado' => $this->mercado,
+                'direcpuesto' => $this->direcpuesto,
+                'fotopuesto' => $this->fotopuesto,
+                'tipocomer' => $this->tipocomer,
+                'numpadron' => $this->numpadron,
+                'observaciones' => $this->observaciones,
+            ],$validation);
+        $this->cerrarModal();
+        $this->limpiarCampos();
+    }
 
 }

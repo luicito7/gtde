@@ -81,17 +81,17 @@
                                   <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="rubro">
                                     RUBRO
                                   </label>
-                                  <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="rubro" type="text" wire:model="model">
+                                  <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="rubro" type="text" wire:model="rubro">
                                 </div>
   
                              </div>
   
                            <div class="flex flex-wrap mb-6 -mx-3">
                              <div class="w-full px-3 md:w-1/2 md:mb-0">
-                               <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="ruc">
+                               <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="zona">
                                  ZONA
                                </label>
-                               <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="ruc" maxlength="11" type="text" wire:model="ruc">
+                               <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="zona" type="text" wire:model="zona">
                              </div>
   
                              
@@ -109,9 +109,9 @@
                               <div>
                                 <div class="flex flex-wrap -mx-3">
                                 <div class="w-full px-3">
-                                <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="direcreal">
+                                <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="observaciones">
                                  OBSERVACIONES</label>
-                                <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="observac" type="texto" wire:model="observac">
+                                <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="observaciones" type="texto" wire:model="observaciones">
                                 </div>
                               </div>  
                           </div>   

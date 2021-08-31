@@ -63,162 +63,89 @@
                          {{-- INICIO  --}}
                           <div class="flex flex-wrap mb-6 -mx-3">
                             <div class="w-full px-3 md:w-1/3 md:mb-0">
-                              <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="departamento">
-                                DEPARTAMENTO
+                              <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="puesto">
+                                PUESTO
                               </label>
-                              <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="departamento" type="text" wire:model="departamento">
+                              <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="puesto" type="text" wire:model="puesto">
                             </div>
-  
                             
                             <div class="w-full px-3 md:w-1/3 md:mb-0">
-                              <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="provincia">
-                                PROVINCIA
+                              <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="asociacion">
+                                ASOCIACION
                               </label>
-                              <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="provincia" type="text" wire:model="provincia">
+                              <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="asociacion" type="text" wire:model="asociacion">
                                 <div class="absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 pointer-events-none">
                                 </div>
                             </div>
-  
                             
                             <div class="w-full px-3 md:w-1/3 md:mb-0">
-                              <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="distrito">
-                                DISTRITO
+                              <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="rubro1">
+                                RUBRO PRINCIPAL
                               </label>
-                              <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="distrito" type="text" wire:model="distrito">
+                              <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="rubro1" type="text" wire:model="rubro1">
                             </div>
                            </div>
+                           
                               {{-- final --}}
                           
-                              <div>
-                                <div class="flex flex-wrap mb-6 -mx-3">
-                                <div class="w-full px-3">
-                                <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="direcreal">
-                                DIRECCION</label>
-                                <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="direcreal" type="texto" placeholder="(Jr.calle,Av.) Av. Los lirios N° 000" wire:model="direcreal">
-                                </div>
-                              </div>
-                            
-                            <div class="flex flex-wrap -mx-3">
-                                <div class="w-full px-3 md:w-1/2 md:mb-0">
-                                  <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="celprin">
-                                    CELULAR
+                              <div class="flex flex-wrap mb-6 -mx-3">
+                                <div class="w-full px-3 md:w-1/3 md:mb-0">
+                                  <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="rubro2">
+                                    RUBRO SECUNDARIO
                                   </label>
-                                  <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="celprin" type="text" maxlength="9" wire:model="celprin">
-                                  <br>
+                                  <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="rubro2" type="text" wire:model="rubro2">
                                 </div>
                                 
-                                <div class="w-full px-3 md:w-1/2">
-                                  <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="email">
-                                    CORREO
+                                <div class="w-full px-3 md:w-1/3 md:mb-0">
+                                  <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="mercado">
+                                    MERCADO
                                   </label>
-                                  <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="email" type="email" wire:model="email">
+                                  <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="mercado" type="text" wire:model="mercado">
+                                    <div class="absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 pointer-events-none">
+                                    </div>
                                 </div>
-  
-                             </div>
-  
-                                <div class="flex flex-wrap mb-6 -mx-3">
-                                  <div class="w-full px-3 md:w-1/2 md:mb-0">
-                                    <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="sexo">
-                                      SEXO
-                                    </label>
-                                    <div class="relative">
-                                      <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="sexo" wire:model="sexo">
-                                        <option value data-isdefault="true" style="display:none;">Seleccione</option>
-                                        <option value="Femenino">Femenino</option>
-                                        <option value="Masculino">Masculino</option>
-                                      </select>
-                                  </div>
+                                
+                                <div class="w-full px-3 md:w-1/3 md:mb-0">
+                                  <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="direcpuesto">
+                                    DIRECCION PUESTO
+                                  </label>
+                                  <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="direcpuesto" type="text" wire:model="direcpuesto">
                                 </div>
-                                  
-                                  <div class="w-full px-3 md:w-1/2">
-                                    <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="fechanac">
-                                      fECHA DE NACIMIENTO
-                                    </label>
-                                    <input type="date" class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="fechanac" type="fechanac" wire:model="fechanac">
-                                  </div>  
+                               </div>
+
+                               <div class="flex flex-wrap mb-6 -mx-3">
+                                <div class="w-full px-3 md:w-1/3 md:mb-0">
+                                  <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="fotopuesto">
+                                    FOTO PUESTO
+                                  </label>
+                                  <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="fotopuesto" type="text" wire:model="fotopuesto">
                                 </div>
-  
-                           <div class="flex flex-wrap mb-6 -mx-3">
-                             <div class="w-full px-3 md:w-1/3 md:mb-0">
-                               <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="ruc">
-                                 RUC
-                               </label>
-                               <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="ruc" maxlength="11" type="text" wire:model="ruc">
-                             </div>
-  
-                             <div class="w-full px-3 md:w-1/3 md:mb-0">
-                                <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="estacivil">
-                                  ESTADO CIVIL
-                                </label>
-                                <div class="relative">
-                                  <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="estacivil" wire:model="estacivil" required atribute>
-                                    <option value data-isdefault="true" style="display:none;">Seleccione</option>
-                                    <option value="soltero">soltero</option>
-                                    <option value="conviviente">conviviente</option>
-                                    <option value="casado">casado</option>
-                                    <option value="divorciado">divorciado</option>
-                                    <option value="viudo">viudo</option>
-                                  </select>
+      
+                                <div class="w-full px-3 md:w-1/3 md:mb-0">
+                                  <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="tipocomer">
+                                    TIPO COMERCIO
+                                  </label>
+                                  <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="tipocomer" type="text" wire:model="tipocomer">
+                                    <div class="absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 pointer-events-none">
+                                    </div>
                                 </div>
-                              </div>
-  
-                             
-                             <div class="w-full px-3 md:w-1/3 md:mb-0">
-                               <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="profesion">
-                                 PROFESION
-                               </label>
-                               <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="profesion" type="text" wire:model="profesion">
-                             </div>
-                            </div>
-                          
-                               {{-- final --}}
+      
+                                <div class="w-full px-3 md:w-1/3 md:mb-0">
+                                  <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="numpadron">
+                                    NUMERO PADRON
+                                  </label>
+                                  <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="distrito" type="text" wire:model="numpadron">
+                                </div>
+                               </div>
   
                             {{-- OTRO FORM  --}}
-                           <div class="flex flex-wrap mb-6 -mx-3">
-                            <div class="w-full px-3 md:w-1/2 md:mb-0">
-                                <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="grainstruc">
-                                  FORMACION
-                                </label>
-                                <div class="relative">
-                                  <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="grainstruc" wire:model="grainstruc">
-                                    <option value data-isdefault="true" style="display:none;">Seleccione</option>
-                                    <option value="primaria">primaria</option>
-                                    <option value="secundaria">secundaria</option> 
-                                    <option value="bachiller">bachiller</option> 
-                                    <option value="titulado">titulado</option> 
-                                    <option value="universidad incompleta">universidad incompleta</option> 
-                                    <option value="universidad completa">universidad completa</option> 
-                                    <option value="instituto">instituto</option> 
-                                    <option value="egresado">egresado</option> 
-                                    <option value="estudiante">estudiante</option> 
-                                    <option value="tecnico">tecnico</option>                                  
-                                  </select>
-                                </div>
-                              </div>
-                            
-                            <div class="w-full px-3 md:w-1/2 md:mb-0">
-                               <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="discapac">
-                                 DISCAPACIDAD
-                               </label>
-                               <div class="relative">
-                                 <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="discapac" wire:model="discapac">
-                                    <option value data-isdefault="true" style="display:none;">Seleccione</option> 
-                                    <option value="Si">Si</option>
-                                    <option value="NO">No</option>
-                                 </select>
-                               </div>
-                             </div>
-  
-                            
-                             
-                              
-                           </div>
+
                               <div>
                                 <div class="flex flex-wrap -mx-3">
                                 <div class="w-full px-3">
-                                <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="direcreal">
+                                <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="observaciones">
                                  OBSERVACIONES</label>
-                                <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="observac" type="texto" wire:model="observac">
+                                <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="observaciones" type="texto" wire:model="observaciones">
                                 </div>
                               </div>  
                           </div>   
