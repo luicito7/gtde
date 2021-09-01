@@ -27,7 +27,7 @@ class CreateComerciantesTable extends Migration
             $table->string('mercado',100)->nullable();
             $table->string('direcpuesto',100)->nullable();
             $table->string('fotopuesto',100)->nullable();
-            $table->enum('tipocomer', ['1', '2'])->nullable();
+            $table->string('tipocomer')->nullable();
             $table->string('numpadron',1000)->nullable();
             $table->text('observaciones');
             $table->timestamps();

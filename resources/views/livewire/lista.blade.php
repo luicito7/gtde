@@ -138,7 +138,7 @@
                               <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="fechaconst">
                                 FECHA CONSTITUCION
                               </label>
-                              <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="fechaconst" type="text" wire:model="fechaconst">
+                              <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="fechaconst" type="date" wire:model="fechaconst">
                           </div>
 
                           <div class="w-full px-3 md:w-1/2">

@@ -7,7 +7,7 @@ use Livewire\Component;
 use App\Models\papeletaDeInfraccion;
 use App\Models\Persona;
 
-
+use Livewire\WithFileUploads;
 use Livewire\WithPagination;
 
 class Associations extends Component
@@ -337,7 +337,7 @@ class Associations extends Component
     }
 
 
-
+    use WithFileUploads;
     public function guardar()
     {
         Association::updateOrCreate(['id'=>$this->id_association],
@@ -351,7 +351,7 @@ class Associations extends Component
                 'tipoasoc' => $this->tipoasoc,
                 'dferia' => $this->lunes.' '.$this->martes.' '.$this->miercoles.' '.$this->jueves.' '.$this->viernes.' '.$this->sabado.' '.$this->domingo,
                 'fechaconst' => $this->fechaconst,
-                'docregist' => $this->docregist,
+                'docregist' => $this->docregist->store('documentos'),
                 'docconsti' => $this->docconsti,
                 'docpadron' => $this->docpadron,
                 'observacion' => $this->observacion,

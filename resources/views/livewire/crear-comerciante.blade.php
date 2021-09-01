@@ -122,12 +122,17 @@
                                 </div>
       
                                 <div class="w-full px-3 md:w-1/3 md:mb-0">
-                                  <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="tipocomer">
+                                  <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="estacivil">
                                     TIPO COMERCIO
                                   </label>
-                                  <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="tipocomer" type="text" wire:model="tipocomer">
-                                    <div class="absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 pointer-events-none">
-                                    </div>
+                                  <div class="relative">
+                                    <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="estacivil" wire:model="estacivil" required atribute>
+                                      <option value data-isdefault="true" style="display:none;">Seleccione</option>
+                                      <option value="mayorista">Mayorista</option>
+                                      <option value="minorista">Minorista</option>
+                                      <option value="mixto">Mixto</option>
+                                    </select>
+                                  </div>
                                 </div>
       
                                 <div class="w-full px-3 md:w-1/3 md:mb-0">

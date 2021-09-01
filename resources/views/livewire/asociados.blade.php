@@ -32,10 +32,10 @@
         <tbody>
             @foreach($asociados as $asociado)
             <tr>
-                <td class="px-4 py-2 border">{{$asociado->id}}</td>
-                <td class="px-4 py-2 border">{{$asociado->dni}}</td>
-                <td class="px-4 py-2 border">{{$asociado->nombrecomplet}}</td>
-                <td class="px-4 py-2 border">{{$asociado->ubicacion}}</td>
+                <td class="px-4 py-2 text-center border">{{$asociado->id}}</td>
+                <td class="px-4 py-2 text-center border">{{$asociado->dni}}</td>
+                <td class="px-4 py-2 text-center border">{{$asociado->nombrecomplet}}</td>
+                <td class="px-4 py-2 text-center border">{{$asociado->ubicacion}}</td>
                 <td class="px-4 py-2 text-center border">
                     <button wire:click="editar({{$asociado->id}})" class="px-4 py-2 font-bold text-white bg-blue-500 hover:bg-blue-600">Editar</button>
                     <button wire:click="borrar({{$asociado->id}})" class="px-4 py-2 font-bold text-white bg-red-500 hover:bg-red-700">Borrar</button>
