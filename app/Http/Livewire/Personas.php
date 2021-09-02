@@ -53,9 +53,9 @@ class Personas extends Component
         $this->validationOnly($propertyName);
     }
      
-    public $modal = false; 
-    public $modal1 = false; 
-    public $modal2 = false; 
+    public $modal = false; //crear
+    public $modal1 = false;//detalles 
+    public $modal2 = false; //editar
 
     protected $queryString = [
         'search'=>['except' => ''],
@@ -83,6 +83,7 @@ class Personas extends Component
         $this->abrirModal();
     }
 
+    //crear
     public function abrirModal()
     {
         $this->modal = true;
@@ -92,7 +93,7 @@ class Personas extends Component
     {
         $this->modal = false;
     }
-
+    //detalles
     public function abrirModal1()
     {
         $this->modal1 = true;
@@ -103,6 +104,7 @@ class Personas extends Component
         $this->modal1 = false;
     }
     
+    //modal editar
     public function abrirModal2()
     {
         $this->modal2 = true;
@@ -112,6 +114,7 @@ class Personas extends Component
     {
         $this->modal2 = false;
     }
+    //fin modal editar
 
     public function limpiarCampos()
     {

@@ -30,7 +30,9 @@ class Asociados extends Component
     ];
 
 
-    public $modal = false;
+    public $modal = false;//crear
+    public $modal1 = false;//detalles
+    public $modal2 = false;//editar
 
     public function update($propertyName) 
     {
@@ -48,7 +50,7 @@ class Asociados extends Component
         $this->limpiarCampos();
         $this->abrirModal();
     }
-
+    //crear
     public function abrirModal()
     {
         $this->modal = true;
@@ -58,6 +60,32 @@ class Asociados extends Component
     {
         $this->modal = false;
     }
+    //fin crear
+
+    //detalles
+    public function abrirModal1()
+    {
+        $this->modal1 = true;
+    }
+
+    public function cerrarModal1()
+    {
+        $this->modal1 = false;
+    }
+    //fin detalles
+
+    //inicio editar
+    public function abrirModal2()
+    {
+        $this->modal2 = true;
+    }
+
+    public function cerrarModal2()
+    {
+        $this->modal2 = false;
+    }
+    //fin editar
+    
 
     public function limpiarCampos()
     {
@@ -107,6 +135,50 @@ class Asociados extends Component
         //         'estadoreg' => $this->estadoreg = (0),
                
         //     ],);
+
+    }
+
+
+     public function editar($id)
+    {
+            $asociado = Asociado::findOrFail($id);
+            $this->id_asociado = $id;
+            $this->dni = $asociado->dni;        
+            $this->apepaterno = $asociado->apepaterno;
+            $this->apematerno = $asociado->apematerno;
+            $this->nombres = $asociado->nombres;
+            $this->nombrecomplet = $asociado->nombrecomplet;
+            $this->ubicacion = $asociado->ubicacion;
+            $this->asociacion = $asociado->asociacion;
+            $this->rubro = $asociado->rubro;
+            $this->zona = $asociado->zona;
+            $this->numpadron = $asociado->numpadron;
+            $this->observaciones = $asociado->observaciones;
+            $this->abrirModal2();
+
+    }
+
+
+    public function mod()
+    {
+        Asociado::updateOrCreate(['id'=>$this->id_asociado],
+            [
+                
+                'dni' => $this->dni ,
+                'apepaterno' => $this->apepaterno,
+                'apematerno' => $this->apematerno,
+                'nombres' => $this->nombres,
+                'nambrecomplet' => $this->nombres.' '. $this->apepaterno.' '. $this->apematerno ,
+                'ubicacion'=> $this->ubicacion,
+                'asociacion'=>$this->asociacion,
+                'rubro'=>$this->rubro,
+                'zona'=>$this->zona,
+                'numpadron'=>$this->numpadron,
+                'observaciones'=>$this->observaciones,
+           
+            ],);
+        $this->cerrarModal2();
+        $this->limpiarCampos();
 
     }
 

@@ -75,14 +75,34 @@ class Associations extends Component
         'dnideleg' => 'required',
         'nombreasoc' => 'required',
         'ubicacion' => 'required',
-        'rubroasoc' => 'required',
+        'docregist' => 'required|mimes:pdf|max:5120',
+        // 'docconsti' => 'required|mimes:pdf|max:5120',
+        // 'docpadron' => 'required|mimes:pdf|max:5120',
+        //'docregist' => 'mimes:pdf|max:5120',
+        'docconsti' => 'mimes:pdf|max:5120',
+        'docpadron' => 'mimes:pdf|max:5120',
+ 
 
     ];
 
     protected $messages = [
         'dnirepre.required' => 'El DNI es obligatorio',
-        //'email.email' => 'The Email Address format is not valid.',
         'dnirepre.unique' => 'El Dni ya existe',
+
+        //'docregist.required' => 'El campo es obligatorio',
+        'docregist.mimes' => 'Solo se Admiten Archivos: PDF',
+        'docregist.max' => 'El Archivo es Demasiado Grande',
+        
+
+        //'docconsti.required' => 'El campo es obligatorio',
+        'docconsti.mimes' => 'Solo se Admiten Archivos: PDF',
+        'docconsti.max' => 'El Archivo es Demasiado Grande',
+
+      
+
+        //'docconsti.required' => 'El campo es obligatorio',
+        'docpadron.mimes' => 'Solo se Admiten Archivos: PDF',
+        'docpadron.max' => 'El Archivo es Demasiado Grande',
     ];
 
     public function update($propertyName) 
@@ -166,11 +186,6 @@ class Associations extends Component
     use WithPagination; 
     public function render()
     {
-
-
-        
-
-
         $searchTerm1 = '%'.$this-> searchTerm1. "%";
         $searchTerm1temp =$this-> searchTerm1;
         $this->personas=Persona::where('dni','LIKE',$searchTerm1)->orderBy('id','ASC')->get();
@@ -190,7 +205,6 @@ class Associations extends Component
                        ->orWhere('dnideleg', 'LIKE', "%{$this->search}%")         
                         ->paginate($this ->perPage)
                                      
-
         ]);
     }
 
@@ -211,7 +225,7 @@ class Associations extends Component
     }
 
 
-
+    //agreagra nuevo registro
     public function crear1()
     {
         $this->limpiarCampos();
@@ -259,9 +273,6 @@ class Associations extends Component
         $this->modalPInfraccion = false; 
         $this->limpiarCampos();
     }
-
-
-    
 
 
     public function limpiarCamposPersona()
@@ -352,8 +363,8 @@ class Associations extends Component
                 'dferia' => $this->lunes.' '.$this->martes.' '.$this->miercoles.' '.$this->jueves.' '.$this->viernes.' '.$this->sabado.' '.$this->domingo,
                 'fechaconst' => $this->fechaconst,
                 'docregist' => $this->docregist->store('documentos'),
-                'docconsti' => $this->docconsti,
-                'docpadron' => $this->docpadron,
+                'docconsti' => $this->docconsti->store('documentos'),
+                'docpadron' => $this->docpadron->store('documentos'),
                 'observacion' => $this->observacion,
             ],$validation);
         $this->cerrarModal3();

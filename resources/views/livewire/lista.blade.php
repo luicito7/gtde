@@ -61,10 +61,10 @@
                                 </div>
 
                                 <div class="w-full px-3 mb-6 md:w-1/2">
-                                <label for="dnideleg" class="block text-xs font-bold tracking-wide text-gray-700 uppercase " > 
+                                <label for="dnideleg" class="block text-xs font-bold tracking-wide text-gray-700 uppercase " >
                                   DNI DELEGADO</label>
                                <h4 type="text" class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-blue-500 rounded appearance-none h-11 focus:outline-none focus:bg-white" id="dnideleg" laceholder="DNI obligatorio" > {{$dnideleg}} </h4>
-                                
+
                                 @error('dnideleg')
                                 <span class="flex items-center mt-1 ml-1 text-xs font-medium tracking-wide text-red-500">
                                     {{$message}}
@@ -146,14 +146,19 @@
                               DOCUMENTO REGISTROS PUBLICOS
                             </label>
                               <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="docregist" type="file" wire:model="docregist">
+        
+                              @error('docregist') <span class="text-red-700 error">{{ $message }}</span> @enderror
+                            
+                            
                             </label>
                            </div>
 
-                          {{-- <div class="w-full px-3 mb-6 md:w-1/2">
+                          <div class="w-full px-3 mb-6 md:w-1/2">
                             <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="docconsti">
                               DOCUMENTO CONSTITUCION
                             </label>
                             <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="docconsti" type="file" wire:model="docconsti">
+                            @error('docconsti') <span class="text-red-500 error">{{ $message }}</span> @enderror
                           </div>
 
                           <div class="w-full px-3 md:w-1/2">
@@ -161,10 +166,11 @@
                               DOCUMENTO PADRON
                             </label>
                             <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="docpadron" type="file" wire:model="docpadron">
-                          </div> --}}
-                        </div> 
+                            @error('docpadron') <span class="text-red-500 error">{{ $message }}</span> @enderror
+                          </div>
+                        </div>
 
-                        
+
                           <div>
                               <div class="flex flex-wrap -mx-3">
                               <div class="w-full px-3">

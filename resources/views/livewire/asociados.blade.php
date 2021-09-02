@@ -17,7 +17,11 @@
         <button wire:click="crear()" class="px-4 py-2 my-3 font-bold text-white bg-green-500 rounded-md hover:bg-green-600" >Nuevo</button>
         @if($modal)
             @include('livewire.crear-asociado')   
-        @endif    
+        @endif
+        
+        @if($modal2)
+        @include('livewire.editar-asociados')   
+        @endif 
 
         <table class="w-full table-fixed">
         <thead>
