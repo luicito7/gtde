@@ -212,6 +212,19 @@ class Personas extends Component
 
     }
 
+    public function hydrate()
+    {
+        $this->resetErrorBag('dni');
+        $this->resetValidation('dni');
+        $this->resetErrorBag('apepaterno');
+        $this->resetValidation('apepaterno');
+        $this->resetErrorBag('apematerno');
+        $this->resetValidation('apematerno');
+        $this->resetErrorBag('nombres');
+        $this->resetValidation('nombres');
+    }
+
+
     public function mod()
     {
         Persona::updateOrCreate(['id'=>$this->id_persona],

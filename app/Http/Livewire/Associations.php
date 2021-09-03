@@ -86,8 +86,10 @@ class Associations extends Component
     ];
 
     protected $messages = [
-        'dnirepre.required' => 'El DNI es obligatorio',
+        'dnirepre.required' => 'El DNI del representante es obligatorio',
         'dnirepre.unique' => 'El Dni ya existe',
+        'dnideleg.required' => 'El DNI del delegado es obligatorio',
+        'dnideleg.unique' => 'El Dni ya existe',
 
         //'docregist.required' => 'El campo es obligatorio',
         'docregist.mimes' => 'Solo se Admiten Archivos: PDF',
@@ -110,26 +112,16 @@ class Associations extends Component
         $this->validationOnly($propertyName);
     }
 
-    public $modal = false;
-    public $modal3 = false; 
-    public $modal4 = false;
-    public $modal5 = false;    
+    public $modal1 = false; //crear
+    public $modal2 = false; //detalles
+    public $modal3 = false; //editar
 
     protected $queryString = [
         'search'=>['except' => ''],
         'perPage'    
     ];
 
-    public function crear(){
-         
-        $this->abrirModal();
-        $this->limpiarCampos();
-    }
     
-    public function abrirModal(){
-        $this->modal = true;
-    }
-
 
     public function abrirModalPInfraccion(){
         // $this->id_buscar = $RegistrarInput;
@@ -229,13 +221,33 @@ class Associations extends Component
     public function crear1()
     {
         $this->limpiarCampos();
-        $this->abrirModal3();
+        $this->abrirModal1();
     }
 
     public function lista()
     {
         $this->limpiarCampos();
-        $this->abrirModal3();
+        $this->abrirModal1();
+    }
+
+    public function abrirModal1()
+    {
+        $this->modal1 = true;
+    }
+
+    public function cerrarModal1()
+    {
+        $this->modal1 = false;
+    }
+
+    public function abrirModal2()
+    {
+        $this->modal2 = true;
+    }
+
+    public function cerrarModal2()
+    {
+        $this->modal2 = false;
     }
 
     public function abrirModal3()
@@ -246,26 +258,6 @@ class Associations extends Component
     public function cerrarModal3()
     {
         $this->modal3 = false;
-    }
-
-    public function abrirModal4()
-    {
-        $this->modal4 = true;
-    }
-
-    public function cerrarModal4()
-    {
-        $this->modal4 = false;
-    }
-
-    public function abrirModal5()
-    {
-        $this->modal5 = true;
-    }
-
-    public function cerrarModal5()
-    {
-        $this->modal5 = false;
     }
 
     public function cerrarModalCP()
@@ -334,9 +326,9 @@ class Associations extends Component
         $this->tipoasoc = $association->tipoasoc;
         $this->dferia = $association->dferia;
         $this->fechaconst = $association->fechaconst;
-        $this->docregist = $association->docregist->store('documentos');
-        $this->docconsti = $association->docconsti->store('documentos');
-        $this->docpadron = $association->docpadron->store('documentos');
+        // $this->docregist = $association->docregist->store('documentos');
+        // $this->docconsti = $association->docconsti->store('documentos');
+        // $this->docpadron = $association->docpadron->store('documentos');
         $this->observacion = $association->observacion;
         $this->abrirModal3();
 
@@ -367,9 +359,21 @@ class Associations extends Component
                 'docpadron' => $this->docpadron->store('documentos'),
                 'observacion' => $this->observacion,
             ],$validation);
-        $this->cerrarModal3();
+        $this->cerrarModal1();
         $this->limpiarCampos();
 
+    }
+
+    public function hydrate()
+    {
+        $this->resetErrorBag('dnirepre');
+        $this->resetValidation('dnirepre');
+        $this->resetErrorBag('dnideleg');
+        $this->resetValidation('dnideleg');
+        $this->resetErrorBag('nombreasoc');
+        $this->resetValidation('nombreasoc');
+        $this->resetErrorBag('ubicacion');
+        $this->resetValidation('ubicacion');
     }
 
     public function guardarPersona()
@@ -419,7 +423,7 @@ class Associations extends Component
      $this->docconsti = $association->docconsti;
      $this->docpadron = $association->docpadron;
      $this->observacion = $association->observacion;
-     $this->abrirModal4();
+     $this->abrirModal2();
      
      }
 
@@ -436,12 +440,12 @@ class Associations extends Component
                  'tipoasoc' => $this->tipoasoc,
                  'dferia' => $this->dferia,
                  'fechaconst' => $this->fechaconst,
-                 'docregist' => $this->docregist->store('documentos'),
-                 'docconsti' => $this->docconsti->store('documentos'),
-                 'docpadron' => $this->docpadron->store('documentos'),
+                 'docregist' => $this->docregist,
+                 'docconsti' => $this->docconsti,
+                 'docpadron' => $this->docpadron,
                  'observacion' => $this->observacion,
              ],);
-         $this->cerrarModal5();
+         $this->cerrarModal3();
          $this->limpiarCampos();
  
      }

@@ -79,7 +79,35 @@ class Comerciantes extends Component
         $this->tipocomer = '';
         $this->numpadron = '';
         $this->observaciones = '';
+        $this->id_comerciante = '';
         
+    }
+
+    public function editar($id)
+    {
+        $comerciante = Comerciante::findOrFail($id);
+        $this->id_comerciante = $id;
+        $this->dni = $comerciante->dni;
+        $this->apepaterno = $comerciante->apepaterno;
+        $this->apematerno = $comerciante->apematerno;
+        $this->nombres = $comerciante->nombres;
+        $this->nombrecomplet = $comerciante->nombrecomplet;
+        $this->puesto = $comerciante->puesto;
+        $this->asociacion = $comerciante->asociacion;
+        $this->rubro1 = $comerciante->rubro1;
+        $this->rubro2 = $comerciante->rubro2;
+        $this->mercado = $comerciante->mercado;
+        $this->direcpuesto = $comerciante->direcpuesto;
+        $this->fotopuesto = $comerciante->fotopuesto;
+        $this->tipocomer = $comerciante->tipocomer;
+        $this->numpadron = $comerciante->numpadron;
+        $this->observaciones = $comerciante->observaciones;
+        $this->abrirModal();
+    }
+
+    public function borrar($id)
+    {
+        Comerciante::find($id)->delete();
     }
 
     public function guardar()

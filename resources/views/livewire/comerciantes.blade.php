@@ -25,7 +25,8 @@
                 <th class="px-4 py-2">ID</th>
                 <th class="px-4 py-2">DNI</th>
                 <th class="px-4 py-2">NOMBRES</th>
-                <th class="px-4 py-2">PUESTO</th>    
+                <th class="px-4 py-2">PUESTO</th>
+                <th class="px-4 py-2">OPCIONES</th>    
             </tr>
         </thead>
         <tbody>

@@ -42,15 +42,15 @@
                       @endif  
                    </div> 
    
-                   @if($modal3)
+                   @if($modal1)
                        @include('livewire.crear-associations')                
                    @endif
 
-                   @if($modal4)
+                   @if($modal2)
                        @include('livewire.detalles-associations')                
                    @endif
                    
-                   @if($modal5)
+                   @if($modal3)
                        @include('livewire.editar-associations')                
                    @endif
                    

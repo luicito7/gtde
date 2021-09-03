@@ -100,6 +100,27 @@ class Asociados extends Component
         $this->zona = '';
         $this->numpadron = '';
         $this->observaciones = '';
+        $this->id_asociado = '';
+    }
+
+    
+    public function editar($id)
+    {
+            $asociado = Asociado::findOrFail($id);
+            $this->id_asociado = $id;
+            $this->dni = $asociado->dni;        
+            $this->apepaterno = $asociado->apepaterno;
+            $this->apematerno = $asociado->apematerno;
+            $this->nombres = $asociado->nombres;
+            $this->nombrecomplet = $asociado->nombrecomplet;
+            $this->ubicacion = $asociado->ubicacion;
+            $this->asociacion = $asociado->asociacion;
+            $this->rubro = $asociado->rubro;
+            $this->zona = $asociado->zona;
+            $this->numpadron = $asociado->numpadron;
+            $this->observaciones = $asociado->observaciones;
+            $this->abrirModal();
+
     }
 
     public function guardar()
@@ -125,61 +146,47 @@ class Asociados extends Component
 
     public function borrar($id)
     {
-        //Persona::find($id)->delete();
-        $asociado = Asociado::findOrFail($id);
-        $asociado -> delete();
-        // $this->id_persona = $id;
-
-        // Persona::updateOrCreate(['id'=>$this->id_persona],
-        //     [
-        //         'estadoreg' => $this->estadoreg = (0),
-               
-        //     ],);
-
+        Asociado::find($id)->delete();
     }
 
-
-     public function editar($id)
+    public function detalles($id)
     {
-            $asociado = Asociado::findOrFail($id);
-            $this->id_asociado = $id;
-            $this->dni = $asociado->dni;        
-            $this->apepaterno = $asociado->apepaterno;
-            $this->apematerno = $asociado->apematerno;
-            $this->nombres = $asociado->nombres;
-            $this->nombrecomplet = $asociado->nombrecomplet;
-            $this->ubicacion = $asociado->ubicacion;
-            $this->asociacion = $asociado->asociacion;
-            $this->rubro = $asociado->rubro;
-            $this->zona = $asociado->zona;
-            $this->numpadron = $asociado->numpadron;
-            $this->observaciones = $asociado->observaciones;
-            $this->abrirModal2();
-
+        $asociado = Asociado::find($id);
+        $this->id_persona = $id;
+        $this->dni = $asociado->dni;
+        $this->apepaterno = $asociado->apepaterno;
+        $this->apematerno = $asociado->apematerno;
+        $this->nombres = $asociado->nombres;
+        $this->ubicacion = $asociado->ubicacion;
+        $this->asociacion = $asociado->asociacion;
+        $this->rubro = $asociado->rubro;
+        $this->zona = $asociado->zona;
+        $this->numpadron = $asociado->numpadron;
+        $this->observaciones = $asociado->observaciones;
+        $this->abrirModal1();
     }
 
-
-    public function mod()
-    {
-        Asociado::updateOrCreate(['id'=>$this->id_asociado],
-            [
+    // public function mod()
+    // {
+    //     Asociado::updateOrCreate(['id'=>$this->id_asociado],
+    //         [
                 
-                'dni' => $this->dni ,
-                'apepaterno' => $this->apepaterno,
-                'apematerno' => $this->apematerno,
-                'nombres' => $this->nombres,
-                'nambrecomplet' => $this->nombres.' '. $this->apepaterno.' '. $this->apematerno ,
-                'ubicacion'=> $this->ubicacion,
-                'asociacion'=>$this->asociacion,
-                'rubro'=>$this->rubro,
-                'zona'=>$this->zona,
-                'numpadron'=>$this->numpadron,
-                'observaciones'=>$this->observaciones,
+    //             'dni' => $this->dni ,
+    //             'apepaterno' => $this->apepaterno,
+    //             'apematerno' => $this->apematerno,
+    //             'nombres' => $this->nombres,
+    //             'nambrecomplet' => $this->nombres.' '. $this->apepaterno.' '. $this->apematerno ,
+    //             'ubicacion'=> $this->ubicacion,
+    //             'asociacion'=>$this->asociacion,
+    //             'rubro'=>$this->rubro,
+    //             'zona'=>$this->zona,
+    //             'numpadron'=>$this->numpadron,
+    //             'observaciones'=>$this->observaciones,
            
-            ],);
-        $this->cerrarModal2();
-        $this->limpiarCampos();
+    //         ],);
+    //     $this->cerrarModal2();
+    //     $this->limpiarCampos();
 
-    }
+    // }
 
 }

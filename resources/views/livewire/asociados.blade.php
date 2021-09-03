@@ -19,9 +19,9 @@
             @include('livewire.crear-asociado')   
         @endif
         
-        @if($modal2)
+        {{-- @if($modal2)
         @include('livewire.editar-asociados')   
-        @endif 
+        @endif  --}}
 
         <table class="w-full table-fixed">
         <thead>
@@ -43,6 +43,7 @@
                 <td class="px-4 py-2 text-center border">
                     <button wire:click="editar({{$asociado->id}})" class="px-4 py-2 font-bold text-white bg-blue-500 hover:bg-blue-600">Editar</button>
                     <button wire:click="borrar({{$asociado->id}})" class="px-4 py-2 font-bold text-white bg-red-500 hover:bg-red-700">Borrar</button>
+                    <button wire:click="detalles({{$asociado->id}})" class="px-4 py-2 font-bold text-white bg-red-500 hover:bg-red-700">Detalles</button>
                 </td>
             </tr>
             @endforeach
