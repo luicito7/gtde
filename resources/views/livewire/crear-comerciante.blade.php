@@ -118,7 +118,7 @@
                                   <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="fotopuesto">
                                     FOTO PUESTO
                                   </label>
-                                  <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="fotopuesto" type="text" wire:model="fotopuesto">
+                                  <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="fotopuesto" type="file" wire:model="fotopuesto">
                                 </div>
       
                                 <div class="w-full px-3 md:w-1/3 md:mb-0">
@@ -139,7 +139,7 @@
                                   <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="numpadron">
                                     NUMERO PADRON
                                   </label>
-                                  <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="distrito" type="text" wire:model="numpadron">
+                                  <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="distrito" type="number" wire:model="numpadron">
                                 </div>
                                </div>
   

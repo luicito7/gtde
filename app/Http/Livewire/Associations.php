@@ -75,7 +75,7 @@ class Associations extends Component
         'dnideleg' => 'required',
         'nombreasoc' => 'required',
         'ubicacion' => 'required',
-        'docregist' => 'required|mimes:pdf|max:5120',
+        'docregist' => 'mimes:pdf|max:5120',
         // 'docconsti' => 'required|mimes:pdf|max:5120',
         // 'docpadron' => 'required|mimes:pdf|max:5120',
         //'docregist' => 'mimes:pdf|max:5120',
@@ -225,7 +225,7 @@ class Associations extends Component
     }
 
 
-    //agreagra nuevo registro
+    //agregar nuevo registro
     public function crear1()
     {
         $this->limpiarCampos();
@@ -334,9 +334,9 @@ class Associations extends Component
         $this->tipoasoc = $association->tipoasoc;
         $this->dferia = $association->dferia;
         $this->fechaconst = $association->fechaconst;
-        $this->docregist = $association->docregist;
-        $this->docconsti = $association->docconsti;
-        $this->docpadron = $association->docpadron;
+        $this->docregist = $association->docregist->store('documentos');
+        $this->docconsti = $association->docconsti->store('documentos');
+        $this->docpadron = $association->docpadron->store('documentos');
         $this->observacion = $association->observacion;
         $this->abrirModal3();
 
@@ -436,9 +436,9 @@ class Associations extends Component
                  'tipoasoc' => $this->tipoasoc,
                  'dferia' => $this->dferia,
                  'fechaconst' => $this->fechaconst,
-                 'docregist' => $this->docregist,
-                 'docconsti' => $this->docconsti,
-                 'docpadron' => $this->docpadron,
+                 'docregist' => $this->docregist->store('documentos'),
+                 'docconsti' => $this->docconsti->store('documentos'),
+                 'docpadron' => $this->docpadron->store('documentos'),
                  'observacion' => $this->observacion,
              ],);
          $this->cerrarModal5();

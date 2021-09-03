@@ -43,15 +43,15 @@
                    </div> 
    
                    @if($modal3)
-                       @include('livewire.lista')                
+                       @include('livewire.crear-associations')                
                    @endif
 
                    @if($modal4)
-                       @include('livewire.detalles2')                
+                       @include('livewire.detalles-associations')                
                    @endif
                    
                    @if($modal5)
-                       @include('livewire.editar2')                
+                       @include('livewire.editar-associations')                
                    @endif
                    
      @if ($associations ->count())  
