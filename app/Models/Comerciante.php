@@ -20,7 +20,7 @@ class Comerciante extends Model
         'rubro1',
         'rubro2',
         'mercado',
-        'direcpuesto',
+        'dimpuesto',
         'fotopuesto',
         'tipocomer',
         'numpadron',

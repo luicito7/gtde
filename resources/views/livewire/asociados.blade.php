@@ -19,18 +19,18 @@
             @include('livewire.crear-asociado')   
         @endif
         
-        {{-- @if($modal2)
-        @include('livewire.editar-asociados')   
-        @endif  --}}
+        @if($modal1)
+        @include('livewire.detalles-asociado')   
+        @endif 
 
-        <table class="w-full table-fixed">
+        <table class="w-full text-xs rounded-lg table-fixed">
         <thead>
             <tr class="text-white bg-indigo-600">
-                <th class="px-4 py-2">ID</th>
-                <th class="px-4 py-2">DNI</th>
-                <th class="px-4 py-2">NOMBRES</th>
-                <th class="px-4 py-2">UBICACION</th>
-                <th class="px-4 py-2">OPCIONES</th>    
+                <th class="px-4 py-2 text-xs">ID</th>
+                <th class="px-4 py-2 text-xs">DNI</th>
+                <th class="px-4 py-2 text-xs">NOMBRES</th>
+                <th class="px-4 py-2 text-xs">UBICACION</th>
+                <th class="px-4 py-2 text-xs">OPCIONES</th>    
             </tr>
         </thead>
         <tbody>
@@ -40,10 +40,20 @@
                 <td class="px-4 py-2 text-center border">{{$asociado->dni}}</td>
                 <td class="px-4 py-2 text-center border">{{$asociado->nombrecomplet}}</td>
                 <td class="px-4 py-2 text-center border">{{$asociado->ubicacion}}</td>
+                
                 <td class="px-4 py-2 text-center border">
-                    <button wire:click="editar({{$asociado->id}})" class="px-4 py-2 font-bold text-white bg-blue-500 hover:bg-blue-600">Editar</button>
-                    <button wire:click="borrar({{$asociado->id}})" class="px-4 py-2 font-bold text-white bg-red-500 hover:bg-red-700">Borrar</button>
-                    <button wire:click="detalles({{$asociado->id}})" class="px-4 py-2 font-bold text-white bg-red-500 hover:bg-red-700">Detalles</button>
+                    <button wire:click="editar({{$asociado->id}})" title="Editar" class="px-0.3 py-0.3 font-bold bg-blue-500 rounded-md hover:bg-blue-600">
+                        <i class="fas fa-pen fa-2x"></i>
+                    </button>
+                    
+                    <button wire:click="detalles({{$asociado->id}})" title="Detalles" class="px-0.3 py-0.3 font-bold bg-green-500 rounded-md hover:bg-green-600">
+                        <i class="fas fa-eye fa-2x"></i>
+                    </button>
+
+                    <button wire:click="borrar({{$asociado->id}})" title="Borrar" class="px-0.3 py-0.3 font-bold bg-red-500 rounded-md hover:bg-red-600">
+                        <i class="far fa-trash-alt fa-2x"></i>
+                    </button>
+
                 </td>
             </tr>
             @endforeach

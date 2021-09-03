@@ -72,23 +72,23 @@
            @foreach($associations as $association)
                <tr>
                    {{-- <td class="px-4 py-2 border">{{$association->id}}</td> --}}
-                   <td class="px-4 py-2 border">{{$association->nombreasoc}}</td>
-                   <td class="px-4 py-2 border">{{$association->dnirepre}}</td>
-                   <td class="px-4 py-2 border">{{$association->dnideleg}}</td>
-                   <td class="px-4 py-2 border">{{$association->ubicacion}}</td>                            
-                   <td class="px-4 py-2 border">{{$association->rubroasoc}}</td>
+                   <td class="px-4 py-2 text-center border">{{$association->nombreasoc}}</td>
+                   <td class="px-4 py-2 text-center border">{{$association->dnirepre}}</td>
+                   <td class="px-4 py-2 text-center border">{{$association->dnideleg}}</td>
+                   <td class="px-4 py-2 text-center border">{{$association->ubicacion}}</td>                            
+                   <td class="px-4 py-2 text-center border">{{$association->rubroasoc}}</td>
                    
                    
                    <td class="px-4 py-2 text-xs text-center border">
-                       <button wire:click="editar({{$association->id}})" class="rounded-md px-0.3 py-0.3 font-bold bg-blue-500 hover:bg-blue-600">
+                       <button wire:click="editar({{$association->id}})" title="Editar" class="rounded-md px-0.3 py-0.3 font-bold bg-blue-500 hover:bg-blue-600">
                             <i class="fas fa-pen fa-2x"></i>
                        </button>
 
-                       <button wire:click="detalles({{$association->id}})"class="rounded-md px-0.3 py-0.3 font-bold bg-green-500 hover:bg-green-600">
+                       <button wire:click="detalles({{$association->id}})" title="Detalles" class="rounded-md px-0.3 py-0.3 font-bold bg-green-500 hover:bg-green-600">
                             <i class="fas fa-eye fa-2x"></i>
                        </button>
                        
-                       <button wire:click="borrar({{$association->id}})"class="rounded-md px-0.3 py-0.3 font-bold bg-red-500 hover:bg-red-600">
+                       <button wire:click="borrar({{$association->id}})" title="Borrar" class="rounded-md px-0.3 py-0.3 font-bold bg-red-500 hover:bg-red-600">
                             <i class="far fa-trash-alt fa-2x"></i>
                        </button>
 

@@ -19,7 +19,7 @@ class Comerciantes extends Component
     $rubro1,
     $rubro2,
     $mercado,
-    $direcpuesto,
+    $dimpuesto,
     $fotopuesto,
     $tipocomer,
     $numpadron,
@@ -33,7 +33,9 @@ class Comerciantes extends Component
         'nombres' => 'required',
     ];
 
-    public $modal = false;
+    public $modal = false;//crear
+    public $modal1 = false;//detalles
+    public $modal2 = false;//editar
 
     public function update($propertyName) 
     {
@@ -52,6 +54,7 @@ class Comerciantes extends Component
         $this->abrirModal();
     }
 
+    //crear
     public function abrirModal()
     {
         $this->modal = true;
@@ -60,6 +63,28 @@ class Comerciantes extends Component
     public function cerrarModal()
     {
         $this->modal = false;
+    }
+
+    //detalles
+    public function abrirModal1()
+    {
+        $this->modal1 = true;
+    }
+
+    public function cerrarModal1()
+    {
+        $this->modal1 = false;
+    }
+
+    //editar
+    public function abrirModal2()
+    {
+        $this->modal2 = true;
+    }
+
+    public function cerrarModal2()
+    {
+        $this->modal2 = false;
     }
 
     public function limpiarCampos()
@@ -74,7 +99,7 @@ class Comerciantes extends Component
         $this->rubro1 = '';
         $this->rubro2 = '';
         $this->mercado = '';
-        $this->direcpuesto = '';
+        $this->dimpuesto = '';
         $this->fotopuesto = '';
         $this->tipocomer = '';
         $this->numpadron = '';
@@ -97,17 +122,12 @@ class Comerciantes extends Component
         $this->rubro1 = $comerciante->rubro1;
         $this->rubro2 = $comerciante->rubro2;
         $this->mercado = $comerciante->mercado;
-        $this->direcpuesto = $comerciante->direcpuesto;
+        $this->dimpuesto = $comerciante->dimpuesto;
         $this->fotopuesto = $comerciante->fotopuesto;
         $this->tipocomer = $comerciante->tipocomer;
         $this->numpadron = $comerciante->numpadron;
         $this->observaciones = $comerciante->observaciones;
         $this->abrirModal();
-    }
-
-    public function borrar($id)
-    {
-        Comerciante::find($id)->delete();
     }
 
     public function guardar()
@@ -125,7 +145,7 @@ class Comerciantes extends Component
                 'rubro1' => $this->rubro1,
                 'rubro2' => $this->rubro2,
                 'mercado' => $this->mercado,
-                'direcpuesto' => $this->direcpuesto,
+                'dimpuesto' => $this->dimpuesto,
                 'fotopuesto' => $this->fotopuesto,
                 'tipocomer' => $this->tipocomer,
                 'numpadron' => $this->numpadron,
@@ -133,6 +153,32 @@ class Comerciantes extends Component
             ],$validation);
         $this->cerrarModal();
         $this->limpiarCampos();
+    }
+
+    public function borrar($id)
+    {
+        Comerciante::find($id)->delete();
+    }
+
+    public function detalles($id)
+    {
+        $comerciante = Comerciante::find($id);
+        $this->id_comerciante = $id;
+        $this->dni = $comerciante->dni;
+        $this->apepaterno = $comerciante->apepaterno;
+        $this->apematerno = $comerciante->apematerno;
+        $this->nombres = $comerciante->nombres;
+        $this->puesto = $comerciante->puesto;
+        $this->asociacion = $comerciante->asociacion;
+        $this->rubro1 = $comerciante->rubro1;
+        $this->rubro2 = $comerciante->rubro2;
+        $this->mercado = $comerciante->mercado;
+        $this->dimpuesto = $comerciante->dimpuesto;
+        $this->fotopuesto = $comerciante->fotopuesto;
+        $this->tipocomer = $comerciante->tipocomer;
+        $this->numpadron = $comerciante->numpadron;
+        $this->observaciones = $comerciante->observaciones;
+        $this->abrirModal1();
     }
 
 }

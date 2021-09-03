@@ -25,7 +25,7 @@ class CreateComerciantesTable extends Migration
             $table->string('rubro1',50)->nullable();
             $table->string('rubro2',50)->nullable();
             $table->string('mercado',100)->nullable();
-            $table->string('direcpuesto',100)->nullable();
+            $table->string('dimpuesto',100)->nullable();
             $table->string('fotopuesto',100)->nullable();
             $table->string('tipocomer')->nullable();
             $table->string('numpadron',1000)->nullable();
