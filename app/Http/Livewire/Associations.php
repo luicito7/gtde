@@ -196,6 +196,10 @@ class Associations extends Component
                        ->orWhere('dnirepre', 'LIKE', "%{$this->search}%")
                        ->orWhere('dnideleg', 'LIKE', "%{$this->search}%")         
                         ->paginate($this ->perPage)
+
+
+
+            
                                      
         ]);
     }

@@ -26,11 +26,11 @@
                                                <button wire:click.prevent="registrarBuscar({{0}})" class="py-2 text-black transition duration-150 ease-in-out bg-gray-200 border-2 border-transparent rounded-md focus:outline-none focus:border-gray-400 focus:shadow-outline-green sm:text-sm sm:leading-5">Buscar</button>
                                              </div>
                                         </div>
-                                                  <div class="col-span-1">
+                                                  <div class="col-span-2">
                                                      <div class="">
-                                                      <label for="" class="block mb-2 text-sm font-bold text-gring-gray-700">Datos DNI Delegado</label>
+                                                      <label for="" class="block px-3 mb-2 text-sm font-bold text-gring-gray-700">Datos DNI Delegado</label>
                                                       <div class="grid grid-cols-1 gap-2">
-                                                          <button wire:click.prevent="registrarBuscar({{1}})" class="py-2 text-black transition duration-150 ease-in-out bg-gray-200 border border-transparent rounded-md focus:outline-none focus:border-gray-400 focus:shadow-outline-green sm:text-sm sm:leading-5">Buscar</button>
+                                                          <button wire:click.prevent="registrarBuscar({{1}})" class="py-2 text-black transition duration-150 ease-in-out bg-gray-200 border-2 border-transparent rounded-md focus:outline-none focus:border-gray-400 focus:shadow-outline-green sm:text-sm sm:leading-5">Buscar</button>
                                                       </div>
                                                   </div>
 

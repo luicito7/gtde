@@ -4,60 +4,90 @@
         <div class="fixed inset-y-0 w-full transition-opacity right-4">
             <div class="absolute inset-0 bg-gray-500 opacity-75" ></div>   {{--aqui para el fondo --}}
         </div>
-  
+          
+
                <span class="hidden sm:inline-block sm:align-middle sm:h-screen " ></span>
-               
-            <div class="inline-block overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:max-w-4xl sm:my-8 sm:align-middle" role="dialog" aria-modal="true" aria-labelledby="modal-headline" > <style> body {overflow-y:hidden;}</style>
-    
+
+            
+              <div class="inline-block overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:max-w-4xl sm:my-8 sm:align-middle" role="dialog" aria-modal="true" aria-labelledby="modal-headline" > <style> body {overflow-y:hidden;}</style>
+  
                 <form>
+
                   <span class="flex flex-row-reverse pt-2 pr-2 bg-yellow-50">
                     <button wire:click.prevent="cerrarModal()" class="px-2 py-1 text-white transition duration-150 ease-in-out bg-red-600 border border-transparent rounded-full focus:outline-none focus:border-green-400 focus:shadow-outline-green sm:text-sm sm:leading-4">X</button>
                   </span>
+              
                     <div class="px-4 pt-5 pb-4 bg-yellow-50 sm:p-6 sm:pb-4" >
+
+
+                      <div class="flex items-center justify-between gap-4 mb-4 "> 
+                            <div class="col-span-1">
+                                <label for="" class="block mb-2 text-sm font-bold text-gring-gray-700">Datos DNI Comerciante</label>
+                                    <div class="grid grid-cols-1 gap-2">
+                                        <button wire:click.prevent="registrarBuscar({{0}})" class="py-2 text-black transition duration-150 ease-in-out bg-gray-200 border-2 border-transparent rounded-md focus:outline-none focus:border-gray-400 focus:shadow-outline-green sm:text-sm sm:leading-5">Buscar</button>
+                                      </div>
+                                </div>
+                                          <div class="col-span-1">
+                                              <div class="">
+                                              <label for="" class="block px-5 mb-2 text-sm font-bold text-gring-gray-700">Datos Asociación</label>
+                                              <div class="grid grid-cols-1 gap-2">
+                                                  <button wire:click.prevent="registrarBuscar({{1}})" class="py-2 text-black transition duration-150 ease-in-out bg-gray-200 border border-transparent rounded-md focus:outline-none focus:border-gray-400 focus:shadow-outline-green sm:text-sm sm:leading-5">Buscar</button>
+                                              </div>
+                                          </div>
+                                  </div>
+                         </div>
+
+
+                         
+                         @if ($modalBPersona)
+                         @include('livewire.modal-buscar-persona')
+                         @endif
+
+                         @if ($modalPInfraccion)
+                         @include('livewire.crear-personas')
+                         @endif
+  
+                      
                         
                         <div class="flex flex-wrap -mx-3">
-                            <div class="w-full px-3 md:w-1/2 md:mb-0">
-                              <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="dni">
-                                DNI
-                              </label>
-                              <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-blue-500 rounded appearance-none focus:outline-none focus:bg-white" id="dni" type="number" placeholder="DNI obligatorio" data-maxlength="8" pattern="[0-9]{8}" wire:model="dni" required oninput="this.value=this.value.slice(0,this.dataset.maxlength)" >
-                              @error('dni')
-                              <span href="$form">
-                              <div class="px-4 py-3 text-teal-900 bg-red-100 border-t-4 border-red-500 rounded-b shadow-md " role="alert">
-                                <div class="flex">
-                                  <div class="py-1"><svg class="w-6 h-6 mr-4 text-red-500 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"/></svg></div>
-                                  <div>
-                                    <p class="font-bold">DNI</p>
-                                    <p class="text-sm">{{ $message }}</p>
-                                  </div>
-                                </div>
+                          
+
+                              <div class="w-full px-3 md:w-1/2 md:mb-0">
+                                <label for="dni" class="block text-xs font-bold tracking-wide text-gray-700 uppercase" >
+                                  DNI 
+                                </label>
+                                <h3 type="text" class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-blue-500 rounded appearance-none h-11 focus:outline-none focus:bg-white" id="dni" placeholder="DNI obligatorio" > {{$dni}} </h3>
+                                @error('dni')
+                                <span class="flex items-center mt-1 ml-1 text-xs font-medium tracking-wide text-red-500">
+                                    {{$message}}
+                                </span>
+                                  @enderror
                               </div>
-                              </span>
-                               @enderror 
-                            </div>
-                            
+
+
                             <div class="w-full px-3 mb-6 md:w-1/2">
-                              <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="nombres">
-                                NOMBRES
-                              </label>
-                              <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="nombres" type="text" wire:model="nombres">
-                           </div>
-  
-                            <div class="w-full px-3 mb-6 md:w-1/2">
-                                <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="apepaterno">
-                                  APELLIDO PATERNO
-                                </label>
-                                <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="apepaterno" type="text" wire:model="apepaterno">
-                            </div>
                               
-                              <div class="w-full px-3 md:w-1/2">
-                                <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="apematerno">
-                                  APELLIDO MATERNO
-                                </label>
-                                <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="apematerno" type="text" wire:model="apematerno">
-                              </div>                      
-  
+                              <label for="asociacion" class="block text-xs font-bold tracking-wide text-gray-700 uppercase" >
+                                ASOCIACIÓN 
+                              </label>
+                              <h3 type="text" class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-blue-500 rounded appearance-none h-11 focus:outline-none focus:bg-white" id="asociacion" placeholder="DNI obligatorio" > {{$asociacion}} </h3>
+                            
+                            </div>                                     
                           </div>
+
+                          {{-- nombrecomplet --}}
+
+                          <div>
+                            <div class="flex flex-wrap mb-6">
+                            <div class="w-full ">
+                              <label for="nombrecomplet" class="block text-xs font-bold tracking-wide text-gray-700 uppercase" >
+                                NOMBRE COMPLETO 
+                              </label>
+                              <h3 type="text" class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-blue-500 rounded appearance-none h-11 focus:outline-none focus:bg-white" id="nombrecomplet" > {{$nombrecomplet}} </h3>
+                          
+                            </div>
+                           </div>  
+                          </div> 
                           
   
                          {{-- INICIO  --}}
@@ -69,15 +99,14 @@
                               <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="puesto" type="text" wire:model="puesto">
                             </div>
                             
-                            <div class="w-full px-3 md:w-1/3 md:mb-0">
-                              <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="asociacion">
-                                ASOCIACION
+
+                            <div class="w-full px-3 md:w-1/3 md:mb-0"> 
+                              <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="nombres">
+                                poner algo
                               </label>
-                              <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="asociacion" type="text" wire:model="asociacion">
-                                <div class="absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 pointer-events-none">
-                                </div>
-                            </div>
-                            
+                              <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="nombres" type="text" wire:model="nombres">
+                           </div>
+                           
                             <div class="w-full px-3 md:w-1/3 md:mb-0">
                               <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="rubro1">
                                 RUBRO PRINCIPAL
@@ -109,7 +138,7 @@
                                   <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="dimpuesto">
                                     DIMENSIONES PUESTO
                                   </label>
-                                  <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="dimpuesto" placeholder="Largo x Ancho" type="text" wire:model="dimpuesto">
+                                  <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="dimpuesto" placeholder="Largo x Ancho x Alto" type="text" wire:model="dimpuesto">
                                 </div>
                                </div>
 

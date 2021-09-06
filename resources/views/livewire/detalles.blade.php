@@ -198,7 +198,7 @@
                                   <br>
                                 </div>
                                 
-                                <div class="w-full mb-5 md:w-1/2">
+                                <div class="w-full px-3 mb-5 md:w-1/2">
                                   <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="email">
                                     CORREO
                                   </label>

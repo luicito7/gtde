@@ -169,17 +169,8 @@ class Personas extends Component
 
     public function borrar($id)
     {
-        //Persona::find($id)->delete();
         $persona = Persona::findOrFail($id);
         $persona -> delete();
-        // $this->id_persona = $id;
-
-        // Persona::updateOrCreate(['id'=>$this->id_persona],
-        //     [
-        //         'estadoreg' => $this->estadoreg = (0),
-               
-        //     ],);
-
     }
 
     public function guardar()

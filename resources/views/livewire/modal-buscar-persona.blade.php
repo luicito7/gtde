@@ -22,7 +22,7 @@
                                       <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-6 h-6"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                                     </button>
                                   </span>
-                                <input wire:model="searchTerm1" type="search" name="q" class="py-2 pl-10 text-sm border-2 rounded-md focus:outline-none focus:bg-green focus:text-gray-900" placeholder="Buscar..." autocomplete="on">
+                                <input wire:model="searchTerm1" type="number" name="q" class="py-2 pl-10 text-sm border-2 rounded-md focus:outline-none focus:bg-green focus:text-gray-900" placeholder="Buscar..." autocomplete="on" data-maxlength="8" pattern="[0-9]{8}" wire:model="dni" required oninput="this.value=this.value.slice(0,this.dataset.maxlength)" >
                                 
                                 {{-- <input type="text" class="rounded form-control" placeholder="Buscar..." wire:model="searchTerm" /> --}}
                             </div>
