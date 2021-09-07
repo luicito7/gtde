@@ -31,7 +31,7 @@
                                               <div class="">
                                               <label for="" class="block px-5 mb-2 text-sm font-bold text-gring-gray-700">Datos Asociación</label>
                                               <div class="grid grid-cols-1 gap-2">
-                                                  <button wire:click.prevent="registrarBuscar({{1}})" class="py-2 text-black transition duration-150 ease-in-out bg-gray-200 border border-transparent rounded-md focus:outline-none focus:border-gray-400 focus:shadow-outline-green sm:text-sm sm:leading-5">Buscar</button>
+                                                  <button wire:click.prevent="registrarBuscaraso({{0}})" class="py-2 text-black transition duration-150 ease-in-out bg-gray-200 border border-transparent rounded-md focus:outline-none focus:border-gray-400 focus:shadow-outline-green sm:text-sm sm:leading-5">Buscar</button>
                                               </div>
                                           </div>
                                   </div>
@@ -47,6 +47,9 @@
                          @include('livewire.crear-personas')
                          @endif
   
+                         @if ($modalBAsociacion)
+                         @include('livewire.modal-buscar-associations')
+                         @endif
                       
                         
                         <div class="flex flex-wrap -mx-3">
@@ -70,7 +73,7 @@
                               <label for="asociacion" class="block text-xs font-bold tracking-wide text-gray-700 uppercase" >
                                 ASOCIACIÓN 
                               </label>
-                              <h3 type="text" class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-blue-500 rounded appearance-none h-11 focus:outline-none focus:bg-white" id="asociacion" placeholder="DNI obligatorio" > {{$asociacion}} </h3>
+                              <h3 type="text" class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-blue-500 rounded appearance-none h-11 focus:outline-none focus:bg-white" id="asociacion"> {{$asociacion}} </h3>
                             
                             </div>                                     
                           </div>

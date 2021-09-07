@@ -13,8 +13,9 @@ class Comerciantes extends Component
 
     public $datosPapeletaDeInfraciones;
     // public $personasLivewire;
-    public $personas;
+    public $personas,$associations;
 
+   
 
     public $estado, $mostrar, $papeletaDeIn, $id_registrar,
       $id_persona,
@@ -80,11 +81,17 @@ class Comerciantes extends Component
     public $modal2 = false;//editar
     public $modalBPersona=false;//modal buscar persona
     public $id_buscar;
+    public $id_buscar1;
     public $modalPInfraccion = false;
     public $cantPerson=0;
     public $searchTerm1;
-
+    
     public $modalMulta =false;
+
+    public $modalBAsociacion=false;//modal buscar asociacion
+    public $cantAso=0;
+    public $searchTerm2;
+    
 
     public function update($propertyName) 
     {
@@ -105,6 +112,20 @@ class Comerciantes extends Component
             $this->cantPerson=true;
             $this->dni=$searchTerm1temp;
         }
+
+
+        $searchTerm2 = '%'.$this-> searchTerm2. "%";
+        $searchTerm2temp =$this-> searchTerm2;
+        $this->associations=Association::where('nombreasoc','LIKE',$searchTerm2)->orderBy('id','ASC')->get();
+        $this->cantAso=$this->associations->count();
+
+        if ($this->cantAso>0) {
+            $this->cantASo=false;
+        } else {
+            $this->cantASo=true;
+            $this->dni=$searchTerm2temp;
+        }
+
         
         $this->comerciantes = Comerciante::all();
         return view('livewire.comerciantes');
@@ -169,6 +190,7 @@ class Comerciantes extends Component
         $this->id_comerciante = '';
         
     }
+
 
     public function editar($id)
     {
@@ -287,15 +309,15 @@ class Comerciantes extends Component
         }
 
  
-        if ($this->id_buscar==1) {
-            # code...
-            $this->id_fisc = $id_selBusc;
-            $db = Association::where('id',$id_selBusc)->get();
-            foreach ($db as $db1) {
-                $this->asociacion = $db1->nombreasoc ;
-                $this->dnideleg= $db1->dni;
-            }
-        }
+        // if ($this->id_buscar==1) {
+        //     # code...
+        //     $this->id_fisc = $id_selBusc;
+        //     $db = Association::where('id',$id_selBusc)->get();
+        //     foreach ($db as $db1) {
+        //         $this->asociacion = $db1->nombreasoc ;
+        //         $this->dnideleg= $db1->dni;
+        //     }
+        // }
         $this->id_buscar=0;
         
         $this->cerrarModalBPersona();
@@ -328,5 +350,73 @@ class Comerciantes extends Component
     }
 
 
+
+    
+    //buscar asociacion
+    //buscarIdPersona =  buscarIdAsociacion
+    //registrarBuscar = registrarBuscaraso
+    //modalBPersona = modalBAsociacion
+
+    //id_buscar
+
+    public function cerrarModalBAsociacion(){
+        $this->modalBAsociacion = false;
+        $this->modalPInfraccion  = false;
+        
+        $this->limpiarCamposAsociacion();
+    }
+
+    
+
+    public function registrarBuscaraso($buscarIdAsociacion){
+        $this->id_buscar1= $buscarIdAsociacion;
+        $this->modalBAsociacion = true;
+    }
+
+
+  
+    public function almacenarInput1($id_selBusc1){
+        if ($this->id_buscar1==0) {
+            $this->id_Pers = $id_selBusc1;
+            $db = Association::where('id',$id_selBusc1)->get();
+            foreach ($db as $db1) {
+                //$this->propNomCom = $db1->namecomplet;
+                $this->asociacion = $db1->nombreasoc ;
+                $this->dnideleg= $db1->dni;
+
+                
+            }
+        }
+
+        
+
+        $this->id_buscar1=0;
+        
+        $this->cerrarModalBAsociacion();
+
+    }
+
+
+
+    public function limpiarCamposAsociacion()
+    {
+
+
+        $this->nombreasoc = '';
+        $this->dnirepre = '';
+        $this->dnideleg = '';
+        $this->ubicacion = '';
+        $this->rubroasoc = '';
+        $this->tipoasoc = '';
+        $this->dferia = '';
+        $this->fechaconst = '';
+        $this->docregist = '';
+        $this->docconsti = '';
+        $this->docpadron = '';
+        $this->observacion = '';
+        $this->id_association = '';
+        $this->propietarioInput="";
+        $this->namecomplet = '';
+    }
 
 }
