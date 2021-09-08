@@ -32,10 +32,10 @@
                                 <table class="table-fixed w- full">
                                     <thead>
                                         <tr class="h-12 text-xs text-white bg-indigo-600">
-                                            <th class="px-4 py-2 ">Nombre Asocacion</th>
+                                            <th class="px-4 py-2 ">Nombre Asociacion</th>
                                             <th class="px-4 py-2 ">DNI Representante</th>
                                             <th class="px-4 py-2 ">DNI Delegado</th>
-                                            <th class="px-4 py-2 ">Rubo De la ASocacion</th>
+                                            <th class="px-4 py-2 ">Rubro De la Asociacion</th>
                                             <th class="px-4 py-2 ">Accion</th>
                                         </tr>
                                     </thead>

@@ -104,81 +104,40 @@
                                 <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="estacivil">
                                   ESTADO CIVIL
                                 </label>
-                                <div class="relative">
-                                    
-                                  <select requierd class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="estacivil" wire:model="estacivil">
-                                    <option value data-isdefault="true" style="display:none;">Seleccione</option>
-                                    <option value="soltero">soltero</option>
-                                    <option value="conviviente">conviviente</option>
-                                    <option value="casado">casado</option>
-                                    <option value="divorciado">divorciado</option>
-                                    <option value="viudo">viudo</option>
-                                  </select>
-                                </div>
+                                <output class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="estacivil" type="text" wire:model="estacivil">
                               </div>
  
                              
                              <div class="w-full px-3 md:w-1/3 md:mb-0">
-                               <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="profesion">
-                                 PROFESION
+                               <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="discapac">
+                                DISCAPACIDAD 
                                </label>
-                               <output class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="profesion" type="text" wire:model="profesion">
+                               <output class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="discapac" type="text" wire:model="discapac">
+                               
                              </div>
                             </div>
                                {{-- final --}}
 
-                            {{-- OTRO FORM  --}}
-                           <div class="flex flex-wrap mb-5 -mx-3">
-                            <div class="w-full px-3 md:w-1/3 md:mb-0">
-                                <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="grainstruc">
-                                  FORMACION
-                                </label>
-                                <div class="relative">
-                                  <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="grainstruc" wire:model="grainstruc">
-                                    <option value data-isdefault="true" style="display:none;">Seleccione</option>
-                                    <option value="primaria">primaria</option>
-                                    <option value="secundaria">secundaria</option> 
-                                    <option value="bachiller">bachiller</option> 
-                                    <option value="titulado">titulado</option> 
-                                    <option value="universidad incompleta">universidad incompleta</option> 
-                                    <option value="universidad completa">universidad completa</option> 
-                                    <option value="instituto">instituto</option> 
-                                    <option value="egresado">egresado</option> 
-                                    <option value="estudiante">estudiante</option> 
-                                    <option value="tecnico">tecnico</option>
-                                    
-                                  </select>
-                                </div>
-                              </div>
-                            
-                            <div class="w-full px-3 md:w-1/3 md:mb-0">
-                               <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="discapac">
-                                 DISCAPACIDAD
-                               </label>
-                               <div class="relative">
-                                 <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="discapac" wire:model="discapac">
-                                    <option value data-isdefault="true" style="display:none;">Seleccione</option> 
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                 </select>
-                               </div>
-                             </div>
 
-                            
-                             <div class="w-full px-3 md:w-1/3 md:mb-0">
-                                <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="estadoreg">
-                                  ESTADO
-                                </label>
-                                <div class="relative">
-                                  <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"  id="estadoreg" wire:model="estadoreg">
-                                    <option value data-isdefault="true" style="display:none;">Seleccione</option>
-                                    <option value="Activo">Activo</option>
-                                    <option value="Inactivo">Inactivo</option>
-                                  </select>
+                               <div class="flex flex-wrap -mx-3">
+                                <div class="w-full px-3 md:w-1/2 md:mb-0">
+                                  <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="grainstruc">
+                                    FORMACION
+                                  </label>
+                                  <output class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="grainstruc" type="text" wire:model="grainstruc">
+                                  <br>
                                 </div>
+                                
+                                <div class="w-full px-3 mb-5 md:w-1/2">
+                                  <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="profesion">
+                                   PROFESION 
+                                  </label>
+                                  <output class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="profesion" type="text" wire:model="profesion">
+                                </div>
+                                
                               </div>
-                           </div>
-                            {{-- final --}}
+                              
+
 
                             <div>
                                 <div class="flex flex-wrap mb-5 -mx-3">
@@ -206,18 +165,13 @@
                                 </div>
                                 
                               </div>
+
                               <div class="flex flex-wrap -mx-3">
                                 <div class="w-full px-3 md:w-1/2 md:mb-0">
                                   <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="sexo">
                                     SEXO
                                   </label>
-                                  <div class="relative">
-                                    <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="sexo" wire:model="sexo">
-                                      <option value data-isdefault="true" style="display:none;">Seleccione</option>
-                                      <option value="Femenino">Femenino</option>
-                                      <option value="Masculino">Masculino</option>
-                                    </select>
-                                </div>
+                                  <output class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="sexo" type="text" wire:model="sexo">
                               </div>
                                 
                                 <div class="w-full px-3 mb-5 md:w-1/2">

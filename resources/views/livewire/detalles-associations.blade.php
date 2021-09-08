@@ -51,53 +51,35 @@
                                   UBICACION
                                 </label>
                                 <output class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="ubicacion" type="text" wire:model="ubicacion">
-                              </div>                      
-  
-                          </div>
-  
-                            {{-- OTRO FORM  --}}
-                           <div class="flex flex-wrap mb-6 -mx-3">
-                            <div class="w-full px-3 md:w-1/3 md:mb-0">
-                              <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="rubroasoc">
-                                RUBRO ASOCIACION
-                              </label>
-                              <output class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="rubroasoc" type="text" wire:model="rubroasoc">
-                              </div>
-                            
-                            <div class="w-full px-3 md:w-1/3 md:mb-0">
-                               <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="tipoasoc">
-                                 TIPO ASOCIACION
-                               </label>
-                               <div class="relative">
-                                 <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="tipoasoc" wire:model="tipoasoc">
-                                    <option value data-isdefault="true" style="display:none;">Seleccione</option> 
-                                    <option value="1">Mayorista</option>
-                                    <option value="2">Minorista</option>
-                                    <option value="3">Mixto</option>
-                                 </select>
-                               </div>
-                             </div>
-  
-                            
-                             <div class="w-full px-3 md:w-1/3 md:mb-0">
-                                <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="dferia">
-                                  DIAS FERIA
+                              </div>    
+                              
+                              <div class="w-full px-3 mb-6 md:w-1/2">
+                                <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="dnideleg">
+                                  RUBRO ASOCIACION
                                 </label>
-                                <div class="relative">
-                                  <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="dferia" wire:model="dferia">
-                                    <option value data-isdefault="true" style="display:none;">Seleccione</option>
-                                    <option value="1">Lunes</option>
-                                    <option value="2">Martes</option>
-                                    <option value="3">Miercoles</option>
-                                    <option value="4">Jueves</option>
-                                    <option value="5">Viernes</option>
-                                    <option value="6">Sabado</option>
-                                    <option value="7">Domingo</option>
-                                  </select>
+                                <output class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="rubroasoc" type="text" wire:model="rubroasoc">
+                            </div>
+                              
+                              <div class="w-full px-3 md:w-1/2">
+                                <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="ubicacion">
+                                  TIPO ASOCIACION
+                                </label>
+                                <output class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="tipoasoc" type="text" wire:model="tipoasoc">
+                              </div>   
+                          </div>
+            
+
+                              <div>
+                                <div class="flex flex-wrap -mx-3">
+                                <div class="w-full px-3 mb-6">
+                                <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="observacion">
+                                  DIAS DE FERIA</label>
+                                  <output class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="dferia" type="text" wire:model="dferia">
                                 </div>
-                              </div>
-                           </div>
-  
+                              </div>  
+                          </div>   
+
+                          
                            <div class="flex flex-wrap -mx-3"> 
                             <div class="w-full px-3 mb-6 md:w-1/2">
                                 <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="fechaconst">

@@ -6,7 +6,6 @@
         </div>
 
         <span class="hidden sm:align-middle sm:h-screen " ></span>
-
             <div class="inline-block overflow-auto text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:my-10 sm:align-middle sm:max-w-lg sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline" >    
                 <span class="flex flex-row-reverse pt-2 pr-2">
                     <button wire:click.prevent="cerrarModalBPersona()" class="px-2 py-1 text-white transition duration-150 ease-in-out bg-red-600 border border-transparent rounded-full focus:outline-none focus:border-green-400 focus:shadow-outline-green sm:text-sm sm:leading-4">X</button>

@@ -54,7 +54,7 @@ class Associations extends Component
     $discapac,
     $estadoreg,
     $RegistrarInput,
-    $observac;
+    $observac ;
     
     public $lunes, $martes, $miercoles, $jueves, $viernes, $sabado, $domingo;
 
@@ -311,7 +311,6 @@ class Associations extends Component
         $this->docpadron = '';
         $this->observacion = '';
         $this->id_association = '';
-
         // $this->id_selBusc="";
         $this->propietarioInput="";
         $this->namecomplet = '';
@@ -328,8 +327,8 @@ class Associations extends Component
         $this->ubicacion = $association->ubicacion;
         $this->rubroasoc = $association->rubroasoc;
         $this->tipoasoc = $association->tipoasoc;
+        //$this->dferia = $association->dferia = $this->lunes.' '.$this->martes.' '.$this->miercoles.' '.$this->jueves.' '.$this->viernes.' '.$this->sabado.' '.$this->domingo;
         $this->dferia = $association->dferia;
-        $this->fechaconst = $association->fechaconst;
         // $this->docregist = $association->docregist->store('documentos');
         // $this->docconsti = $association->docconsti->store('documentos');
         // $this->docpadron = $association->docpadron->store('documentos');
@@ -442,7 +441,8 @@ class Associations extends Component
                  'ubicacion' => $this->ubicacion,
                  'rubroasoc' => $this->rubroasoc,
                  'tipoasoc' => $this->tipoasoc,
-                 'dferia' => $this->dferia,
+                 'dferia' => $this->lunes.' '.$this->martes.' '.$this->miercoles.' '.$this->jueves.' '.$this->viernes.' '.$this->sabado.' '.$this->domingo,
+                //  'dferia' => $this->dferia,
                  'fechaconst' => $this->fechaconst,
                  'docregist' => $this->docregist,
                  'docconsti' => $this->docconsti,

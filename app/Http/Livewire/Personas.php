@@ -57,10 +57,14 @@ class Personas extends Component
     public $modal1 = false;//detalles 
     public $modal2 = false; //editar
 
+    public $modalborrar = false; //borrar
+
     protected $queryString = [
         'search'=>['except' => ''],
         'perPage'    
     ];
+
+    
 
     use WithPagination;
     public function render()
@@ -76,7 +80,7 @@ class Personas extends Component
                 ->paginate($this ->perPage)
         ]);
     }
-
+ 
     public function crear()
     {
         $this->limpiarCampos();
@@ -93,6 +97,19 @@ class Personas extends Component
     {
         $this->modal = false;
     }
+
+    //borrar modal
+    public function abrirModalBorrar()
+    {
+        $this->modalborrar  = true;
+    }
+
+    public function cerrarModalBorra()
+    {
+        $this->modalborrar  = false;
+    }
+
+
     //detalles
     public function abrirModal1()
     {
@@ -167,8 +184,21 @@ class Personas extends Component
 
     }
 
+    public function modalborrar()
+    {
+
+        $this->limpiarCampos();
+        $this->abrirModalBorrar();
+
+        // $persona = Persona::findOrFail($id);
+        // $persona -> delete();
+    }
+
+
+
     public function borrar($id)
     {
+
         $persona = Persona::findOrFail($id);
         $persona -> delete();
     }

@@ -24,27 +24,24 @@
                             </div>
                             
                             <div class="w-full px-3 mb-6 md:w-1/2">
-                              <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="nombres">
-                                NOMBRES
+                              <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="asociacion">
+                                ASOCIACION
                               </label>
-                              <output class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="nombres" type="text" wire:model="nombres">
-                           </div>
-  
-                            <div class="w-full px-3 mb-6 md:w-1/2">
-                                <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="apepaterno">
-                                  APELLIDO PATERNO
-                                </label>
-                                <output class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="apepaterno" type="text" wire:model="apepaterno">
-                            </div>
-                              
-                              <div class="w-full px-3 md:w-1/2">
-                                <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="apematerno">
-                                  APELLIDO MATERNO
-                                </label>
-                                <output class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="apematerno" type="text" wire:model="apematerno">
-                              </div>                      
-  
+                              <output class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="asociacion" type="text" wire:model="asociacion">
+                                <div class="absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 pointer-events-none">
+                                </div>
+                           </div>                      
                           </div>
+
+                          <div>
+                            <div class="flex flex-wrap mb-6 -mx-3">
+                            <div class="w-full px-3">
+                            <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="nombrecomplet">
+                             NOMBRE COMPLETO</label>
+                            <output class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="nombrecomplet" type="texto" wire:model="nombrecomplet">
+                            </div>
+                          </div>  
+                      </div> 
                           
   
                          {{-- INICIO  --}}
@@ -57,12 +54,7 @@
                             </div>
                             
                             <div class="w-full px-3 md:w-1/3 md:mb-0">
-                              <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="asociacion">
-                                ASOCIACION
-                              </label>
-                              <output class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="asociacion" type="text" wire:model="asociacion">
-                                <div class="absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 pointer-events-none">
-                                </div>
+                              {{-- sdfdsfs --}}
                             </div>
                             
                             <div class="w-full px-3 md:w-1/3 md:mb-0">

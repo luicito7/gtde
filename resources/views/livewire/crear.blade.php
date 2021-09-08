@@ -5,16 +5,15 @@
           <div class="absolute inset-0 bg-gray-500 opacity-75" ></div>   {{--aqui para el fondo --}}
       </div>
 
-             <span class="hidden sm:inline-block sm:align-middle sm:h-screen " ></span>
+        <span class="hidden sm:inline-block sm:align-middle sm:h-screen " ></span>
              
           <div class="inline-block overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:max-w-4xl sm:my-8 sm:align-middle" role="dialog" aria-modal="true" aria-labelledby="modal-headline" > <style> body {overflow-y:hidden;}</style>
-  
               <form>
                 <span class="flex flex-row-reverse pt-2 pr-2 bg-yellow-50">
                   <button wire:click.prevent="cerrarModal()" class="px-2 py-1 text-white transition duration-150 ease-in-out bg-red-600 border border-transparent rounded-full focus:outline-none focus:border-green-400 focus:shadow-outline-green sm:text-sm sm:leading-4">X</button>
                 </span>
+      
                   <div class="px-4 pt-5 pb-4 bg-yellow-50 sm:p-6 sm:pb-4" >
-                      
                       <div class="flex flex-wrap -mx-3">
                           <div class="w-full px-3 md:w-1/2 md:mb-0">
                             <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="dni">
@@ -164,10 +163,17 @@
 
                            
                            <div class="w-full px-3 md:w-1/3 md:mb-0">
-                             <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="profesion">
-                               PROFESION
+                             <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="discapac">
+                               DISCAPACIDAD
                              </label>
-                             <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="profesion" type="text" wire:model="profesion">
+                             <div class="relative">
+                              <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="discapac" wire:model="discapac">
+                                 <option value data-isdefault="true" style="display:none;">Seleccione</option> 
+                                 <option value="si">Si</option>
+                                 <option value="no">No</option>
+                              </select>
+                            </div>
+                             
                            </div>
                           </div>
                         
@@ -197,16 +203,10 @@
                             </div>
                           
                           <div class="w-full px-3 md:w-1/2 md:mb-0">
-                             <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="discapac">
-                               DISCAPACIDAD
+                             <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="profesion">
+                               PROFESION
                              </label>
-                             <div class="relative">
-                               <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="discapac" wire:model="discapac">
-                                  <option value data-isdefault="true" style="display:none;">Seleccione</option> 
-                                  <option value="Si">Si</option>
-                                  <option value="NO">No</option>
-                               </select>
-                             </div>
+                             <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="profesion" type="text" wire:model="profesion">
                            </div>
 
                           

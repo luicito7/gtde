@@ -156,10 +156,17 @@
                               </div>
                              </div>
                             <div class="w-full px-3 md:w-1/3 md:mb-0">
-                             <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="profesion">
-                               PROFESION
+                             <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="discapac">
+                               DISCAPACIDAD
                              </label>
-                             <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="profesion" type="text" wire:model="profesion">
+                             <div class="relative">
+                              <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="discapac" wire:model="discapac">
+                                 <option value data-isdefault="true" style="display:none;">Seleccione</option> 
+                                 <option value="si">Si</option>
+                                 <option value="no">No</option>
+                              </select>
+                            </div>
+                             
                             </div>
                           </div>
                           {{-- FINAL DE LINEA 7 RUC, ESTADO CIVIL, PROFESION --}}
@@ -188,32 +195,15 @@
                             </div>
                           
                           <div class="w-full px-3 md:w-1/2 md:mb-0">
-                             <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="discapac">
-                               DISCAPACIDAD
+                             <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="profesion">
+                              PROFESION 
                              </label>
-                             <div class="relative">
-                               <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="discapac" wire:model="discapac">
-                                  <option value data-isdefault="true" style="display:none;">Seleccione</option> 
-                                  <option value="Si">Si</option>
-                                  <option value="No">No</option>
-                               </select>
-                             </div>
+                             <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="profesion" type="text" wire:model="profesion">
                            </div>
 
-                           {{-- <div class="w-full px-3 md:w-1/3 md:mb-0">
-                              <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="estadoreg">
-                                ESTADO
-                              </label>
-                              <div class="relative">
-                                <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="estadoreg" wire:model="estadoreg">
-                                  <option value data-isdefault="true" style="display:none;">Seleccione</option>
-                                  <option value="0">Activo</option>
-                                  <option value="1">Inactivo</option>
-                                </select>
-                              </div>
-                            </div> --}}
+    
                           </div>
-                         {{-- final de LINEA 8 formacion, discapacidad, estado ----}}
+                         {{-- final de LINEA 8 formacion, discapacidad, ----}}
                          
                          {{-- inicio de LINEA 9 OBERVACION----}}
                             <div>

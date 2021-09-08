@@ -42,9 +42,6 @@ class Comerciantes extends Component
       
     public $comerciantes, 
     $dni,
-    // $apepaterno,
-    // $apematerno,
-    // $nombres,
     $nombrecomplet, 
     $puesto,
     $asociacion,
@@ -62,17 +59,17 @@ class Comerciantes extends Component
     
 
     protected $rules = [
-        'dni' => 'required|max:8|unique:personas,dni',
-        'fotopuesto' => 'mimes:jpg|max:5120',
+        'dni' => 'required|max:8|unique:comerciantes,dni',
+        'fotopuesto' => 'required|mimes:jpg,png|max:5120',
     ];
 
     protected $messages = [
         'dni.required' => 'El DNI es obligatorio',
         'dni.unique' => 'El Dni ya existe',
 
-        //'docregist.required' => 'El campo es obligatorio',
-        'docregist.mimes' => 'Solo se Admiten Archivos: PDF',
-        'docregist.max' => 'El Archivo es Demasiado Grande',
+        'fotopuesto.required' => 'La foto del puesto es obligatorio',
+        'fotopuesto.mimes' => 'Solo se Admiten Imagenes: jpg, png',
+        'fotopuesto.max' => 'El Archivo es Demasiado Grande',
         
     ];
 
@@ -173,9 +170,6 @@ class Comerciantes extends Component
     public function limpiarCampos()
     {
         $this->dni = '';
-        $this->apepaterno = '';
-        $this->apematerno = '';
-        $this->nombres = '';
         $this->nombrecomplet = '';
         $this->puesto = '';
         $this->asociacion = '';
@@ -197,9 +191,6 @@ class Comerciantes extends Component
         $comerciante = Comerciante::findOrFail($id);
         $this->id_comerciante = $id;
         $this->dni = $comerciante->dni;
-        $this->apepaterno = $comerciante->apepaterno;
-        $this->apematerno = $comerciante->apematerno;
-        $this->nombres = $comerciante->nombres;
         $this->nombrecomplet = $comerciante->nombrecomplet;
         $this->puesto = $comerciante->puesto;
         $this->asociacion = $comerciante->asociacion;
@@ -221,10 +212,7 @@ class Comerciantes extends Component
             [
                 $validation =$this->validate(),
                 'dni' => $this->dni,
-                'apepaterno' => $this->apepaterno,
-                'apematerno' => $this->apematerno,
-                'nombres' => $this->nombres,
-                'nombrecomplet' => $this->nombres.' '. $this->apepaterno.' '. $this->apematerno ,
+                'nombrecomplet' => $this->nombrecomplet,
                 'puesto' => $this->puesto,
                 'asociacion' => $this->asociacion,
                 'rubro1' => $this->rubro1,
@@ -240,6 +228,14 @@ class Comerciantes extends Component
         $this->limpiarCampos();
     }
 
+    public function hydrate()
+    {
+        $this->resetErrorBag('dni');
+        $this->resetValidation('dni');
+        $this->resetErrorBag('fotopuesto');
+        $this->resetValidation('fotopuesto');
+    }
+
     public function borrar($id)
     {
         Comerciante::find($id)->delete();
@@ -250,9 +246,7 @@ class Comerciantes extends Component
         $comerciante = Comerciante::find($id);
         $this->id_comerciante = $id;
         $this->dni = $comerciante->dni;
-        $this->apepaterno = $comerciante->apepaterno;
-        $this->apematerno = $comerciante->apematerno;
-        $this->nombres = $comerciante->nombres;
+        $this->nombrecomplet = $comerciante->nombrecomplet;
         $this->puesto = $comerciante->puesto;
         $this->asociacion = $comerciante->asociacion;
         $this->rubro1 = $comerciante->rubro1;

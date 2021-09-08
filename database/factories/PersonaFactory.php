@@ -34,7 +34,7 @@ class PersonaFactory extends Factory
             'nombres' => $nombre,
             'namecomplet' => $apellidos.' '.$apellido.' '.$nombre,
             'fechanac' => $this->faker->date($format = 'Y-m-d', $max = '-19 years'),
-            'sexo' => $this->faker->numberBetween($min = 1, $max = 2),
+            'sexo' => $this->faker->numberBetween($min = 'Masculino', $max = 'Femenino'),
             'direcreal' => $this->faker->streetAddress(),
             'departamento' => $this->faker->country(),
             'provincia' => $this->faker->state(),

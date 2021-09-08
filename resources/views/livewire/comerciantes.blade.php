@@ -28,7 +28,7 @@
             <tr class="text-white bg-indigo-600">
                 <th class="px-4 py-2 text-xs">ID</th>
                 <th class="px-4 py-2 text-xs">DNI</th>
-                <th class="px-4 py-2 text-xs">NOMBRES</th>
+                <th class="px-4 py-2 text-xs">NOMBRE COMPLETO</th>
                 <th class="px-4 py-2 text-xs">PUESTO</th>
                 <th class="px-4 py-2 text-xs">OPCIONES</th>    
             </tr>
@@ -38,7 +38,7 @@
             <tr>
                 <td class="px-4 py-2 text-center border">{{$comerciante->id}}</td>
                 <td class="px-4 py-2 text-center border">{{$comerciante->dni}}</td>
-                <td class="px-4 py-2 text-center border">{{$comerciante->nombres}}</td>
+                <td class="px-4 py-2 text-center border">{{$comerciante->nombrecomplet}}</td>
                 <td class="px-4 py-2 text-center border">{{$comerciante->puesto}}</td>
                 
                 <td class="px-4 py-2 text-center border">
