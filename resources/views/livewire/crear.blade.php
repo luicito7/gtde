@@ -19,6 +19,14 @@
                             <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="dni">
                               DNI
                             </label>
+                            <style>
+                              input[type=number]::-webkit-inner-spin-button, 
+                                input[type=number]::-webkit-outer-spin-button { 
+                                  -webkit-appearance: none; 
+                                  margin: 0; 
+                                }
+                                input[type=number] { -moz-appearance:textfield; }
+                            </style>
                             <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-blue-500 rounded appearance-none focus:outline-none focus:bg-white" id="dni" type="number" placeholder="DNI obligatorio" data-maxlength="8" pattern="[0-9]{8}" wire:model="dni" required oninput="this.value=this.value.slice(0,this.dataset.maxlength)" >
                             @error('dni')
                             <span href="$form" >

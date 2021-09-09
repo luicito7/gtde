@@ -11,11 +11,7 @@ use Livewire\WithFileUploads;
 class Comerciantes extends Component
 {
 
-    public $datosPapeletaDeInfraciones;
-    // public $personasLivewire;
     public $personas,$associations;
-
-   
 
     public $estado, $mostrar, $papeletaDeIn, $id_registrar,
       $id_persona,

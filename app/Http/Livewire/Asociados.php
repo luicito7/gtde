@@ -8,11 +8,34 @@ use App\Models\Persona;
 
 class Asociados extends Component
 {
+    public $personas,$associations;
+
+    public $estado, $mostrar, $papeletaDeIn, $id_registrar,
+      $id_persona,
+      $apepaterno,
+      $apematerno, 
+      $nombres, 
+      $namecomplet, 
+      $fechanac, 
+      $sexo, 
+      $direcreal,
+      $departamento,
+      $provincia,
+      $distrito,
+      $celprin,
+      $email, 
+      $estacivil,
+      $profesion,
+      $grainstruc,
+      $ruc,
+      $discapac,
+      $estadoreg,
+      $RegistrarInput,
+      $observac;
+
+
     public $asociados, 
     $dni,
-    $apepaterno,
-    $apematerno,
-    $nombres,
     $nombrecomplet, 
     $ubicacion,
     $asociacion,
@@ -90,9 +113,6 @@ class Asociados extends Component
     public function limpiarCampos()
     {
         $this->dni = '';
-        $this->apepaterno = '';
-        $this->apematerno = '';
-        $this->nombres = '';
         $this->nombrecomplet = '';
         $this->ubicacion = '';
         $this->asociacion = '';
@@ -109,9 +129,6 @@ class Asociados extends Component
             $asociado = Asociado::findOrFail($id);
             $this->id_asociado = $id;
             $this->dni = $asociado->dni;        
-            $this->apepaterno = $asociado->apepaterno;
-            $this->apematerno = $asociado->apematerno;
-            $this->nombres = $asociado->nombres;
             $this->nombrecomplet = $asociado->nombrecomplet;
             $this->ubicacion = $asociado->ubicacion;
             $this->asociacion = $asociado->asociacion;
@@ -129,10 +146,7 @@ class Asociados extends Component
             [
                 $validation =$this->validate(),
                 'dni' => $this->dni,
-                'apepaterno' => $this->apepaterno,
-                'apematerno' => $this->apematerno,
-                'nombres' => $this->nombres,
-                'nombrecomplet' => $this->nombres.' '. $this->apepaterno.' '. $this->apematerno ,
+                'nombrecomplet' => $this->nombrecomplet,
                 'ubicacion' => $this->ubicacion,
                 'asociacion' => $this->asociacion,
                 'rubro' => $this->rubro,
@@ -154,9 +168,6 @@ class Asociados extends Component
         $asociado = Asociado::find($id);
         $this->id_persona = $id;
         $this->dni = $asociado->dni;
-        $this->apepaterno = $asociado->apepaterno;
-        $this->apematerno = $asociado->apematerno;
-        $this->nombres = $asociado->nombres;
         $this->ubicacion = $asociado->ubicacion;
         $this->asociacion = $asociado->asociacion;
         $this->rubro = $asociado->rubro;
@@ -172,10 +183,7 @@ class Asociados extends Component
     //         [
                 
     //             'dni' => $this->dni ,
-    //             'apepaterno' => $this->apepaterno,
-    //             'apematerno' => $this->apematerno,
-    //             'nombres' => $this->nombres,
-    //             'nambrecomplet' => $this->nombres.' '. $this->apepaterno.' '. $this->apematerno ,
+    //             'nombrecomplet' => $this->nombres.' '. $this->apepaterno.' '. $this->apematerno ,
     //             'ubicacion'=> $this->ubicacion,
     //             'asociacion'=>$this->asociacion,
     //             'rubro'=>$this->rubro,

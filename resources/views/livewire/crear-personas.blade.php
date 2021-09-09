@@ -23,6 +23,17 @@
                             <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="dni">
                               DNI
                             </label>
+
+                            <style>
+
+                                  input[type=number]::-webkit-inner-spin-button, 
+                                  input[type=number]::-webkit-outer-spin-button { 
+                                    -webkit-appearance: none; 
+                                    margin: 0; 
+                                  }
+                                  input[type=number] { -moz-appearance:textfield; }
+                            </style>
+
                             <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-blue-500 rounded appearance-none focus:outline-none focus:bg-white" id="dni" type="number" placeholder="DNI obligatorio" data-maxlength="8" pattern="[0-9]{8}" wire:model="dni" required oninput="this.value=this.value.slice(0,this.dataset.maxlength)" >
                             @error('dni')
                             <span href="$form" >
@@ -38,6 +49,8 @@
                             </span>
                              @enderror 
                           </div>
+
+                          
                           
                           <div class="w-full px-3 mb-6 md:w-1/2">
                             <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="nombres">
@@ -127,8 +140,8 @@
                                   <div class="relative">
                                     <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="sexo" wire:model="sexo">
                                       <option value data-isdefault="true" style="display:none;">Seleccione</option>
-                                      <option value="1">Femenino</option>
-                                      <option value="2">Masculino</option>
+                                      <option value="Femenino">Femenino</option>
+                                      <option value="Masculino">Masculino</option>
                                     </select>
                                 </div>
                               </div>
@@ -156,21 +169,28 @@
                               <div class="relative">
                                 <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="estacivil" wire:model="estacivil" required atribute>
                                   <option value data-isdefault="true" style="display:none;">Seleccione</option>
-                                  <option value="1">soltero</option>
-                                  <option value="2">conviviente</option>
-                                  <option value="3">casado</option>
-                                  <option value="4">divorciado</option>
-                                  <option value="5">viudo</option>
+                                  <option value="soltero">soltero</option>
+                                  <option value="conviviente">conviviente</option>
+                                  <option value="casado">casado</option>
+                                  <option value="divorciado">divorciado</option>
+                                  <option value="viudo">viudo</option>
                                 </select>
                               </div>
                             </div>
 
                            
                            <div class="w-full px-3 md:w-1/3 md:mb-0">
-                             <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="profesion">
-                               PROFESION
+                             <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="discapac">
+                               DISCAPACIDAD
                              </label>
-                             <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="profesion" type="text" wire:model="profesion">
+                             <div class="relative">
+                              <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="discapac" wire:model="discapac">
+                                 <option value data-isdefault="true" style="display:none;">Seleccione</option> 
+                                 <option value="si">Si</option>
+                                 <option value="no">No</option>
+                              </select>
+                            </div>
+                             
                            </div>
                           </div>
                         
@@ -178,53 +198,33 @@
 
                           {{-- OTRO FORM  --}}
                          <div class="flex flex-wrap mb-6 -mx-3">
-                          <div class="w-full px-3 md:w-1/3 md:mb-0">
+                          <div class="w-full px-3 md:w-1/2 md:mb-0">
                               <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="grainstruc">
                                 FORMACION
                               </label>
                               <div class="relative">
                                 <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="grainstruc" wire:model="grainstruc">
                                   <option value data-isdefault="true" style="display:none;">Seleccione</option>
-                                  <option value="1">primaria</option>
-                                  <option value="2">secundaria</option> 
-                                  <option value="3">bachiller</option> 
-                                  <option value="4">titulado</option> 
-                                  <option value="5">universidad incompleta</option> 
-                                  <option value="6">universidad completa</option> 
-                                  <option value="7">instituto</option> 
-                                  <option value="8">egresado</option> 
-                                  <option value="9">estudiante</option> 
-                                  <option value="10">tecnico</option>                                  
+                                  <option value="primaria">primaria</option>
+                                  <option value="secundaria">secundaria</option> 
+                                  <option value="bachiller">bachiller</option> 
+                                  <option value="titulado">titulado</option> 
+                                  <option value="universidad incompleta">universidad incompleta</option> 
+                                  <option value="universidad completa">universidad completa</option> 
+                                  <option value="instituto">instituto</option> 
+                                  <option value="egresado">egresado</option> 
+                                  <option value="estudiante">estudiante</option> 
+                                  <option value="tecnico">tecnico</option>                                  
                                 </select>
                               </div>
                             </div>
                           
-                          <div class="w-full px-3 md:w-1/3 md:mb-0">
-                             <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="discapac">
-                               DISCAPACIDAD
+                          <div class="w-full px-3 md:w-1/2 md:mb-0">
+                             <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="profesion">
+                               PROFESION
                              </label>
-                             <div class="relative">
-                               <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="discapac" wire:model="discapac">
-                                  <option value data-isdefault="true" style="display:none;">Seleccione</option> 
-                                  <option value="1">Si</option>
-                                  <option value="2">No</option>
-                               </select>
-                             </div>
-                           </div>
-
-                          
-                           <div class="w-full px-3 md:w-1/3 md:mb-0">
-                              <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="estadoreg">
-                                ESTADO
-                              </label>
-                              <div class="relative">
-                                <select class="block w-full px-4 py-3 pr-8 ml-1 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" name="estadoreg" [(ngModel)]="estadoreg" id="estadoreg" wire:model="estadoreg">
-                                  <option value data-isdefault="true" style="display:none;">Seleccione</option>
-                                  <option value="0">Activo</option>
-                                  <option value="1">Inactivo</option>
-                                </select>
-                              </div>
-                          </div> 
+                             <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="profesion" type="text" wire:model="profesion">
+                           </div>              
                             
                          </div>
                             <div>
@@ -240,13 +240,13 @@
                 
                       <div class="px-4 py-3 bg-yellow-50 sm:px-6 sm:flex sm:flex-row-reverse">
                           
-                          <span class="flex w-full rounded-md shadow-sm sm:ml-3 sm:w-auto">
-                              <button wire:click="cerrarModalCP()" type="button" class="inline-flex justify-center w-full px-4 py-2 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-red-600 border border-transparent rounded-md shadow-sm hover:bg-red-800 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue sm:text-sm sm:leading-5">Cancelar</button>
-                          </span>
-                          
-                          <span class="flex w-full rounded-md shadow-sm sm:ml-3 sm:w-auto">
-                              <button wire:click.prevent="guardarPersona()" type="button" class="inline-flex justify-center w-full px-4 py-2 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-purple-600 border border-transparent rounded-md shadow-sm hover:bg-purple-800 focus:outline-none focus:border-green-700 focus:shadow-outline-green sm:text-sm sm:leading-5">Guardar</button>
-                          </span>
+                        <span class="flex w-full rounded-md shadow-sm sm:ml-3 sm:w-auto">
+                          <button wire:click="cerrarModalCP()" type="button" class="inline-flex justify-center w-full px-4 py-2 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-red-600 border border-transparent rounded-md shadow-sm hover:bg-red-800 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue sm:text-sm sm:leading-5">Cancelar</button>
+                      </span>
+                      
+                      <span class="flex w-full rounded-md shadow-sm sm:ml-3 sm:w-auto">
+                          <button wire:click.prevent="guardarPersona()" type="button" class="inline-flex justify-center w-full px-4 py-2 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-purple-600 border border-transparent rounded-md shadow-sm hover:bg-purple-800 focus:outline-none focus:border-green-700 focus:shadow-outline-green sm:text-sm sm:leading-5">Guardar</button>
+                      </span>
 
                       </div>
 

@@ -104,7 +104,7 @@ class Personas extends Component
         $this->modalborrar  = true;
     }
 
-    public function cerrarModalBorra()
+    public function cerrarModalBorrar()
     {
         $this->modalborrar  = false;
     }
@@ -184,24 +184,24 @@ class Personas extends Component
 
     }
 
-    public function modalborrar()
+    public function modalborrar($id)
     {
-
-        $this->limpiarCampos();
+        $persona = Persona::findOrFail($id);
+        $this->id_persona=$id;
         $this->abrirModalBorrar();
 
-        // $persona = Persona::findOrFail($id);
-        // $persona -> delete();
     }
 
 
 
-    public function borrar($id)
+    public function borrar()
     {
 
-        $persona = Persona::findOrFail($id);
+        $persona = Persona::findOrFail($this->id_persona);
         $persona -> delete();
+        $this->cerrarModalBorrar();
     }
+
 
     public function guardar()
     {

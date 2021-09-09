@@ -33,6 +33,7 @@ class CreatePersonasTable extends Migration
             $table->string('profesion',191)->nullable();
             $table->string('grainstruc')->nullable();
             $table->string('discapac')->nullable();
+            $table->string('estadoreg')->nullable();
             $table->text('observac')->nullable();
             $table->softDeletes();
             $table->timestamps();
