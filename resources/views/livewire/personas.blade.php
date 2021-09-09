@@ -95,9 +95,9 @@
 
                              {{-- <button wire:click="borrar({{$persona->id}})" class="rounded-lg px-0.3 py-0.3 font-bold bg-red-500 hover:bg-red-600">BORRAR
                             <i class="far fa-trash-alt fa-2x"></i>
-                          </button>
+                          </button> --}}
 
-                           --}}
+                          
                         
                         <button wire:click="detalles({{$persona->id}})" title="Detalles" class="rounded-lg px-0.3 py-0.3 font-bold bg-green-500 hover:bg-green-600">
                             <i class="fas fa-eye fa-2x"></i>
