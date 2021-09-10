@@ -29,7 +29,7 @@ class AssociationFactory extends Factory
             'ubicacion' => $this->faker->streetAddress(),
             'rubroasoc' => $this->faker->name(),
             'tipoasoc' => $this->faker->numberBetween($min = 1, $max = 3),
-            'dferia' => $this->faker->numberBetween($min = 1, $max = 7),
+            'dferia' => $this->faker->randomElement(['lunes','martes','miercoles','jueves','viernes','sabado',]),
             'fechaconst' => $this->faker->optional(0.6)->company(),
             'docregist' => $this->faker->text(),
             'docconsti' => $this->faker->text(),

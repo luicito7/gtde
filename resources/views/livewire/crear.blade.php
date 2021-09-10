@@ -29,17 +29,7 @@
                             </style>
                             <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-blue-500 rounded appearance-none focus:outline-none focus:bg-white" id="dni" type="number" placeholder="DNI obligatorio" data-maxlength="8" pattern="[0-9]{8}" wire:model="dni" required oninput="this.value=this.value.slice(0,this.dataset.maxlength)" >
                             @error('dni')
-                            <span href="$form" >
-                            <div class="px-4 py-3 text-teal-900 bg-red-100 border-t-4 border-red-500 rounded-b shadow-md " role="alert">
-                              <div class="flex">
-                                <div class="py-1"><svg class="w-6 h-6 mr-4 text-red-500 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"/></svg></div>
-                                <div>
-                                  <p class="font-bold">DNI</p>
-                                  <p class="text-sm">{{ $message }}</p>
-                                </div>
-                              </div>
-                            </div>
-                            </span>
+                              <p class="text-sm italic text-red-500">{{$message}}</p>
                              @enderror 
                           </div>
                           
@@ -48,6 +38,9 @@
                               NOMBRES
                             </label>
                             <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="nombres" type="text" wire:model="nombres">
+                            @error('nombres')
+                              <p class="text-xs italic text-red-500">{{$message}}</p>
+                            @enderror 
                          </div>
 
                           <div class="w-full px-3 mb-6 md:w-1/2">
@@ -55,6 +48,9 @@
                                 APELLIDO PATERNO
                               </label>
                               <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="apepaterno" type="text" wire:model="apepaterno">
+                              @error('apepaterno')
+                                <p class="text-xs italic text-red-500">{{$message}}</p>
+                              @enderror 
                           </div>
                             
                             <div class="w-full px-3 md:w-1/2">
@@ -62,6 +58,9 @@
                                 APELLIDO MATERNO
                               </label>
                               <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="apematerno" type="text" wire:model="apematerno">
+                              @error('apematerno')
+                                <p class="text-xs italic text-red-500">{{$message}}</p>
+                              @enderror
                             </div>                      
 
                         </div>

@@ -35,17 +35,22 @@ class Personas extends Component
      $search = '',
      $perPage = '10';
 
-     protected $rules = [
+    protected $rules = [
         'dni' => 'required|max:8|unique:personas,dni',
         'apepaterno' => 'required',
         'apematerno' => 'required',
-        'nombres' => 'required',
+        'nombres' => 'required|regex:/^[\pL\s\-]+$/u',
+        //'nombre' => 'required|regex:/^[\pL\s\-]+$/u',
+        //'nombre'=>'required|regex:([a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+)',
     ];
 
     protected $messages = [
         'dni.required' => 'El DNI es obligatorio',
-        //'email.email' => 'The Email Address format is not valid.',
         'dni.unique' => 'El Dni ya existe',
+        'apepaterno.required' => 'Este campo es obligatorio',
+        'apematerno.required' => 'Este campo es obligatorio',
+        'nombres.required' => 'Este campo es obligatorio',
+        'nombres.regex' => 'Solo se admiten letras',
     ];
 
     public function update($propertyName) 
@@ -67,6 +72,11 @@ class Personas extends Component
     
 
     use WithPagination;
+    public function updatingSearch()
+    {
+        $this->resetPage();
+    }
+
     public function render()
     {
         // $personas = Persona::where('id_persona',auth()->personas()->id)
@@ -200,6 +210,7 @@ class Personas extends Component
         $persona = Persona::findOrFail($this->id_persona);
         $persona -> delete();
         $this->cerrarModalBorrar();
+        $this->resetPage();
     }
 
 

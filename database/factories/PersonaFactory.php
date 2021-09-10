@@ -42,11 +42,10 @@ class PersonaFactory extends Factory
             'celprin' => $this->faker->numerify('9########'),
             'email' => $this->faker->unique()->safeEmail,
             'ruc' => $this->faker->numerify('10#########'),
-            'estacivil' => $this->faker->numberBetween($min = 1, $max = 5),
+            'estacivil' => $this->faker->randomElement(['soltero','conviviente','casado','divorciado','viudo']),
             'profesion' => $this->faker->optional(0.6)->company(),
-            'grainstruc' => $this->faker->numberBetween($min = 1, $max = 10),
-            'discapac' => $this->faker->numberBetween($min = 1, $max = 2),
-            //'estadoreg' => $this->faker->boolean(),
+            'grainstruc' => $this->faker->randomElement(['primaria','secundaria','bachiller','titulado','universidad incompleta','universidad completa','instituto','egresado','estudiante','tecnico']),
+            'discapac' => $this->faker->randomElement(['si','no']),
             'observac' => $this->faker->text(),
         ];
     }
