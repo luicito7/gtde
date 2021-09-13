@@ -84,6 +84,8 @@ class Comerciantes extends Component
     public $modalBAsociacion=false;//modal buscar asociacion
     public $cantAso=0;
     public $searchTerm2;
+
+    public $id_Pers, $id_Comer;
     
 
     public function update($propertyName) 
@@ -116,7 +118,7 @@ class Comerciantes extends Component
             $this->cantASo=false;
         } else {
             $this->cantASo=true;
-            $this->dni=$searchTerm2temp;
+            $this->nombreasoc=$searchTerm2temp;
         }
 
         
@@ -367,7 +369,7 @@ class Comerciantes extends Component
   
     public function almacenarInput1($id_selBusc1){
         if ($this->id_buscar1==0) {
-            $this->id_Pers = $id_selBusc1;
+            $this->id_Comer = $id_selBusc1;
             $db = Association::where('id',$id_selBusc1)->get();
             foreach ($db as $db1) {
                 //$this->propNomCom = $db1->namecomplet;

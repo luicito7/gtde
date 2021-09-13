@@ -46,18 +46,14 @@
   
                          {{-- INICIO  --}}
                           <div class="flex flex-wrap mb-6 -mx-3">
-                            <div class="w-full px-3 md:w-1/3 md:mb-0">
+                            <div class="w-full px-3 md:w-1/2 md:mb-0">
                               <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="puesto">
                                 PUESTO
                               </label>
                               <output class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="puesto" type="text" wire:model="puesto">
                             </div>
                             
-                            <div class="w-full px-3 md:w-1/3 md:mb-0">
-                              {{-- sdfdsfs --}}
-                            </div>
-                            
-                            <div class="w-full px-3 md:w-1/3 md:mb-0">
+                            <div class="w-full px-3 md:w-1/2 md:mb-0">
                               <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="rubro1">
                                 RUBRO PRINCIPAL
                               </label>

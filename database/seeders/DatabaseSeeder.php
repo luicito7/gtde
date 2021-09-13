@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
         Association::factory(200)->create();  
         //$this->call(PersonaSeader::class);
         $this->call(UserSeader::class);
-        User::factory(30)->create();
+        User::factory(06)->create();
         $this->call(PapeletaSeeder::class);
         $this->call(InfraccionPersonaSeeder::class);
         $this->call(InfraccionDatosSeeder::class);

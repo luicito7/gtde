@@ -14,7 +14,7 @@
         @endif
 
 
-        <button wire:click="crear()" class="px-4 py-2 my-3 font-bold text-white bg-green-500 rounded-md hover:bg-green-600" >Nuevo</button>
+        <button wire:click="crear()" class="px-4 py-2 my-3 font-bold text-white bg-green-500 rounded-md hover:bg-green-600" >Agregar Comerciante</button>
         @if($modal)
             @include('livewire.crear-comerciante')   
         @endif    

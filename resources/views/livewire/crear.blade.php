@@ -159,11 +159,11 @@
                               <div class="relative">
                                 <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="estacivil" wire:model="estacivil" required atribute>
                                   <option value data-isdefault="true" style="display:none;">Seleccione</option>
-                                  <option value="soltero">soltero</option>
-                                  <option value="conviviente">conviviente</option>
-                                  <option value="casado">casado</option>
-                                  <option value="divorciado">divorciado</option>
-                                  <option value="viudo">viudo</option>
+                                  <option value="soltero">Soltero</option>
+                                  <option value="conviviente">Conviviente</option>
+                                  <option value="casado">Casado</option>
+                                  <option value="divorciado">Divorciado</option>
+                                  <option value="viudo">Viudo</option>
                                 </select>
                               </div>
                             </div>
@@ -176,8 +176,8 @@
                              <div class="relative">
                               <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="discapac" wire:model="discapac">
                                  <option value data-isdefault="true" style="display:none;">Seleccione</option> 
-                                 <option value="si">Si</option>
                                  <option value="no">No</option>
+                                 <option value="si">Si</option>
                               </select>
                             </div>
                              
@@ -195,16 +195,16 @@
                               <div class="relative">
                                 <select class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="grainstruc" wire:model="grainstruc">
                                   <option value data-isdefault="true" style="display:none;">Seleccione</option>
-                                  <option value="primaria">primaria</option>
-                                  <option value="secundaria">secundaria</option> 
-                                  <option value="bachiller">bachiller</option> 
-                                  <option value="titulado">titulado</option> 
-                                  <option value="universidad incompleta">universidad incompleta</option> 
-                                  <option value="universidad completa">universidad completa</option> 
-                                  <option value="instituto">instituto</option> 
-                                  <option value="egresado">egresado</option> 
-                                  <option value="estudiante">estudiante</option> 
-                                  <option value="tecnico">tecnico</option>                                  
+                                  <option value="primaria">Primaria</option>
+                                  <option value="secundaria">Secundaria</option> 
+                                  <option value="bachiller">Bachiller</option> 
+                                  <option value="titulado">Titulado</option> 
+                                  <option value="universidad incompleta">Universidad Incompleta</option> 
+                                  <option value="universidad completa">Universidad Completa</option> 
+                                  <option value="instituto">Instituto</option> 
+                                  <option value="egresado">Egresado</option> 
+                                  <option value="estudiante">Estudiante</option> 
+                                  <option value="tecnico">Tecnico</option>                                  
                                 </select>
                               </div>
                             </div>
