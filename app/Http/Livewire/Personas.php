@@ -40,8 +40,6 @@ class Personas extends Component
         'apepaterno' => 'required',
         'apematerno' => 'required',
         'nombres' => 'required|regex:/^[\pL\s\-]+$/u',
-        //'nombre' => 'required|regex:/^[\pL\s\-]+$/u',
-        //'nombre'=>'required|regex:([a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+)',
     ];
 
     protected $messages = [
@@ -79,8 +77,7 @@ class Personas extends Component
 
     public function render()
     {
-        // $personas = Persona::where('id_persona',auth()->personas()->id)
-        //     ->paginate(10);    
+          
         $this->personas = Persona::all();
 
         return view('livewire.personas', [
@@ -91,13 +88,13 @@ class Personas extends Component
         ]);
     }
  
+    /*modal crear persona */
     public function crear()
     {
         $this->limpiarCampos();
         $this->abrirModal();
     }
 
-    //crear
     public function abrirModal()
     {
         $this->modal = true;
@@ -107,8 +104,10 @@ class Personas extends Component
     {
         $this->modal = false;
     }
+    /*-------------------------------*/
 
-    //borrar modal
+
+     /*------------modal borrar---------------*/
     public function abrirModalBorrar()
     {
         $this->modalborrar  = true;
@@ -118,9 +117,10 @@ class Personas extends Component
     {
         $this->modalborrar  = false;
     }
+     /*---------------------------------------*/
 
 
-    //detalles
+     /*----------- modal detalles--------------------*/
     public function abrirModal1()
     {
         $this->modal1 = true;
@@ -130,8 +130,9 @@ class Personas extends Component
     {
         $this->modal1 = false;
     }
+     /*------------------------------------------*/
     
-    //modal editar
+     /*---------- modal editar-------------------*/
     public function abrirModal2()
     {
         $this->modal2 = true;
@@ -141,7 +142,7 @@ class Personas extends Component
     {
         $this->modal2 = false;
     }
-    //fin modal editar
+    /*---------- modal editar-------------------*/
 
     public function limpiarCampos()
     {
@@ -167,6 +168,7 @@ class Personas extends Component
         $this->id_persona = '';
     }
 
+    /* obtencion de datos para editar */
     public function editar($id)
     {
         $persona = Persona::findOrFail($id);
@@ -193,17 +195,17 @@ class Personas extends Component
         $this->abrirModal2();
 
     }
+    /*------------------------------------------------------*/
 
+
+    /*-------------------- Borrar--------------------------*/
     public function modalborrar($id)
     {
-        $persona = Persona::findOrFail($id);
+        //$persona = Persona::findOrFail($id);
         $this->id_persona=$id;
         $this->abrirModalBorrar();
-
     }
-
-
-
+    /*------------------------------------------------------*/
     public function borrar()
     {
 
@@ -212,6 +214,8 @@ class Personas extends Component
         $this->cerrarModalBorrar();
         $this->resetPage();
     }
+
+    /*------------------------------------------------------*/
 
 
     public function guardar()

@@ -11,7 +11,11 @@ class Asociados extends Component
 {
     public $personas,$associations;
 
-    public $estado, $mostrar, $papeletaDeIn, $id_registrar,
+    public 
+      $estado, 
+      $mostrar,
+      $papeletaDeIn,
+      $id_registrar,
       $id_persona,
       $apepaterno,
       $apematerno, 
@@ -35,7 +39,8 @@ class Asociados extends Component
       $observac;
 
 
-    public $asociados, 
+    public 
+    $asociados, 
     $dniaso,
     $nombrecomplet, 
     $ubicacion,
@@ -54,9 +59,13 @@ class Asociados extends Component
 
     ];
 
+    protected $message = [
+
+        'dniaso.required' => 'el dni es requiero'
+
+    ];
 
 
-    
 
     public $modal = false;//crear
     public $modal1 = false;//detalles
@@ -67,14 +76,13 @@ class Asociados extends Component
     public $id_buscar;
     public $id_buscar1;
     public $modalPInfraccion = false;
-    public $cantPerson=0;
-    public $searchTerm1;
-    
+    public $cantPerson=0;//cantidad de personas encontradas despues de buscar
+    public $searchTerm1;//almacenar palabra buscada
     public $modalMulta =false;
 
     public $modalBAsociacion=false;//modal buscar asociacion
-    public $cantAso=0;
-    public $searchTerm2;
+    public $cantAso=0;//cantidad de asociaciones encontradas despues de buscar
+    public $searchTerm2;//almacenar palabra buscada
 
     public $id_Pers, $id_Comer, $dni;
 
@@ -87,19 +95,24 @@ class Asociados extends Component
     {
 
 
+        /*con sulta de dni en tabla personas */
         $searchTerm1 = '%'.$this-> searchTerm1. "%";
         $searchTerm1temp =$this-> searchTerm1;
         $this->personas=Persona::where('dni','LIKE',$searchTerm1)->orderBy('id','ASC')->get();
         $this->cantPerson=$this->personas->count();
 
+        /*cantidad de personas mostrar boton de registro */
         if ($this->cantPerson>0) {
             $this->cantPerson=false;
         } else {
             $this->cantPerson=true;
+            //captura dni en modal registro de persoas
             $this->dni=$searchTerm1temp;
         }
 
+        /*--------------------------------------- */
 
+         /*con sulta de nombreasco en tabla association*/
         $searchTerm2 = '%'.$this-> searchTerm2. "%";
         $searchTerm2temp =$this-> searchTerm2;
         $this->associations=Association::where('nombreasoc','LIKE',$searchTerm2)->orderBy('id','ASC')->get();
@@ -111,6 +124,9 @@ class Asociados extends Component
             $this->cantASo=true;
             $this->nombreasoc=$searchTerm2temp;
         }
+        /*-------------------------------------------------*/
+
+
         $this->asociados = Asociado::all();
         return view('livewire.asociados');
     }
@@ -187,6 +203,7 @@ class Asociados extends Component
 
     }
 
+    /* alamenar en variables de base de datos */
     public function guardar()
     {
         Asociado::updateOrCreate(['id'=>$this->id_asociado],
@@ -205,11 +222,15 @@ class Asociados extends Component
         $this->limpiarCampos();
     }
 
+    /* fin alamenar en variables de base de datos*/
+
+
     public function borrar($id)
     {
         Asociado::find($id)->delete();
     }
 
+    /*------------------ obtencion de datos para detalles */
     public function detalles($id)
     {
         $asociado = Asociado::find($id);
@@ -224,17 +245,11 @@ class Asociados extends Component
         $this->observaciones = $asociado->observaciones;
         $this->abrirModal1();
     }
+    /*--------fin obtencion de datos para detalles */
 
-
-
-    //buscar
-
-
-       //funciones buscar
-
-    
+  
+    /*----------------------------Funcion Buscar persona----------------- */
        public function abrirModalPInfraccion(){
-        // $this->id_buscar = $RegistrarInput;
         $this->modalPInfraccion  = true;
     }
     
@@ -255,23 +270,19 @@ class Asociados extends Component
         $this->modalPInfraccion = true;
     }
 
-
+    /*--------obteniendo datos desde la tabla personas--------- */
     public function almacenarInput($id_selBusc){
-        // $array = array_add($array, 'key', 'value');
         if ($this->id_buscar==0) {
-            # code...
             $this->id_Pers = $id_selBusc;
             $db = Persona::where('id',$id_selBusc)->get();
             foreach ($db as $db1) {
-                //$this->propNomCom = $db1->namecomplet;
                 $this->dniaso= $db1->dni;
                 $this->nombrecomplet = $db1->namecomplet;
 
                 
             }
         }
-
-
+    /*-------- fin obteniendo datos desde la tabla personas--------- */
         $this->id_buscar=0;
         
         $this->cerrarModalBPersona();
@@ -338,8 +349,7 @@ class Asociados extends Component
 
     }
 
-    //fin buscar
-
+     /*---------------------------- fin Funcion Buscar persona----------------- */
 
 
     public function limpiarCamposAsociacion()
@@ -363,7 +373,9 @@ class Asociados extends Component
         $this->namecomplet = '';
     }
 
-    //registar persona desde comerciente
+
+
+    /*------------REGISTAR DESDE COMERCIANTES---------------------*/
 
     public function cerrarModalCP()
     {
@@ -379,11 +391,7 @@ class Asociados extends Component
             $this->abrirModal1();
         }
     
-        // public function lista()
-        // {
-        //     $this->limpiarCampos();
-        //     $this->abrirModal1();
-        // }
+
 
 
         public function guardarPersona()
@@ -416,6 +424,9 @@ class Asociados extends Component
              
              $this->almacenarInput($data);
      }
+
+     
+    /*---------------------------------------------------------------------------*/
 
 
  
