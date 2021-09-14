@@ -28,7 +28,7 @@
             <tr class="text-white bg-indigo-600">
                 <th class="px-4 py-2 text-xs">ID</th>
                 <th class="px-4 py-2 text-xs">DNI</th>
-                <th class="px-4 py-2 text-xs">NOMBRES</th>
+                <th class="px-4 py-2 text-xs">NOMBRE COMPLETO</th>
                 <th class="px-4 py-2 text-xs">UBICACION</th>
                 <th class="px-4 py-2 text-xs">OPCIONES</th>    
             </tr>

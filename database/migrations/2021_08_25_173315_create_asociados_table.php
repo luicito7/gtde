@@ -16,9 +16,9 @@ class CreateAsociadosTable extends Migration
         Schema::create('asociados', function (Blueprint $table) {
             $table->id();
             $table->string('dni',8)->unique();
-            $table->string('apepaterno',100)->nullable();
-            $table->string('apematerno',100)->nullable();
-            $table->string('nombres',100)->nullable();
+            // $table->string('apepaterno',100)->nullable();
+            // $table->string('apematerno',100)->nullable();
+            // $table->string('nombres',100)->nullable();
             $table->string('nombrecomplet',100)->nullable();
             $table->string('ubicacion',100)->nullable();
             $table->string('asociacion',100)->nullable();

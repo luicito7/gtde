@@ -11,9 +11,6 @@ class Comerciante extends Model
     protected $table = 'comerciantes';
     protected $fillable = [
         'dni',
-        'apepaterno',
-        'apematerno',
-        'nombres',
         'nombrecomplet',
         'puesto',
         'asociacion',

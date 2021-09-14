@@ -11,9 +11,9 @@ class Asociado extends Model
     protected $table = 'asociados';
     protected $fillable = [
         'dni',
-        'apepaterno',
-        'apematerno',
-        'nombres',
+        // 'apepaterno',
+        // 'apematerno',
+        // 'nombres',
         'nombrecomplet',
         'ubicacion',
         'asociacion',

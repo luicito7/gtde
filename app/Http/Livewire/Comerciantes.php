@@ -79,7 +79,6 @@ class Comerciantes extends Component
     public $cantPerson=0;
     public $searchTerm1;
     
-    public $modalMulta =false;
 
     public $modalBAsociacion=false;//modal buscar asociacion
     public $cantAso=0;
@@ -342,15 +341,6 @@ class Comerciantes extends Component
     }
 
 
-
-    
-    //buscar asociacion
-    //buscarIdPersona =  buscarIdAsociacion
-    //registrarBuscar = registrarBuscaraso
-    //modalBPersona = modalBAsociacion
-
-    //id_buscar
-
     public function cerrarModalBAsociacion(){
         $this->modalBAsociacion = false;
         $this->modalPInfraccion  = false;
@@ -372,9 +362,8 @@ class Comerciantes extends Component
             $this->id_Comer = $id_selBusc1;
             $db = Association::where('id',$id_selBusc1)->get();
             foreach ($db as $db1) {
-                //$this->propNomCom = $db1->namecomplet;
                 $this->asociacion = $db1->nombreasoc ;
-                $this->dnideleg= $db1->dni;
+                //$this->dnideleg= $db1->dni;
 
                 
             }
@@ -387,6 +376,8 @@ class Comerciantes extends Component
         $this->cerrarModalBAsociacion();
 
     }
+
+    //fin buscar
 
 
 
