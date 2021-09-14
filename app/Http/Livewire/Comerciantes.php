@@ -402,4 +402,53 @@ class Comerciantes extends Component
         $this->namecomplet = '';
     }
 
+    //registar persona desde comerciente
+
+    public function cerrarModalCP()
+    {
+        $this->modalPInfraccion = false; 
+        $this->limpiarCampos();
+    }
+
+
+        //agregar nuevo registro
+    public function crear1()
+    {
+        $this->limpiarCampos();
+        $this->abrirModal1();
+    }
+
+
+    public function guardarPersona()
+    {
+        Persona::updateOrCreate(['id'=>$this->id_persona],
+            [
+                'dni' => $this->dni,
+                'apepaterno' => $this->apepaterno,
+                'apematerno' => $this->apematerno,
+                'nombres' => $this->nombres,
+                'namecomplet' => $this->nombres.' '. $this->apepaterno.' '. $this->apematerno,
+                'fechanac' => $this->fechanac,
+                'sexo' => $this->sexo,
+                'direcreal' => $this->direcreal,
+                'departamento' => $this->departamento,
+                'provincia' => $this->provincia,
+                'distrito' => $this->distrito,
+                'celprin' => $this->celprin,
+                'email' => $this->email,
+                'estacivil' => $this->estacivil,
+                'profesion' => $this->profesion,
+                'grainstruc' => $this->grainstruc,
+                'ruc' => $this->ruc,
+                'discapac' => $this->discapac,
+                'estadoreg' => $this->estadoreg,
+                'observac' => $this->observac,
+            ]); 
+            $data = Persona::latest('id')->first();
+            $data = $data->id;
+             
+        $this->almacenarInput($data);
+    }
+
+
 }

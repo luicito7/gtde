@@ -23,14 +23,14 @@
                               <div class="flex items-center justify-between gap-4 mb-4 ">
 
                                    <div class="col-span-1">
-                                        <label for="" class="block mb-2 text-sm font-bold text-gring-gray-700">Datos DNI Representate</label>
+                                        <label for="" class="block mb-2 text-sm font-bold text-gring-gray-700">Datos DNI Asociado</label>
                                             <div class="grid grid-cols-1 gap-2">
                                                <button wire:click.prevent="registrarBuscar({{0}})" class="py-2 text-black transition duration-150 ease-in-out bg-gray-200 border-2 border-transparent border-blue-300 rounded-md focus:outline-none focus:border-gray-400 focus:shadow-outline-green sm:text-sm sm:leading-5">Buscar</button>
                                              </div>
                                         </div>
                                                   <div class="col-span-2">
                                                      <div class="">
-                                                      <label for="" class="block px-3 mb-2 text-sm font-bold text-gring-gray-700">Datos DNI Delegado</label>
+                                                      <label for="" class="block px-3 mb-2 text-sm font-bold text-gring-gray-700">Datos Asociacion</label>
                                                       <div class="grid grid-cols-1 gap-2">
                                                           <button wire:click.prevent="registrarBuscaraso({{0}})" class="py-2 text-black transition duration-150 ease-in-out bg-gray-200 border-2 border-transparent border-red-200 rounded-md focus:outline-none focus:border-gray-400 focus:shadow-outline-green sm:text-sm sm:leading-5">Buscar</button>
                                                       </div>
@@ -109,7 +109,7 @@
 
                             <div class="w-full px-3 mb-6 md:w-1/2">
                               <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="rubro">
-                                RUBO
+                                RUBRO
                               </label>
                               <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="rubro" type="text" wire:model="rubro">
                             </div>

@@ -22,7 +22,14 @@
                                     </button>
                                   </span>
                                 <input wire:model="searchTerm1" type="number" name="q" class="py-2 pl-10 text-sm border-2 rounded-md focus:outline-none focus:bg-green focus:text-gray-900" placeholder="Buscar..." autocomplete="on" data-maxlength="8" pattern="[0-9]{8}" wire:model="dni" required oninput="this.value=this.value.slice(0,this.dataset.maxlength)" >
-                                
+                                <style>
+                                    input[type=number]::-webkit-inner-spin-button, 
+                                      input[type=number]::-webkit-outer-spin-button { 
+                                        -webkit-appearance: none; 
+                                        margin: 0; 
+                                      }
+                                    input[type=number] { -moz-appearance:textfield; }
+                                </style>
                                 {{-- <input type="text" class="rounded form-control" placeholder="Buscar..." wire:model="searchTerm" /> --}}
                             </div>
                         </div>
