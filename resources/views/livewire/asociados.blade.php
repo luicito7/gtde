@@ -37,7 +37,7 @@
             @foreach($asociados as $asociado)
             <tr>
                 <td class="px-4 py-2 text-center border">{{$asociado->id}}</td>
-                <td class="px-4 py-2 text-center border">{{$asociado->dni}}</td>
+                <td class="px-4 py-2 text-center border">{{$asociado->dniaso}}</td>
                 <td class="px-4 py-2 text-center border">{{$asociado->nombrecomplet}}</td>
                 <td class="px-4 py-2 text-center border">{{$asociado->ubicacion}}</td>
                 

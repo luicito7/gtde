@@ -10,7 +10,7 @@ class Asociado extends Model
     use HasFactory;
     protected $table = 'asociados';
     protected $fillable = [
-        'dni',
+        'dniaso',
         // 'apepaterno',
         // 'apematerno',
         // 'nombres',

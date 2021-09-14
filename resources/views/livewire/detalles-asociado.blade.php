@@ -20,10 +20,10 @@
                           <div class="flex flex-wrap -mx-3">
 
                                 <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0">
-                                  <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="dni">
+                                  <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="dniaso">
                                     DNI 
                                   </label>
-                                  <output class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-blue-500 rounded appearance-none focus:outline-none focus:bg-white" id="dni" type="text"  wire:model="dni"  >
+                                  <output class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-blue-500 rounded appearance-none focus:outline-none focus:bg-white" id="dniaso" type="text"  wire:model="dniaso"  >
                                   
                                  </div>
                                 <div class="w-full px-3 mb-6 md:w-1/2">

@@ -37,7 +37,7 @@
             @foreach($comerciantes as $comerciante)
             <tr>
                 <td class="px-4 py-2 text-center border">{{$comerciante->id}}</td>
-                <td class="px-4 py-2 text-center border">{{$comerciante->dni}}</td>
+                <td class="px-4 py-2 text-center border">{{$comerciante->dnicomer}}</td>
                 <td class="px-4 py-2 text-center border">{{$comerciante->nombrecomplet}}</td>
                 <td class="px-4 py-2 text-center border">{{$comerciante->puesto}}</td>
                 

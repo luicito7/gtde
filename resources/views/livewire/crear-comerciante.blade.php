@@ -56,11 +56,11 @@
                           
 
                               <div class="w-full px-3 md:w-1/2 md:mb-0">
-                                <label for="dni" class="block text-xs font-bold tracking-wide text-gray-700 uppercase" >
+                                <label for="dnicomer" class="block text-xs font-bold tracking-wide text-gray-700 uppercase" >
                                   DNI 
                                 </label>
-                                <h3 type="text" class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-blue-500 rounded appearance-none h-11 focus:outline-none focus:bg-white" id="dni" placeholder="DNI obligatorio" > {{$dni}} </h3>
-                                @error('dni')
+                                <h3 type="text" class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-blue-500 rounded appearance-none h-11 focus:outline-none focus:bg-white" id="dnicomer" placeholder="DNI obligatorio" > {{$dnicomer}} </h3>
+                                @error('dnicomer')
                                 <span class="flex items-center mt-1 ml-1 text-xs font-medium tracking-wide text-red-500">
                                     {{$message}}
                                 </span>

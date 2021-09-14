@@ -37,7 +37,7 @@ class Comerciantes extends Component
       $observac;
       
     public $comerciantes, 
-    $dni,
+    $dnicomer,
     $nombrecomplet, 
     $puesto,
     $asociacion,
@@ -55,13 +55,13 @@ class Comerciantes extends Component
     
 
     protected $rules = [
-        'dni' => 'required|max:8|unique:comerciantes,dni',
+        'dnicomer' => 'required|max:8|unique:comerciantes,dnicomer',
         'fotopuesto' => 'required|mimes:jpg,png|max:5120',
     ];
 
     protected $messages = [
-        'dni.required' => 'El DNI es obligatorio',
-        'dni.unique' => 'El Dni ya existe',
+        'dnicomer.required' => 'El DNI es obligatorio',
+        'dnicomer.unique' => 'El Dni ya existe',
 
         'fotopuesto.required' => 'La foto del puesto es obligatorio',
         'fotopuesto.mimes' => 'Solo se Admiten Imagenes: jpg, png',
@@ -84,7 +84,7 @@ class Comerciantes extends Component
     public $cantAso=0;
     public $searchTerm2;
 
-    public $id_Pers, $id_Comer;
+    public $id_Pers, $id_Comer, $dni;
     
 
     public function update($propertyName) 
@@ -166,7 +166,7 @@ class Comerciantes extends Component
 
     public function limpiarCampos()
     {
-        $this->dni = '';
+        $this->dnicomer = '';
         $this->nombrecomplet = '';
         $this->puesto = '';
         $this->asociacion = '';
@@ -187,7 +187,7 @@ class Comerciantes extends Component
     {
         $comerciante = Comerciante::findOrFail($id);
         $this->id_comerciante = $id;
-        $this->dni = $comerciante->dni;
+        $this->dnicomer = $comerciante->dnicomer;
         $this->nombrecomplet = $comerciante->nombrecomplet;
         $this->puesto = $comerciante->puesto;
         $this->asociacion = $comerciante->asociacion;
@@ -208,7 +208,7 @@ class Comerciantes extends Component
         Comerciante::updateOrCreate(['id'=>$this->id_comerciante],
             [
                 $validation =$this->validate(),
-                'dni' => $this->dni,
+                'dnicomer' => $this->dnicomer,
                 'nombrecomplet' => $this->nombrecomplet,
                 'puesto' => $this->puesto,
                 'asociacion' => $this->asociacion,
@@ -227,8 +227,8 @@ class Comerciantes extends Component
 
     public function hydrate()
     {
-        $this->resetErrorBag('dni');
-        $this->resetValidation('dni');
+        $this->resetErrorBag('dnicomer');
+        $this->resetValidation('dnicomer');
         $this->resetErrorBag('fotopuesto');
         $this->resetValidation('fotopuesto');
     }
@@ -242,7 +242,7 @@ class Comerciantes extends Component
     {
         $comerciante = Comerciante::find($id);
         $this->id_comerciante = $id;
-        $this->dni = $comerciante->dni;
+        $this->dnicomer = $comerciante->dnicomer;
         $this->nombrecomplet = $comerciante->nombrecomplet;
         $this->puesto = $comerciante->puesto;
         $this->asociacion = $comerciante->asociacion;
@@ -291,7 +291,7 @@ class Comerciantes extends Component
             $db = Persona::where('id',$id_selBusc)->get();
             foreach ($db as $db1) {
                 //$this->propNomCom = $db1->namecomplet;
-                $this->dni= $db1->dni;
+                $this->dnicomer= $db1->dni;
                 $this->nombrecomplet = $db1->namecomplet;
                 $this->propDirRea= $db1->direcreal;
 
@@ -299,16 +299,6 @@ class Comerciantes extends Component
             }
         }
 
- 
-        // if ($this->id_buscar==1) {
-        //     # code...
-        //     $this->id_fisc = $id_selBusc;
-        //     $db = Association::where('id',$id_selBusc)->get();
-        //     foreach ($db as $db1) {
-        //         $this->asociacion = $db1->nombreasoc ;
-        //         $this->dnideleg= $db1->dni;
-        //     }
-        // }
         $this->id_buscar=0;
         
         $this->cerrarModalBPersona();
@@ -317,7 +307,7 @@ class Comerciantes extends Component
 
       public function limpiarCamposPersona()
     {
-       
+        $this->dni = '';       
         $this->apepaterno = '';
         $this->apematerno = '';
         $this->nombres = '';

@@ -15,7 +15,7 @@ class CreateComerciantesTable extends Migration
     {
         Schema::create('comerciantes', function (Blueprint $table) {
             $table->id();
-            $table->string('dni',8)->unique();
+            $table->string('dnicomer',8)->unique();
             $table->string('nombrecomplet',100)->nullable();
             $table->string('puesto',100)->nullable();
             $table->string('asociacion',100)->nullable();

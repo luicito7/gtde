@@ -36,7 +36,7 @@ class Asociados extends Component
 
 
     public $asociados, 
-    $dni,
+    $dniaso,
     $nombrecomplet, 
     $ubicacion,
     $asociacion,
@@ -50,7 +50,7 @@ class Asociados extends Component
     
 
     protected $rules = [
-        'dni' => 'required|max:8|unique:asociados,dni',
+        'dniaso' => 'required|max:8|unique:asociados,dniaso',
 
     ];
 
@@ -76,7 +76,7 @@ class Asociados extends Component
     public $cantAso=0;
     public $searchTerm2;
 
-    public $id_Pers, $id_Comer;
+    public $id_Pers, $id_Comer, $dni;
 
     public function update($propertyName) 
     {
@@ -159,7 +159,7 @@ class Asociados extends Component
 
     public function limpiarCampos()
     {
-        $this->dni = '';
+        $this->dniaso = '';
         $this->nombrecomplet = '';
         $this->ubicacion = '';
         $this->asociacion = '';
@@ -175,7 +175,7 @@ class Asociados extends Component
     {
             $asociado = Asociado::findOrFail($id);
             $this->id_asociado = $id;
-            $this->dni = $asociado->dni;        
+            $this->dniaso = $asociado->dniaso;        
             $this->nombrecomplet = $asociado->nombrecomplet;
             $this->ubicacion = $asociado->ubicacion;
             $this->asociacion = $asociado->asociacion;
@@ -192,7 +192,7 @@ class Asociados extends Component
         Asociado::updateOrCreate(['id'=>$this->id_asociado],
             [
                 $validation =$this->validate(),
-                'dni' => $this->dni,
+                'dniaso' => $this->dniaso,
                 'nombrecomplet' => $this->nombrecomplet,
                 'ubicacion' => $this->ubicacion,
                 'asociacion' => $this->asociacion,
@@ -214,7 +214,7 @@ class Asociados extends Component
     {
         $asociado = Asociado::find($id);
         $this->id_persona = $id;
-        $this->dni = $asociado->dni;
+        $this->dniaso = $asociado->dniaso;
         $this->nombrecomplet = $asociado->nombrecomplet;
         $this->ubicacion = $asociado->ubicacion;
         $this->asociacion = $asociado->asociacion;
@@ -264,7 +264,7 @@ class Asociados extends Component
             $db = Persona::where('id',$id_selBusc)->get();
             foreach ($db as $db1) {
                 //$this->propNomCom = $db1->namecomplet;
-                $this->dni= $db1->dni;
+                $this->dniaso= $db1->dni;
                 $this->nombrecomplet = $db1->namecomplet;
 
                 
@@ -280,7 +280,7 @@ class Asociados extends Component
 
       public function limpiarCamposPersona()
     {
-       
+        $this->dni = '';       
         $this->apepaterno = '';
         $this->apematerno = '';
         $this->nombres = '';

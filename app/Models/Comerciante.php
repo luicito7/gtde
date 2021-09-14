@@ -10,7 +10,7 @@ class Comerciante extends Model
     use HasFactory;
     protected $table = 'comerciantes';
     protected $fillable = [
-        'dni',
+        'dnicomer',
         'nombrecomplet',
         'puesto',
         'asociacion',
