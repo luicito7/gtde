@@ -7,13 +7,20 @@ use Livewire\Component;
 use App\Models\Comerciante;
 use App\Models\Persona;
 use Livewire\WithFileUploads;
+use Livewire\WithPagination;
 
 class Comerciantes extends Component
 {
 
-    public $personas,$associations;
+    public 
+    $personas,
+    $associations;
 
-    public $estado, $mostrar, $papeletaDeIn, $id_registrar,
+    public 
+      $estado, 
+      $mostrar, 
+      $papeletaDeIn, 
+      $id_registrar,
       $id_persona,
       $apepaterno,
       $apematerno, 
@@ -34,9 +41,11 @@ class Comerciantes extends Component
       $discapac,
       $estadoreg,
       $RegistrarInput,
-      $observac;
+      $observac,
+      $search = '',
+      $perPage = '10';
       
-    public $comerciantes, 
+    public   
     $dnicomer,
     $nombrecomplet, 
     $puesto,
@@ -56,12 +65,15 @@ class Comerciantes extends Component
 
     protected $rules = [
         'dnicomer' => 'required|max:8|unique:comerciantes,dnicomer',
+        'numpadron' => 'unique:comerciantes,numpadron',
         'fotopuesto' => 'required|mimes:jpg,png|max:5120',
     ];
 
     protected $messages = [
         'dnicomer.required' => 'El DNI es obligatorio',
         'dnicomer.unique' => 'El Dni ya existe',
+        'numpadron' => 'Este número ya esta romado en la lista',
+
 
         'fotopuesto.required' => 'La foto del puesto es obligatorio',
         'fotopuesto.mimes' => 'Solo se Admiten Imagenes: jpg, png',
@@ -92,9 +104,21 @@ class Comerciantes extends Component
         $this->validationOnly($propertyName);
     }
 
+    protected $queryString = [
+        'search'=>['except' => ''],
+        'perPage'    
+    ];
+
+
+    use WithPagination; 
+    public function updatingSearch()
+    {
+        $this->resetPage();
+    }
+    use WithPagination; 
     public function render()
     {
-
+         
         $searchTerm1 = '%'.$this-> searchTerm1. "%";
         $searchTerm1temp =$this-> searchTerm1;
         $this->personas=Persona::where('dni','LIKE',$searchTerm1)->orderBy('id','ASC')->get();
@@ -121,8 +145,26 @@ class Comerciantes extends Component
         }
 
         
-        $this->comerciantes = Comerciante::all();
-        return view('livewire.comerciantes');
+        //$this->comerciantes = Comerciante::all();
+
+        return view('livewire.comerciantes',[ 
+            'comerciantes' =>Comerciante::where('dnicomer', 'LIKE', "%{$this->search}%")
+                       ->orWhere('nombrecomplet', 'LIKE', "%{$this->search}%")  
+                       ->orWhere('asociacion', 'LIKE', "%{$this->search}%")
+                       ->orWhere('rubro1', 'LIKE', "%{$this->search}%")
+                       ->orWhere('tipocomer', 'LIKE', "%{$this->search}%") 
+                       ->orWhere('numpadron', 'LIKE', "%{$this->search}%")          
+                        ->paginate($this ->perPage)                              
+        ]);
+    }
+
+    
+    public function clear()
+    
+    {
+        $this->search ='';
+        $this ->page = 1;
+        $this ->perPage = '10';
     }
 
     public function crear()
@@ -439,6 +481,5 @@ class Comerciantes extends Component
              
         $this->almacenarInput($data);
     }
-
 
 }

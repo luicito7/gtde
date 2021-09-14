@@ -54,6 +54,10 @@
                        @include('livewire.editar-associations')                
                    @endif
                    
+                   @if($modalborrar)
+                   @include('livewire.modal-eliminar')                
+                   @endif
+                   
      @if ($associations ->count())  
             
     <table class="w-full text-xs rounded-lg table-fixed ">
@@ -88,7 +92,7 @@
                             <i class="fas fa-eye fa-2x"></i>
                        </button>
                        
-                       <button wire:click="borrar({{$association->id}})" title="Borrar" class="rounded-md px-0.3 py-0.3 font-bold bg-red-500 hover:bg-red-600">
+                       <button wire:click="modalborrar({{$association->id}})" title="Borrar" class="rounded-md px-0.3 py-0.3 font-bold bg-red-500 hover:bg-red-600">
                             <i class="far fa-trash-alt fa-2x"></i>
                        </button>
 

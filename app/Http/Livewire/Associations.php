@@ -61,6 +61,7 @@ class Associations extends Component
     public $modalBPersona=false;
     public $id_buscar;
     public $modalPInfraccion = false;
+    public $modalborrar = false; //borrar
 
   
   
@@ -142,6 +143,19 @@ class Associations extends Component
     public function createPersona1(){
         $this->modalPInfraccion = true;
     }
+
+
+      /*------------modal borrar---------------*/
+      public function abrirModalBorrar()
+      {
+          $this->modalborrar  = true;
+      }
+  
+      public function cerrarModalBorrar()
+      {
+          $this->modalborrar  = false;
+      }
+       /*---------------------------------------*/
 
     public function almacenarInput($id_selBusc){
         // $array = array_add($array, 'key', 'value');
@@ -341,11 +355,31 @@ class Associations extends Component
 
     }
 
-    public function borrar($id)
+    // public function borrar($id)
+    // {
+    //     Association::find($id)->delete();
+    //     $this->resetPage();
+    // }
+
+
+    public function modalborrar($id)
     {
-        Association::find($id)->delete();
+        //$persona = Persona::findOrFail($id);
+        $this->id_association=$id;
+        $this->abrirModalBorrar();
+    }
+    /*------------------------------------------------------*/
+    public function borrar()
+    {
+
+        // $association = Association::find($this->id_association);
+        // $association -> delete();
+        $association = Association::findOrFail($this->id_association);
+        $association -> delete();
+        $this->cerrarModalBorrar();
         $this->resetPage();
     }
+
 
 
     use WithFileUploads;

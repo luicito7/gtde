@@ -27,6 +27,7 @@ class CreateAssociationsTable extends Migration
             $table->string('docconsti',255)->nullable();
             $table->string('docpadron',255)->nullable();
             $table->string('observacion',255)->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

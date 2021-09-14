@@ -6,6 +6,7 @@ use App\Models\Asociado;
 use Livewire\Component;
 use App\Models\Persona;
 use App\Models\Association;
+use Livewire\WithPagination;
 
 class Asociados extends Component
 {
@@ -40,7 +41,6 @@ class Asociados extends Component
 
 
     public 
-    $asociados, 
     $dniaso,
     $nombrecomplet, 
     $ubicacion,
@@ -49,19 +49,26 @@ class Asociados extends Component
     $zona,
     $numpadron,
     $id_asociado,
-    $observaciones;
+    $observaciones,
+    $search = '',
+    $perPage = '10';
 
 
     
 
     protected $rules = [
         'dniaso' => 'required|max:8|unique:asociados,dniaso',
+        'numpadron' => 'required|unique:asociados,numpadron',
 
     ];
 
     protected $message = [
 
-        'dniaso.required' => 'el dni es requiero'
+        'dniaso.required' => 'el dni es requiero',
+        'dniaso.unique' => 'el dni ya existe ',
+
+        'numpadron.required' => 'numero de padron es requerido',
+        'numpadron.unique' => 'el numero de padron ya existe ',
 
     ];
 
@@ -91,6 +98,16 @@ class Asociados extends Component
         $this->validationOnly($propertyName);
     }
 
+    protected $queryString = [
+        'search'=>['except' => ''],
+        'perPage'    
+    ];
+
+    use WithPagination; 
+    public function updatingSearch()
+    {
+        $this->resetPage();
+    }
     public function render()
     {
 
@@ -126,9 +143,23 @@ class Asociados extends Component
         }
         /*-------------------------------------------------*/
 
+        return view('livewire.asociados',[ 
+            'asociados' => Asociado::where('dniaso', 'LIKE', "%{$this->search}%")
+                       ->orWhere('nombrecomplet', 'LIKE', "%{$this->search}%")  
+                       ->orWhere('asociacion', 'LIKE', "%{$this->search}%")
+                       ->orWhere('rubro', 'LIKE', "%{$this->search}%") 
+                       ->orWhere('zona', 'LIKE', "%{$this->search}%")
+                       ->orWhere('numpadron', 'LIKE', "%{$this->search}%") 
+                        ->paginate($this ->perPage) 
+        ]);
+    }
 
-        $this->asociados = Asociado::all();
-        return view('livewire.asociados');
+        public function clear()
+    
+    {
+        $this->search ='';
+        $this ->page = 1;
+        $this ->perPage = '10';
     }
 
     public function crear()
@@ -452,3 +483,4 @@ class Asociados extends Component
     // }
 
 }
+
