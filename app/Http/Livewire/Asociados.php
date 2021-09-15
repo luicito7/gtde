@@ -417,6 +417,7 @@ public function cerrarModalBorrar()
             foreach ($db as $db1) {
                 //$this->propNomCom = $db1->namecomplet;
                 $this->asociacion = $db1->nombreasoc ;
+                $this->rubro = $db1->rubroasoc;
             }
         }
 

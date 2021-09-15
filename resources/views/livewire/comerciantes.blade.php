@@ -60,8 +60,8 @@
                 <th class="px-4 py-2 text-xs">DNI</th>
                 <th class="px-4 py-2 text-xs">NOMBRE COMPLETO</th>
                 <th class="px-4 py-2 text-xs">ASOCIACIÓN</th>
-                <th class="px-4 py-2 text-xs">TIPOCOMERCIANTE</th>    
-                <th class="px-4 py-2 text-xs">PUESTO</th>
+                <th class="px-4 py-2 text-xs">PUESTO</th>    
+                <th class="px-4 py-2 text-xs">MERCADO</th>
                 <th class="px-4 py-2 text-xs">NUMERO DE PADRON</th>
                 <th class="px-4 py-2 text-xs">OPCIONES</th>    
             </tr>
@@ -73,7 +73,7 @@
                 <td class="px-4 py-2 text-center border">{{$comerciante->nombrecomplet}}</td>
                 <td class="px-4 py-2 text-center border">{{$comerciante->asociacion}}</td>
                 <td class="px-4 py-2 text-center border">{{$comerciante->puesto}}</td>
-                <td class="px-4 py-2 text-center border">{{$comerciante->tipocomer}}</td>
+                <td class="px-4 py-2 text-center border">{{$comerciante->mercado}}</td>
                 <td class="px-4 py-2 text-center border">{{$comerciante->numpadron}}</td>
                 
                 <td class="px-4 py-2 text-center border">

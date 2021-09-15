@@ -18,15 +18,15 @@ class DatabaseSeeder extends Seeder
     {
        
         // \App\Models\User::factory(10)->create();
-        Persona::factory(200)->create(); 
-        Association::factory(200)->create();  
+        Persona::factory(1)->create(); 
+        Association::factory(1)->create();  
         //$this->call(PersonaSeader::class);
         $this->call(UserSeader::class);
         User::factory(06)->create();
-        $this->call(PapeletaSeeder::class);
-        $this->call(InfraccionPersonaSeeder::class);
-        $this->call(InfraccionDatosSeeder::class);
-        $this->call(InfraccionDatosPapeletaSeeder::class);
+        // $this->call(PapeletaSeeder::class);
+        // $this->call(InfraccionPersonaSeeder::class);
+        // $this->call(InfraccionDatosSeeder::class);
+        // $this->call(InfraccionDatosPapeletaSeeder::class);
         
             
 

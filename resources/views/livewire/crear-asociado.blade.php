@@ -108,10 +108,15 @@
 
 
                             <div class="w-full px-3 mb-6 md:w-1/2">
-                              <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="rubro">
+                              <label for="rubro" class="block text-xs font-bold tracking-wide text-gray-700 uppercase" >
+                                RUBRO 
+                              </label>
+                              <h3 type="text" class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-red-300 rounded appearance-none h-11 focus:outline-none focus:bg-white" id="rubro"> {{$rubro}} </h3>
+                              {{-- <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="rubro">
                                 RUBRO
                               </label>
                               <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="rubro" type="text" wire:model="rubro">
+                             --}}
                             </div>
 
                         </div>

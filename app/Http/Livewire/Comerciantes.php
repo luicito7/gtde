@@ -439,6 +439,7 @@ class Comerciantes extends Component
             $db = Association::where('id',$id_selBusc1)->get();
             foreach ($db as $db1) {
                 $this->asociacion = $db1->nombreasoc ;
+                $this->rubro1 = $db1->rubroasoc ;
                 //$this->dnideleg= $db1->dni;
 
                 

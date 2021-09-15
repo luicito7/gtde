@@ -61,7 +61,7 @@
                 <th class="px-4 py-2 text-xs">DNI</th>
                 <th class="px-4 py-2 text-xs">NOMBRE COMPLETO</th>
                 <th class="px-4 py-2 text-xs">UBICACION</th>
-                <th class="px-4 py-2 text-xs">UASOCIACIÓN</th>
+                <th class="px-4 py-2 text-xs">ASOCIACIÓN</th>
                 <th class="px-4 py-2 text-xs">RUBRO</th>
                 <th class="px-4 py-2 text-xs">OPCIONES</th>    
             </tr>

@@ -382,9 +382,13 @@ class Associations extends Component
     use WithFileUploads;
     public function guardar()
     {
-        Association::updateOrCreate(['id'=>$this->id_association],
+
+           if(empty($this->docregist)||empty($this->docpadron)||empty($this->docpadron)){
+                
+            Association::updateOrCreate(['id'=>$this->id_association],
             [
                 $validation =$this->validate(),
+
                 'nombreasoc' => $this->nombreasoc,
                 'dnirepre' => $this->dnirepre,
                 'dnideleg' => $this->dnideleg,
@@ -394,29 +398,57 @@ class Associations extends Component
                 'dferia' => $this->lunes.' '.$this->martes.' '.$this->miercoles.' '.$this->jueves.' '.$this->viernes.' '.$this->sabado.' '.$this->domingo,
                 'fechaconst' => $this->fechaconst,
                 'observacion' => $this->observacion,
+                'docregist' =>   $this->docregist = null,
+                'docconsti' =>  $this->docconsti = null,
+                'docpadron' =>   $this->docpadron = null,
+              
+                
             ],$validation);
 
-            if(!empty($this->docregist)){
-                $validation =$this->validate();
-                $docregist = $this->docregist->store('documentos');
-            }else{
-                $docregisto = null;
-            }
+        }else{
 
-            if(!empty($this->docconsti)){
-                $validation =$this->validate();
-                $docconsti = $this->docconsti->store('documentos');
-            }else{
-                $docconsti = null;
+                Association::updateOrCreate(['id'=>$this->id_association],
+                [
+    
+                    'nombreasoc' => $this->nombreasoc,
+                    'dnirepre' => $this->dnirepre,
+                    'dnideleg' => $this->dnideleg,
+                    'ubicacion' => $this->ubicacion,
+                    'rubroasoc' => $this->rubroasoc,
+                    'tipoasoc' => $this->tipoasoc,
+                    'dferia' => $this->lunes.' '.$this->martes.' '.$this->miercoles.' '.$this->jueves.' '.$this->viernes.' '.$this->sabado.' '.$this->domingo,
+                    'fechaconst' => $this->fechaconst,
+                    'observacion' => $this->observacion,
+                    'docregist' =>  $this-> docregist->store('documentos'),
+                    'docpadron' =>   $this->docconsti->store('documentos'),
+                    'docregist' =>  $this->docpadron->store('documentos'),
+                  
+                    
+                ],);
+
+                // $docregisto = null;
+                // $docconsti = null;
+                // $docpadron = null;
             }
+   
+            
+           
 
 
-            if(!empty($this->docpadron)){
-                $validation =$this->validate();
-                $docpadron = $this->docpadron->store('documentos');
-            }else{
-                $docpadron = null;
-            }
+       
+            // if(!empty($this->docconsti)){
+            //     $validation =$this->validate();
+            //     $docconsti = $this->docconsti->store('documentos');
+            // }else{
+            //     $docconsti = null;
+            // }
+
+            // if(!empty($this->docpadron)){
+            //     $validation =$this->validate();
+            //     $docpadron = $this->docpadron->store('documentos');
+            // }else{
+            //     $docpadron = null;
+            // }
     
         $this->cerrarModal1();
         $this->limpiarCampos();
