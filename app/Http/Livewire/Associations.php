@@ -52,7 +52,8 @@ class Associations extends Component
     $estadoreg,
     $RegistrarInput,
     $observac ;
-    public $docregist = '', $docconsti = '', $docpadron = '';
+    public $docregist = null, $docconsti = null, $docpadron = null;
+
     public $lunes, $martes, $miercoles, $jueves, $viernes, $sabado, $domingo;
 
     public $cantPerson=0;
@@ -75,12 +76,12 @@ class Associations extends Component
         'dnideleg' => 'required',
         'nombreasoc' => 'required',
         'ubicacion' => 'required',
-        // 'docregist' => 'mimes:pdf|max:5120',
+        'docregist' => 'mimes:pdf|max:5120',
         // // 'docconsti' => 'required|mimes:pdf|max:5120',
         // // 'docpadron' => 'required|mimes:pdf|max:5120',
         // //'docregist' => 'mimes:pdf|max:5120',
-        // 'docconsti' => 'mimes:pdf|max:5120',
-        // 'docpadron' => 'mimes:pdf|max:5120',
+        'docconsti' => 'mimes:pdf|max:5120',
+        'docpadron' => 'mimes:pdf|max:5120',
  
 
     ];
@@ -92,19 +93,19 @@ class Associations extends Component
         'dnideleg.unique' => 'El Dni ya existe',
 
         // //'docregist.required' => 'El campo es obligatorio',
-        // 'docregist.mimes' => 'Solo se Admiten Archivos: PDF',
-        // 'docregist.max' => 'El Archivo es Demasiado Grande',
+        'docregist.mimes' => 'Solo se Admiten Archivos: PDF',
+        'docregist.max' => 'El Archivo es Demasiado Grande',
         
 
         // //'docconsti.required' => 'El campo es obligatorio',
-        // 'docconsti.mimes' => 'Solo se Admiten Archivos: PDF',
-        // 'docconsti.max' => 'El Archivo es Demasiado Grande',
+        'docconsti.mimes' => 'Solo se Admiten Archivos: PDF',
+        'docconsti.max' => 'El Archivo es Demasiado Grande',
 
       
 
         // //'docconsti.required' => 'El campo es obligatorio',
-        // 'docpadron.mimes' => 'Solo se Admiten Archivos: PDF',
-        // 'docpadron.max' => 'El Archivo es Demasiado Grande',
+        'docpadron.mimes' => 'Solo se Admiten Archivos: PDF',
+        'docpadron.max' => 'El Archivo es Demasiado Grande',
     ];
 
     public function update($propertyName) 
@@ -214,11 +215,7 @@ class Associations extends Component
                        ->orWhere('dnirepre', 'LIKE', "%{$this->search}%")
                        ->orWhere('dnideleg', 'LIKE', "%{$this->search}%")         
                         ->paginate($this ->perPage)
-
-
-
-            
-                                     
+                         
         ]);
     }
 
@@ -337,6 +334,7 @@ class Associations extends Component
 
     public function editar($id)
     {
+        
         $association = Association::findOrFail($id);
         $this->id_association = $id;
         $this->nombreasoc = $association->nombreasoc;
@@ -347,6 +345,7 @@ class Associations extends Component
         $this->tipoasoc = $association->tipoasoc;
         //$this->dferia = $association->dferia = $this->lunes.' '.$this->martes.' '.$this->miercoles.' '.$this->jueves.' '.$this->viernes.' '.$this->sabado.' '.$this->domingo;
         $this->dferia = $association->dferia;
+        $this->fechaconst = $association->fechaconst;
         $this->docregist = $association->docregist;
         $this->docconsti = $association->docconsti;
         $this->docpadron = $association->docpadron;
@@ -380,8 +379,6 @@ class Associations extends Component
         $this->resetPage();
     }
 
-
-
     use WithFileUploads;
     public function guardar()
     {
@@ -396,23 +393,31 @@ class Associations extends Component
                 'tipoasoc' => $this->tipoasoc,
                 'dferia' => $this->lunes.' '.$this->martes.' '.$this->miercoles.' '.$this->jueves.' '.$this->viernes.' '.$this->sabado.' '.$this->domingo,
                 'fechaconst' => $this->fechaconst,
-                // 'docregist' => $this->docregist->store('documentos'),
-                // 'docconsti' => $this->docconsti->store('documentos'),
-                // 'docpadron' => $this->docpadron->store('documentos'),
                 'observacion' => $this->observacion,
             ],$validation);
-            if(!empty($this->docregist)){
-                $docregist = $this->docregist->store('documentos');
 
+            if(!empty($this->docregist)){
+                $validation =$this->validate();
+                $docregist = $this->docregist->store('documentos');
+            }else{
+                $docregisto = null;
             }
+
             if(!empty($this->docconsti)){
-               
+                $validation =$this->validate();
                 $docconsti = $this->docconsti->store('documentos');
+            }else{
+                $docconsti = null;
             }
+
+
             if(!empty($this->docpadron)){
-              
+                $validation =$this->validate();
                 $docpadron = $this->docpadron->store('documentos');
+            }else{
+                $docpadron = null;
             }
+    
         $this->cerrarModal1();
         $this->limpiarCampos();
 
@@ -495,11 +500,30 @@ class Associations extends Component
                  'dferia' => $this->lunes.' '.$this->martes.' '.$this->miercoles.' '.$this->jueves.' '.$this->viernes.' '.$this->sabado.' '.$this->domingo,
                 //  'dferia' => $this->dferia,
                  'fechaconst' => $this->fechaconst,
-                 'docregist' => $this->docregist->store('documentos'),
-                 'docconsti' => $this->docconsti->store('documentos'),
-                 'docpadron' => $this->docpadron->store('documentos'),
                  'observacion' => $this->observacion,
              ],);
+
+             if(!empty($this->docregist)){
+                $validation =$this->validate();
+                $docregist = $this->docregist->store('documentos');
+            }else{
+                $docregisto = null;
+            }
+
+            if(!empty($this->docconsti)){
+                $validation =$this->validate();
+                $docconsti = $this->docconsti->store('documentos');
+            }else{
+                $docconsti = null;
+            }
+
+            if(!empty($this->docpadron)){
+                $validation =$this->validate();
+                $docpadron = $this->docpadron->store('documentos');
+            }else{
+                $docpadron = null;
+            }
+
          $this->cerrarModal3();
          $this->limpiarCampos();
  

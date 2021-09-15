@@ -37,7 +37,7 @@
                             <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="nombres">
                               NOMBRES
                             </label>
-                            <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="nombres" type="text" wire:model="nombres">
+                            <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"  id="nombres" type="text"  onKeyUp="document.getElementById(this.id).value=document.getElementById(this.id).value.toUpperCase()" wire:model="nombres">
                             @error('nombres')
                               <p class="text-xs italic text-red-500">{{$message}}</p>
                             @enderror 
@@ -47,7 +47,7 @@
                               <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="apepaterno">
                                 APELLIDO PATERNO
                               </label>
-                              <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="apepaterno" type="text" wire:model="apepaterno">
+                              <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="apepaterno" type="text" onKeyUp="document.getElementById(this.id).value=document.getElementById(this.id).value.toUpperCase()"  wire:model="apepaterno">
                               @error('apepaterno')
                                 <p class="text-xs italic text-red-500">{{$message}}</p>
                               @enderror 
@@ -57,7 +57,7 @@
                               <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="apematerno">
                                 APELLIDO MATERNO
                               </label>
-                              <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="apematerno" type="text" wire:model="apematerno">
+                              <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="apematerno" type="text" onKeyUp="document.getElementById(this.id).value=document.getElementById(this.id).value.toUpperCase()" wire:model="apematerno">
                               @error('apematerno')
                                 <p class="text-xs italic text-red-500">{{$message}}</p>
                               @enderror
@@ -72,7 +72,7 @@
                             <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="departamento">
                               DEPARTAMENTO
                             </label>
-                            <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="departamento" type="text" wire:model="departamento">
+                            <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="departamento" type="text" onKeyUp="document.getElementById(this.id).value=document.getElementById(this.id).value.toUpperCase()" wire:model="departamento">
                           </div>
 
                           
@@ -80,7 +80,7 @@
                             <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="provincia">
                               PROVINCIA
                             </label>
-                            <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="provincia" type="text" wire:model="provincia">
+                            <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="provincia" type="text" onKeyUp="document.getElementById(this.id).value=document.getElementById(this.id).value.toUpperCase()" wire:model="provincia">
                               <div class="absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 pointer-events-none">
                               </div>
                           </div>
@@ -90,7 +90,7 @@
                             <label class="block text-xs font-bold tracking-wide text-gray-700 uppercase" for="distrito">
                               DISTRITO
                             </label>
-                            <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="distrito" type="text" wire:model="distrito">
+                            <input class="block w-full px-4 py-3 leading-tight text-gray-700 bg-blue-100 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" id="distrito" type="text" onKeyUp="document.getElementById(this.id).value=document.getElementById(this.id).value.toUpperCase()" wire:model="distrito">
                           </div>
                          </div>
                             {{-- final --}}

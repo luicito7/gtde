@@ -64,7 +64,7 @@ class Comerciantes extends Component
     
 
     protected $rules = [
-        'dnicomer' => 'required|max:8|unique:comerciantes,dnicomer',
+        'dnicomer' => 'required|max:8|unique:comerciantes,dnicomer|unique:asociados,dniaso',
         'numpadron' => 'unique:comerciantes,numpadron',
         'fotopuesto' => 'required|mimes:jpg,png|max:5120',
     ];
@@ -72,7 +72,7 @@ class Comerciantes extends Component
     protected $messages = [
         'dnicomer.required' => 'El DNI es obligatorio',
         'dnicomer.unique' => 'El Dni ya existe',
-        'numpadron' => 'Este número ya esta romado en la lista',
+        '' => 'Este número ya esta Tomado en la lista',
 
 
         'fotopuesto.required' => 'La foto del puesto es obligatorio',
@@ -80,6 +80,23 @@ class Comerciantes extends Component
         'fotopuesto.max' => 'El Archivo es Demasiado Grande',
         
     ];
+
+
+    public function hydrate()
+    {
+        $this->resetErrorBag('dnicomer');
+        $this->resetValidation('dnicomer');
+        $this->resetErrorBag('fotopuesto');
+        $this->resetValidation('fotopuesto');
+        $this->resetErrorBag('numpadron');
+        $this->resetValidation('numpadron');
+        $this->resetErrorBag('asociados,dniaso');
+        $this->resetValidation('asociados,dniaso');
+    }
+
+
+
+
 
     public $modal = false;//crear
     public $modal1 = false;//detalles
@@ -95,7 +112,7 @@ class Comerciantes extends Component
     public $modalBAsociacion=false;//modal buscar asociacion
     public $cantAso=0;
     public $searchTerm2;
-
+    public $modalborrar = false; //borrar
     public $id_Pers, $id_Comer, $dni;
     
 
@@ -103,6 +120,7 @@ class Comerciantes extends Component
     {
         $this->validationOnly($propertyName);
     }
+
 
     protected $queryString = [
         'search'=>['except' => ''],
@@ -205,6 +223,22 @@ class Comerciantes extends Component
     {
         $this->modal2 = false;
     }
+    //----------------------fin-editar
+
+
+/*------------modal borrar---------------*/
+ public function abrirModalBorrar()
+        {
+            $this->modalborrar  = true;
+        }
+            
+ public function cerrarModalBorrar()
+        {
+           $this->modalborrar  = false;
+        }
+  /*---------------------------------------*/  
+
+  
 
     public function limpiarCampos()
     {
@@ -241,7 +275,7 @@ class Comerciantes extends Component
         $this->tipocomer = $comerciante->tipocomer;
         $this->numpadron = $comerciante->numpadron;
         $this->observaciones = $comerciante->observaciones;
-        $this->abrirModal();
+        $this->abrirModal2();
     }
 
     use WithFileUploads;
@@ -267,17 +301,27 @@ class Comerciantes extends Component
         $this->limpiarCampos();
     }
 
-    public function hydrate()
-    {
-        $this->resetErrorBag('dnicomer');
-        $this->resetValidation('dnicomer');
-        $this->resetErrorBag('fotopuesto');
-        $this->resetValidation('fotopuesto');
-    }
 
-    public function borrar($id)
+
+    // public function borrar($id)
+    // {
+    //     Comerciante::find($id)->delete();
+    // }
+
+    public function modalborrar($id)
     {
-        Comerciante::find($id)->delete();
+        //$persona = Persona::findOrFail($id);
+        $this->id_comerciante=$id;
+        $this->abrirModalBorrar();
+    }
+    /*------------------------------------------------------*/
+    public function borrar()
+    {
+
+        $comerciante = Comerciante::findOrFail($this->id_comerciante);
+        $comerciante -> delete();
+        $this->cerrarModalBorrar();
+        $this->resetPage();
     }
 
     public function detalles($id)
@@ -480,6 +524,28 @@ class Comerciantes extends Component
             $data = $data->id;
              
         $this->almacenarInput($data);
+    }
+
+    use WithFileUploads;
+    public function modificar()
+    {
+        Comerciante::updateOrCreate(['id'=>$this->id_comerciante],
+            [
+                'dnicomer' => $this->dnicomer,
+                'nombrecomplet' => $this->nombrecomplet,
+                'puesto' => $this->puesto,
+                'asociacion' => $this->asociacion,
+                'rubro1' => $this->rubro1,
+                'rubro2' => $this->rubro2,
+                'mercado' => $this->mercado,
+                'dimpuesto' => $this->dimpuesto,
+                'fotopuesto' => $this->fotopuesto,
+                'tipocomer' => $this->tipocomer,
+                'numpadron' => $this->numpadron,
+                'observaciones' => $this->observaciones,
+            ],);
+        $this->cerrarModal2();
+        $this->limpiarCampos();
     }
 
 }

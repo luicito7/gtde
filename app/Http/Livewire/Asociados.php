@@ -54,29 +54,10 @@ class Asociados extends Component
     $perPage = '10';
 
 
-    
-
-    protected $rules = [
-        'dniaso' => 'required|max:8|unique:asociados,dniaso',
-        'numpadron' => 'required|unique:asociados,numpadron',
-
-    ];
-
-    protected $message = [
-
-        'dniaso.required' => 'el dni es requiero',
-        'dniaso.unique' => 'el dni ya existe ',
-
-        'numpadron.required' => 'numero de padron es requerido',
-        'numpadron.unique' => 'el numero de padron ya existe ',
-
-    ];
-
-
-
     public $modal = false;//crear
     public $modal1 = false;//detalles
     public $modal2 = false;//editar
+    public $modalborrar = false; //borrar
 
 
     public $modalBPersona=false;//modal buscar persona
@@ -93,6 +74,40 @@ class Asociados extends Component
 
     public $id_Pers, $id_Comer, $dni;
 
+
+    
+
+    protected $rules = [
+        'dniaso' => 'required|max:8|unique:asociados,dniaso|unique:comerciantes,dnicomer',
+        'numpadron' => 'required|unique:asociados,numpadron',
+
+    ];
+
+    protected $message = [
+
+        'dniaso.required' => 'el dni es requiero',
+
+        'dnicomer.unique' => 'El Dni ya existe en comer',
+        'dniaso.unique' => 'el dni ya existe ',
+
+
+        'numpadron.required' => 'numero de padron es requerido',
+        'numpadron.unique' => 'el numero de padron ya existe ',
+
+    ];
+
+
+    public function hydrate()
+    {
+        $this->resetErrorBag('dniaso');
+        $this->resetValidation('dniaso');
+        $this->resetErrorBag('numpadron');
+        $this->resetValidation('numpadron');
+        $this->resetErrorBag('comerciantes,dnicomer');
+        $this->resetValidation('comerciantes,dnicomer');
+    }
+
+
     public function update($propertyName) 
     {
         $this->validationOnly($propertyName);
@@ -103,6 +118,10 @@ class Asociados extends Component
         'perPage'    
     ];
 
+
+
+
+  
     use WithPagination; 
     public function updatingSearch()
     {
@@ -202,8 +221,23 @@ class Asociados extends Component
         $this->modal2 = false;
     }
     //fin editar
-    
 
+
+    
+/*------------modal borrar---------------*/
+ public function abrirModalBorrar()
+ {
+     $this->modalborrar  = true;
+ }
+     
+public function cerrarModalBorrar()
+ {
+    $this->modalborrar  = false;
+ }
+/*---------------------------------------*/  
+
+
+    
     public function limpiarCampos()
     {
         $this->dniaso = '';
@@ -230,7 +264,8 @@ class Asociados extends Component
             $this->zona = $asociado->zona;
             $this->numpadron = $asociado->numpadron;
             $this->observaciones = $asociado->observaciones;
-            $this->abrirModal();
+            $this->abrirModal2();
+
 
     }
 
@@ -256,10 +291,23 @@ class Asociados extends Component
     /* fin alamenar en variables de base de datos*/
 
 
-    public function borrar($id)
+
+    public function modalborrar($id)
     {
-        Asociado::find($id)->delete();
+        //$persona = Persona::findOrFail($id);
+        $this->id_asociado=$id;
+        $this->abrirModalBorrar();
     }
+    /*------------------------------------------------------*/
+    public function borrar()
+    {
+
+        $asociado = Asociado::findOrFail($this->id_asociado);
+        $asociado -> delete();
+        $this->cerrarModalBorrar();
+        $this->resetPage();
+    }
+
 
     /*------------------ obtencion de datos para detalles */
     public function detalles($id)
@@ -462,25 +510,26 @@ class Asociados extends Component
 
  
 
-    // public function mod()
-    // {
-    //     Asociado::updateOrCreate(['id'=>$this->id_asociado],
-    //         [
-                
-    //             'dni' => $this->dni ,
-    //             'nombrecomplet' => $this->nombres.' '. $this->apepaterno.' '. $this->apematerno ,
-    //             'ubicacion'=> $this->ubicacion,
-    //             'asociacion'=>$this->asociacion,
-    //             'rubro'=>$this->rubro,
-    //             'zona'=>$this->zona,
-    //             'numpadron'=>$this->numpadron,
-    //             'observaciones'=>$this->observaciones,
+     public function modificar()
+     {
+         Asociado::updateOrCreate(['id'=>$this->id_asociado],
+             [
+                'dni' => $this->dni ,
+                'nombrecomplet' => $this-> nombrecomplet,
+                'ubicacion'=> $this->ubicacion,
+                'asociacion'=>$this->asociacion,
+                'rubro'=>$this->rubro,
+                'zona'=>$this->zona,
+                'numpadron'=>$this->numpadron,
+                'observaciones'=>$this->observaciones,
            
-    //         ],);
-    //     $this->cerrarModal2();
-    //     $this->limpiarCampos();
+            ],);
+         $this->cerrarModal2();
+        $this->limpiarCampos();
 
-    // }
+     }
+
+
 
 }
 

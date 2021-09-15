@@ -49,6 +49,11 @@
                     @include('livewire.detalles-asociado')   
                     @endif 
 
+
+                    @if($modal2)
+                    @include('livewire.editar-asociados')   
+                    @endif 
+
         @if ($asociados ->count())  
         <table class="w-full text-xs rounded-lg table-fixed">
         <thead>

@@ -44,6 +44,15 @@
                 @if($modal1)
                     @include('livewire.detalles-comerciante')   
                 @endif 
+
+                @if($modal2)
+                @include('livewire.editar-comerciante')   
+                @endif
+
+                @if($modalborrar)
+                @include('livewire.modal-eliminar')                
+                @endif
+                
         @if ($comerciantes ->count())
         <table class="w-full text-xs rounded-lg table-fixed">
         <thead>
@@ -76,7 +85,7 @@
                         <i class="fas fa-eye fa-2x"></i>
                     </button>
                     
-                    <button wire:click="borrar({{$comerciante->id}})" title="Borrar" class="px-0.3 py-0.3 font-bold bg-red-500 rounded-md hover:bg-red-600">
+                    <button wire:click="modalborrar({{$comerciante->id}})" title="Borrar" class="px-0.3 py-0.3 font-bold bg-red-500 rounded-md hover:bg-red-600">
                         <i class="far fa-trash-alt fa-2x"></i>
                     </button>
 
